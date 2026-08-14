@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useRef, useState, useLayoutEffect } from "react";
 import styles from "./FAQBox.module.css";
 

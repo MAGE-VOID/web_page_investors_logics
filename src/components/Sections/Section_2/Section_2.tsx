@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import styles from "./Section_2.module.css"; // Importar archivo CSS para estilos
 
 const Section_2 = () => {
@@ -18,12 +17,12 @@ const Section_2 = () => {
           <button>Learn More</button>
         </div>
         <div className={styles.cardImage}>
-          <Image
+          <img
             src="/Logos/Images/image_3.webp"
             alt="Logo"
             width={300}
             height={300}
-            priority
+            loading="lazy"
           />
         </div>
       </div>

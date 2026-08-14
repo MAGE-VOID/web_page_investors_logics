@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 
@@ -34,11 +32,6 @@ const AnimateBackground_2 = () => {
     // Material
     const material = new THREE.SpriteMaterial({
       color: 0xd8f5ff,
-      program: function (context) {
-        context.beginPath();
-        context.arc(0, 0, 0.1, 0, Math.PI * 2, true);
-        context.fill();
-      },
     });
 
     // Particles
@@ -89,7 +82,9 @@ const AnimateBackground_2 = () => {
 
     return () => {
       window.removeEventListener("resize", onResize);
-      frameId && cancelAnimationFrame(frameId);
+      if (frameId) {
+        cancelAnimationFrame(frameId);
+      }
       if (mount && mount.contains(renderer.domElement)) {
         mount.removeChild(renderer.domElement);
       }

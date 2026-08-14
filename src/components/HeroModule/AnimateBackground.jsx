@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useEffect, useRef } from "react";
 
 const AnimateBackground = () => {
@@ -11,15 +9,15 @@ const AnimateBackground = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    var parts = [];
-    var waves = [];
+    const parts = [];
+    const waves = [];
 
     function randFrom(min, max) {
       return Math.random() * (max - min) + min;
     }
 
     function randBet(c1, c2) {
-      var nArr = [c1, c2];
+      const nArr = [c1, c2];
       return nArr[Math.floor(Math.random() * 2)];
     }
 
@@ -29,11 +27,11 @@ const AnimateBackground = () => {
         this.dirVal = dir === "left" ? 1 : -1;
 
         this.applyTo = function (points) {
-          for (var i = 0; i < points.length; i++) {
-            var initPhase = (2 * Math.PI * points[i].x) / waveL;
-            var yVal = amp * Math.sin(this.phase + initPhase * this.dirVal);
+          for (let i = 0; i < points.length; i++) {
+            const initPhase = (2 * Math.PI * points[i].x) / waveL;
+            const yVal = amp * Math.sin(this.phase + initPhase * this.dirVal);
             points[i].y += yVal;
-            var angVel = (2 * Math.PI) / period;
+            const angVel = (2 * Math.PI) / period;
             points[i].acc += -(angVel ** 2) * yVal;
           }
           this.phase += (2 * Math.PI) / period;
@@ -93,10 +91,10 @@ const AnimateBackground = () => {
     function gameMove() {
       requestAnimationFrame(gameMove);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let wave of waves) {
+      for (const wave of waves) {
         wave.applyTo(parts);
       }
-      for (let part of parts) {
+      for (const part of parts) {
         part.upd();
       }
     }

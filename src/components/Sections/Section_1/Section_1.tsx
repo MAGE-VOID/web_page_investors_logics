@@ -1,7 +1,6 @@
-"use client";
 import { useState, useEffect } from "react";
 import styles from "./Section_1.module.css";
-import App from "../Section_1/Carousel.js";
+import App from "../Section_1/Carousel.jsx";
 
 const Section_1 = () => {
   const [loaded, setLoaded] = useState(false);

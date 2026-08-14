@@ -1,28 +1,25 @@
-"use client";
-
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 import Menu from "./Menu";
 
 const Header = () => {
-  const pathname = usePathname();
+  const { pathname } = useLocation();
 
-  const isActive = (href: string) => pathname === href;
+  const isActive = (href: string) =>
+    pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
 
   return (
     <header className={styles.header}>
       <div className={styles.justify}>
         <div className={styles.logo}>
-          <Link href="/" passHref>
-            <Image
+          <Link to="/">
+            <img
               src="/Logos/Logo_white90.png"
               alt="Logo"
               width={250}
               height={250}
-              priority
+              fetchPriority="high"
             />
           </Link>
         </div>
@@ -30,8 +27,7 @@ const Header = () => {
         {/* Menú de enlaces */}
         <div className={styles.linkdiv}>
           <Link
-            href="/documentation"
-            passHref
+            to="/documentation"
             className={
               isActive("/documentation")
                 ? `${styles["info-link"]} ${styles["activeLink"]}`
@@ -42,8 +38,7 @@ const Header = () => {
           </Link>
 
           <Link
-            href="/products"
-            passHref
+            to="/products"
             className={
               isActive("/products")
                 ? `${styles["info-link"]} ${styles["activeLink"]}`
@@ -54,8 +49,7 @@ const Header = () => {
           </Link>
 
           <Link
-            href="/contact"
-            passHref
+            to="/contact"
             className={
               isActive("/contact")
                 ? `${styles["info-link"]} ${styles["activeLink"]}`

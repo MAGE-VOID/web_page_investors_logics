@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import PageBreadcrumb from "@/app/documentation/components/Content/PageBreadcrumb";
 import ContentLayout from "@/app/documentation/components/Content/ui/ContentLayout";

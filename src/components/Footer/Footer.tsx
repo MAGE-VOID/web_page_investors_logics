@@ -6,7 +6,6 @@ import Parte1 from "./Parte1";
 import Parte2 from "./Parte2";
 import Parte3 from "./Parte3";
 import Parte4 from "./Parte4";
-import BackgroundCircle from "./BackgroundCircle";
 
 const Footer = () => {
   return (
@@ -31,9 +30,6 @@ const Footer = () => {
           <Info2 />
         </div>
       </footer>
-      {/*
-      <BackgroundCircle />
-      */}
     </div>
   );
 };

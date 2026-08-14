@@ -1,7 +1,5 @@
-"use client";
-
 import React, { useState, useRef, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import styles from "./Menu.module.css";
 
 const Menu = () => {
@@ -51,21 +49,21 @@ const Menu = () => {
       <div className={styles.container}>
         <div className={`${styles.menudiv} ${isOpen ? styles.show : ""}`}>
           <Link
-            href="/documentation"
+            to="/documentation"
             className={styles["menu-link"]}
             onClick={handleLinkClick}
           >
             Documentation
           </Link>
           <Link
-            href="/products"
+            to="/products"
             className={styles["menu-link"]}
             onClick={handleLinkClick}
           >
             Products
           </Link>
           <Link
-            href="/contact"
+            to="/contact"
             className={styles["menu-link"]}
             onClick={handleLinkClick}
           >

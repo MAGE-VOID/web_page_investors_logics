@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 function Parte4() {
   return (
@@ -7,21 +7,23 @@ function Parte4() {
       <h3>More</h3>
       <ul>
         <li>
-          <Link href="/documentation/about-us" passHref>
+          <Link to="/documentation/about-us">
             About Us
           </Link>
         </li>
         <li>
-          <Link href="/documentation/assistance/help-center" passHref>
+          <Link to="/documentation/assistance-and-policies/help-center">
             Help Center
           </Link>
         </li>
         <li>
-          <Link href="/documentation/assistance/terms-and-conditions" passHref>
+          <Link to="/documentation/assistance-and-policies/terms-and-conditions">
             Terms and Conditions
           </Link>
         </li>
-        <li>Contact</li>
+        <li>
+          <Link to="/documentation/contact">Contact</Link>
+        </li>
       </ul>
     </div>
   );

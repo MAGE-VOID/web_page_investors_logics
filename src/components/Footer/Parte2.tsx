@@ -1,37 +1,37 @@
 import React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 
 function Parte2() {
   return (
     <div>
       <h3>
-        <Link href="/documentation/contents" passHref>
+        <Link to="/documentation">
           How To Start
         </Link>
       </h3>
       <ul>
         <li>
-          <Link href="/documentation/contents/what-is-forex" passHref>
+          <Link to="/documentation/table-of-contents/what-is-forex">
             What is Forex
           </Link>
         </li>
         <li>
-          <Link href="/documentation/contents/algo-trading" passHref>
+          <Link to="/documentation/table-of-contents/algorithmic-trading">
             Algorithmic Trading
           </Link>
         </li>
         <li>
-          <Link href="/documentation/brokers" passHref>
+          <Link to="/documentation/best-brokers">
             Best Brokers
           </Link>
         </li>
         <li>
-          <Link href="/documentation/infrastructure/vps" passHref>
+          <Link to="/documentation/infrastructure/virtual-private-server">
             Virtual Private Server
           </Link>
         </li>
         <li>
-          <Link href="/documentation/infrastructure/security" passHref>
+          <Link to="/documentation/infrastructure/cybersecurity-and-scams">
             Cybersecurity and Scams
           </Link>
         </li>

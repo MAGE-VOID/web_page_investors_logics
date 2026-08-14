@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import PageBreadcrumb from "@/app/documentation/components/Content/PageBreadcrumb";
 import ContentLayout from "@/app/documentation/components/Content/ui/ContentLayout";
@@ -163,7 +161,7 @@ export default function ResourcesPage() {
             <strong>Troubleshooting and FAQs:</strong> Solutions to common
             platform issues.{" "}
             <a
-              href="/documentation/assistance/help-center"
+              href="/documentation/assistance-and-policies/help-center"
               target="_blank"
               rel="noopener noreferrer"
               style={linkStyle}

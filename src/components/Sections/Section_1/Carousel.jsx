@@ -1,6 +1,4 @@
-"use client";
 import React from "react";
-import Image from "next/image";
 import styled, { keyframes, css } from "styled-components";
 
 function App() {
@@ -59,7 +57,7 @@ function App() {
           <MarqueeGroup>
             {logos.map((src, index) => (
               <div key={`logo-${index}`} style={imageGroupStyle}>
-                <Image
+                <img
                   src={src}
                   alt={`Logo ${index + 1}`}
                   width={300}
@@ -72,7 +70,7 @@ function App() {
           <MarqueeGroup>
             {logos.map((src, index) => (
               <div key={`logo-${index}`} style={imageGroupStyle}>
-                <Image
+                <img
                   src={src}
                   alt={`Logo Copy ${index + 1}`}
                   width={300}

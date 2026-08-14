@@ -1,11 +1,9 @@
-"use client";
-
 import React from "react";
-import { usePathname } from "next/navigation";
+import { useLocation } from "react-router-dom";
 import styles from "./PageBreadcrumb.module.css";
 
 export default function PageBreadcrumb() {
-  const pathname = usePathname();
+  const { pathname } = useLocation();
   const segments = pathname.split("/").filter(Boolean);
 
   // Removemos "documentation" si existe al inicio

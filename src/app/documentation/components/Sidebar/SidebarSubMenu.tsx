@@ -1,6 +1,5 @@
 import React, { useState, useRef, useLayoutEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./SidebarItem.module.css";
 import { SidebarItemProps } from "./SidebarItem";
 
@@ -17,7 +16,7 @@ export default function SidebarSubMenu({
   isOpen,
   onToggle,
 }: SidebarSubMenuProps) {
-  const pathname = usePathname();
+  const { pathname } = useLocation();
   const subMenuRef = useRef<HTMLDivElement>(null);
 
   // Solo para evitar animación en el primer render
@@ -77,7 +76,7 @@ export default function SidebarSubMenu({
           return (
             <Link
               key={idx}
-              href={sub.href || "#"}
+              to={sub.href || "#"}
               className={`${styles.subMenuLink} ${
                 isSubActive ? styles.active : ""
               }`}

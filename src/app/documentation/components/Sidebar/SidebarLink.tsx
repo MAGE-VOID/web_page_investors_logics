@@ -1,6 +1,5 @@
 import React from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./SidebarItem.module.css";
 
 interface SidebarLinkProps {
@@ -9,12 +8,12 @@ interface SidebarLinkProps {
 }
 
 export default function SidebarLink({ href, label }: SidebarLinkProps) {
-  const pathname = usePathname();
+  const { pathname } = useLocation();
   const isActive = pathname === href;
 
   return (
     <Link
-      href={href}
+      to={href}
       className={`${styles.directLink} ${isActive ? styles.active : ""}`}
     >
       {label}
