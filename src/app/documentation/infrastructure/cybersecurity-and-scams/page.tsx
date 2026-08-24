@@ -1,51 +1,37 @@
-import React from "react";
-import PageBreadcrumb from "@/app/documentation/components/Content/PageBreadcrumb";
-import ContentLayout from "@/app/documentation/components/Content/ui/ContentLayout";
-import Title from "@/app/documentation/components/Content/ui/Title";
-import Subtitle from "@/app/documentation/components/Content/ui/Subtitle";
-import Paragraph from "@/app/documentation/components/Content/ui/Paragraph";
 
 export default function CybersecurityAndScamsPage() {
   return (
-    <ContentLayout>
-      <PageBreadcrumb />
+    <>
 
       {/* BLOQUE 1: TÍTULO PRINCIPAL */}
       <div>
-        <Title>Cybersecurity and Scams</Title>
-        <Paragraph>
-          Welcome to the Cybersecurity and Scams section of Investors Logics. In
-          this guide, we will walk you through common cybersecurity threats and
-          trading scams you may encounter, and provide practical steps to
-          protect yourself and your investments.
-        </Paragraph>
+        <h1>Cybersecurity and scams</h1>
+        <p>
+          Automated trading concentrates access, software and account activity
+          in one operating environment. Protect that environment and verify any
+          person, website or file claiming to represent Investors Logics.
+        </p>
       </div>
 
       {/* BLOQUE 2: UNDERSTANDING CYBERSECURITY THREATS */}
       <div>
-        <Subtitle>Understanding Cybersecurity Threats</Subtitle>
-        <Paragraph>
+        <h2>Understanding Cybersecurity Threats</h2>
+        <p>
           Cybersecurity threats can compromise your trading activities and
           personal data. Awareness is the first step in protection.
-        </Paragraph>
+        </p>
 
         {/* Phishing Emails */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Phishing Emails
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             <strong>Description:</strong> Fraudulent emails that mimic legitimate
             institutions to steal sensitive information.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
+          <li>
             <strong>Prevention:</strong> Verify email origins and avoid clicking
             on unsolicited links.
           </li>
@@ -53,43 +39,31 @@ export default function CybersecurityAndScamsPage() {
 
         {/* Fake Websites */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Fake Websites
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             <strong>Description:</strong> Imitations of reputable trading
             platforms designed to capture login credentials or personal data.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
-            <strong>Prevention:</strong> Always check the URL to ensure it
-            matches the legitimate website exactly.
+          <li>
+            <strong>Prevention:</strong> Check the complete domain, use a saved
+            official address and avoid signing in through unsolicited links.
           </li>
         </ul>
 
         {/* Software Security */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Software Security
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             <strong>Description:</strong> Using outdated software can leave you
             vulnerable to security breaches.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
+          <li>
             <strong>Prevention:</strong> Regularly update your trading platforms
             and computers operating system.
           </li>
@@ -98,29 +72,23 @@ export default function CybersecurityAndScamsPage() {
 
       {/* BLOQUE 3: IDENTIFYING TRADING SCAMS */}
       <div>
-        <Subtitle>Identifying Trading Scams</Subtitle>
-        <Paragraph>
+        <h2>Identifying Trading Scams</h2>
+        <p>
           Scams in trading are diverse and can be sophisticated, targeting both
           novice and experienced traders.
-        </Paragraph>
+        </p>
 
         {/* False Promises */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           False Promises
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             <strong>Description:</strong> Promises of guaranteed returns or
             low-risk investments in trading.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
+          <li>
             <strong>Prevention:</strong> Be skeptical of any investment that
             sounds too good to be true.
           </li>
@@ -128,21 +96,15 @@ export default function CybersecurityAndScamsPage() {
 
         {/* Impersonation */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Impersonation
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             <strong>Description:</strong> Scammers posing as legitimate brokers
             or financial advisors.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
+          <li>
             <strong>Prevention:</strong> Confirm all communications through
             official channels.
           </li>
@@ -150,21 +112,15 @@ export default function CybersecurityAndScamsPage() {
 
         {/* Unregistered Brokers */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Unregistered Brokers
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             <strong>Description:</strong> Firms operating without proper
             licensing or regulatory oversight.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
+          <li>
             <strong>Prevention:</strong> Check the regulatory bodys website to
             confirm the brokers registration.
           </li>
@@ -172,21 +128,15 @@ export default function CybersecurityAndScamsPage() {
 
         {/* High-Pressure Sales Tactics */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           High-Pressure Sales Tactics
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             <strong>Description:</strong> Urging quick decisions to avoid
             missing out on an investment.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
+          <li>
             <strong>Prevention:</strong> Take your time to research and make
             informed decisions.
           </li>
@@ -195,87 +145,63 @@ export default function CybersecurityAndScamsPage() {
 
       {/* BLOQUE 4: PROTECTING YOURSELF */}
       <div>
-        <Subtitle>Protecting Yourself</Subtitle>
-        <Paragraph>
+        <h2>Protecting Yourself</h2>
+        <p>
           Enhance your trading security with these best practices:
-        </Paragraph>
+        </p>
 
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Secure Your Accounts
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             Use strong, unique passwords for different sites.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
+          <li>
             Enable two-factor authentication (2FA) to add an extra layer of
             security.
           </li>
         </ul>
 
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Verify Website Authenticity
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             Before entering any personal information, verify that the website is
             secure and authentic.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
-            Look for <code>https://</code> in the URL and a padlock symbol in the
-            address bar.
+          <li>
+            Confirm the complete domain and certificate. HTTPS protects the
+            connection but does not prove that a business or offer is legitimate.
           </li>
         </ul>
 
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Educate Yourself
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             Stay informed about the latest trading scams and cybersecurity
             threats.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
+          <li>
             Participate in security awareness trainings if available.
           </li>
         </ul>
 
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Use Trusted Networks
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             Avoid trading on public or unsecured Wi-Fi networks.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
+          <li>
             Consider using a VPN for an added layer of security when trading.
           </li>
         </ul>
@@ -283,28 +209,28 @@ export default function CybersecurityAndScamsPage() {
 
       {/* BLOQUE 5: REPORTING AND ASSISTANCE */}
       <div>
-        <Subtitle>Reporting and Assistance</Subtitle>
-        <Paragraph>
+        <h2>Reporting and Assistance</h2>
+        <p>
           If you suspect you have encountered a scam or a breach in your trading
           account:
-        </Paragraph>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        </p>
+        <ul>
+          <li>
             <strong>Contact:</strong> Reach out to our support team immediately
             at <code>investorslogics@gmail.com</code>.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
+          <li>
             <strong>Report:</strong> Inform the appropriate regulatory body if
             you encounter or suspect a scam.
           </li>
         </ul>
-        <Paragraph>
-          We are committed to ensuring your trading experience is secure and
-          successful. For more detailed guidance or support, please refer to our
-          comprehensive help resources or contact our customer support team
-          directly.
-        </Paragraph>
+        <p>
+          Preserve evidence, change compromised credentials from a trusted
+          device and contact the relevant broker or provider through an official
+          channel. Investors Logics will never need your password or unrestricted
+          remote access to answer a documentation question.
+        </p>
       </div>
-    </ContentLayout>
+    </>
   );
 }

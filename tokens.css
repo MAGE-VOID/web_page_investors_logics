@@ -1,0 +1,77 @@
+:root {
+  color-scheme: dark;
+
+  /* BMW-inspired: dark navy bands, engineered blue controls and rectangular precision. */
+  --color-paper: #0a1118;
+  --color-paper-2: #121b24;
+  --color-paper-3: #1a2631;
+  --color-ink: #f5f7fa;
+  --color-ink-2: #d8e0e8;
+  --color-neutral: #a5b0bb;
+  --color-muted: #74818d;
+  --color-rule: #25313c;
+  --color-rule-2: #3a4855;
+  --color-night: #071019;
+  --color-night-2: #101b26;
+  --color-accent: #1c69d4;
+  --color-accent-hover: #4e8de5;
+  --color-accent-ink: #ffffff;
+  --color-accent-soft: #132946;
+  --color-security: #aab8c5;
+  --color-security-strong: #4e8de5;
+  --color-focus: #8ab8ff;
+  --color-danger: #dc2626;
+
+  /* Backwards-compatible aliases used by legacy utility styles. */
+  --color-lime: var(--color-accent);
+  --color-lime-hover: var(--color-accent-hover);
+  --color-lime-ink: var(--color-accent-ink);
+
+  --font-display: "Barlow", system-ui, sans-serif;
+  --font-body: "Barlow", system-ui, sans-serif;
+  --font-outlier: "Barlow", system-ui, sans-serif;
+
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.15rem;
+  --text-lg: 1.5rem;
+  --text-xl: 2rem;
+  --text-2xl: 2.8rem;
+  --text-display: clamp(3.4rem, 6.4vw, 5.3rem);
+  --text-display-s: clamp(2.9rem, 5vw, 4.6rem);
+  --text-hero: clamp(3.2rem, 5.8vw, 5.8rem);
+  --text-section: clamp(2rem, 3.7vw, 3.5rem);
+  --text-title: clamp(1.35rem, 1.8vw, 1.8rem);
+  --text-body-lg: clamp(1rem, 1vw, 1.08rem);
+
+  --layout-max: 90rem;
+  --page-max: 90rem;
+  --read-max: 70ch;
+  --page-gutter: clamp(1.25rem, 4vw, 4.25rem);
+  --header-height: 4rem;
+  --radius-input: 0;
+  --radius-card: 0;
+  --radius-pill: 999px;
+  --rule-hair: 1px;
+  --rule-fine: 1px;
+
+  --dur-micro: 120ms;
+  --dur-short: 180ms;
+  --dur-long: 420ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --shadow-modal: 0 1rem 2.5rem rgb(0 0 0 / 35%);
+}

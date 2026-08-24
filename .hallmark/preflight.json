@@ -1,0 +1,23 @@
+{
+  "version": "1.1.0",
+  "scannedAt": "2026-08-13",
+  "fontStack": {
+    "value": "Newsreader + IBM Plex Sans + IBM Plex Mono",
+    "source": "@fontsource packages in package.json and imports in src/main.tsx"
+  },
+  "palette": {
+    "value": "warm ivory paper, brown-black ink, restrained copper signal",
+    "source": "tokens.css and design.md"
+  },
+  "motion": {
+    "stance": "motion-cut",
+    "library": null
+  },
+  "spacing": {
+    "scale": "4-point named scale",
+    "source": "tokens.css"
+  },
+  "framework": "Vite 8 + React 19 + React Router 7",
+  "preserve": ["routes", "brand assets", "documentation hierarchy", "public product boundary"],
+  "introduce": ["Newsprint editorial system", "Long Document marketing", "Narrative Workflow product page", "Catalogue documentation index", "N6 masthead", "Ft4 colophon"]
+}

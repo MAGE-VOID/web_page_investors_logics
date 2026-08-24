@@ -1,65 +1,45 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import type { NavLinkRenderProps } from "react-router-dom";
+import CommandPalette from "./CommandPalette";
 import styles from "./Header.module.css";
 import Menu from "./Menu";
 
+const linkClass = ({ isActive }: NavLinkRenderProps) =>
+  `${styles.navLink} ${isActive ? styles.activeLink : ""}`;
+
 const Header = () => {
-  const { pathname } = useLocation();
-
-  const isActive = (href: string) =>
-    pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
-
   return (
     <header className={styles.header}>
-      <div className={styles.justify}>
-        <div className={styles.logo}>
-          <Link to="/">
-            <img
-              src="/Logos/Logo_white90.png"
-              alt="Logo"
-              width={250}
-              height={250}
-              fetchPriority="high"
-            />
-          </Link>
-        </div>
+      <a className={styles.skipLink} href="#main-content">Skip to content</a>
+      <div className={styles.bar}>
+        <Link to="/" className={styles.brand} aria-label="Investors Logics — Blue Boost Bot home">
+          <img className={styles.logoImage} src="/Logos/Logo_white90.png" alt="Investors Logics" width={196} height={58} fetchPriority="high" />
+          <span className={styles.brandDivider} aria-hidden="true" />
+          <span className={styles.productName}>BLUE BOOST BOT</span>
+        </Link>
 
-        {/* Menú de enlaces */}
-        <div className={styles.linkdiv}>
-          <Link
-            to="/documentation"
-            className={
-              isActive("/documentation")
-                ? `${styles["info-link"]} ${styles["activeLink"]}`
-                : styles["info-link"]
-            }
-          >
+        <nav className={styles.nav} aria-label="Primary navigation">
+          <NavLink end to="/#how-it-works" className={linkClass}>
+            How it works
+          </NavLink>
+          <NavLink to="/products#license-options" className={linkClass}>
+            Pricing
+          </NavLink>
+          <NavLink to="/documentation" className={linkClass}>
             Documentation
-          </Link>
+          </NavLink>
+          <NavLink to="/contact" className={linkClass}>
+            Support
+          </NavLink>
+        </nav>
 
-          <Link
-            to="/products"
-            className={
-              isActive("/products")
-                ? `${styles["info-link"]} ${styles["activeLink"]}`
-                : styles["info-link"]
-            }
-          >
-            Products
+        <div className={styles.actions}>
+          <CommandPalette />
+          <Link className={styles.licenseAction} to="/products#license-options">
+            Get access <span aria-hidden="true">→</span>
           </Link>
-
-          <Link
-            to="/contact"
-            className={
-              isActive("/contact")
-                ? `${styles["info-link"]} ${styles["activeLink"]}`
-                : styles["info-link"]
-            }
-          >
-            Contact
-          </Link>
+          <Menu />
         </div>
-        <Menu />
       </div>
     </header>
   );

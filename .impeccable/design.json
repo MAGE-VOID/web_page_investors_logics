@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-14T05:47:59.1568071Z",
+  "title": "Design System: Investors Logics · Blue Boost Bot",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Charcoal Field",
+        "canonical": "#0d1014",
+        "tonalRamp": ["oklch(15% 0.015 145)", "oklch(26% 0.015 145)", "oklch(38% 0.015 145)", "oklch(50% 0.015 145)", "oklch(62% 0.015 145)", "oklch(74% 0.015 145)", "oklch(86% 0.015 145)", "oklch(95% 0.015 145)"]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Graphite Surface",
+        "canonical": "#151a20",
+        "tonalRamp": ["oklch(15% 0.009 145)", "oklch(26% 0.009 145)", "oklch(38% 0.009 145)", "oklch(50% 0.009 145)", "oklch(62% 0.009 145)", "oklch(74% 0.009 145)", "oklch(86% 0.009 145)", "oklch(95% 0.009 145)"]
+      },
+      "paper-3": {
+        "role": "neutral",
+        "displayName": "Elevated Graphite",
+        "canonical": "#20262d",
+        "tonalRamp": ["oklch(15% 0.018 145)", "oklch(26% 0.018 145)", "oklch(38% 0.018 145)", "oklch(50% 0.018 145)", "oklch(62% 0.018 145)", "oklch(74% 0.018 145)", "oklch(86% 0.018 145)", "oklch(95% 0.018 145)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Warm Ivory",
+        "canonical": "#f4f0e8",
+        "tonalRamp": ["oklch(15% 0.018 150)", "oklch(26% 0.018 150)", "oklch(38% 0.018 150)", "oklch(50% 0.018 150)", "oklch(62% 0.018 150)", "oklch(74% 0.018 150)", "oklch(86% 0.018 150)", "oklch(95% 0.018 150)"]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ivory Secondary",
+        "canonical": "#e4ded3",
+        "tonalRamp": ["oklch(15% 0.025 150)", "oklch(26% 0.025 150)", "oklch(38% 0.025 150)", "oklch(50% 0.025 150)", "oklch(62% 0.025 150)", "oklch(74% 0.025 150)", "oklch(86% 0.025 150)", "oklch(95% 0.025 150)"]
+      },
+      "neutral": {
+        "role": "neutral",
+        "displayName": "Operational Neutral",
+        "canonical": "#c6c0b6",
+        "tonalRamp": ["oklch(15% 0.021 150)", "oklch(26% 0.021 150)", "oklch(38% 0.021 150)", "oklch(50% 0.021 150)", "oklch(62% 0.021 150)", "oklch(74% 0.021 150)", "oklch(86% 0.021 150)", "oklch(95% 0.021 150)"]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Specification",
+        "canonical": "#8f969a",
+        "tonalRamp": ["oklch(15% 0.018 150)", "oklch(26% 0.018 150)", "oklch(38% 0.018 150)", "oklch(50% 0.018 150)", "oklch(62% 0.018 150)", "oklch(74% 0.018 150)", "oklch(86% 0.018 150)", "oklch(95% 0.018 150)"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline Rule",
+        "canonical": "#2b333b",
+        "tonalRamp": ["oklch(15% 0.012 145)", "oklch(26% 0.012 145)", "oklch(38% 0.012 145)", "oklch(50% 0.012 145)", "oklch(62% 0.012 145)", "oklch(74% 0.012 145)", "oklch(86% 0.012 145)", "oklch(95% 0.012 145)"]
+      },
+      "rule-2": {
+        "role": "neutral",
+        "displayName": "Structural Rule",
+        "canonical": "#3b444d",
+        "tonalRamp": ["oklch(15% 0.016 145)", "oklch(26% 0.016 145)", "oklch(38% 0.016 145)", "oklch(50% 0.016 145)", "oklch(62% 0.016 145)", "oklch(74% 0.016 145)", "oklch(86% 0.016 145)", "oklch(95% 0.016 145)"]
+      },
+      "accent": {
+        "role": "primary",
+        "displayName": "Champagne",
+        "canonical": "#d2b16b",
+        "tonalRamp": ["oklch(15% 0.18 35)", "oklch(26% 0.18 35)", "oklch(38% 0.18 35)", "oklch(50% 0.18 35)", "oklch(62% 0.18 35)", "oklch(74% 0.18 35)", "oklch(86% 0.18 35)", "oklch(95% 0.18 35)"]
+      },
+      "accent-hover": {
+        "role": "primary",
+        "displayName": "Pressed Champagne",
+        "canonical": "#e7c982",
+        "tonalRamp": ["oklch(15% 0.19 35)", "oklch(26% 0.19 35)", "oklch(38% 0.19 35)", "oklch(50% 0.19 35)", "oklch(62% 0.19 35)", "oklch(74% 0.19 35)", "oklch(86% 0.19 35)", "oklch(95% 0.19 35)"]
+      },
+      "accent-ink": {
+        "role": "neutral",
+        "displayName": "Champagne Ink",
+        "canonical": "#18130b",
+        "tonalRamp": ["oklch(15% 0 0)", "oklch(26% 0 0)", "oklch(38% 0 0)", "oklch(50% 0 0)", "oklch(62% 0 0)", "oklch(74% 0 0)", "oklch(86% 0 0)", "oklch(95% 0 0)"]
+      },
+      "security": {
+        "role": "secondary",
+        "displayName": "Cool Slate",
+        "canonical": "#aeb6bb",
+        "tonalRamp": ["oklch(15% 0.035 145)", "oklch(26% 0.035 145)", "oklch(38% 0.035 145)", "oklch(50% 0.035 145)", "oklch(62% 0.035 145)", "oklch(74% 0.035 145)", "oklch(86% 0.035 145)", "oklch(95% 0.035 145)"]
+      },
+      "security-strong": {
+        "role": "secondary",
+        "displayName": "Champagne Structure",
+        "canonical": "#d2b16b",
+        "tonalRamp": ["oklch(15% 0.08 145)", "oklch(26% 0.08 145)", "oklch(38% 0.08 145)", "oklch(50% 0.08 145)", "oklch(62% 0.08 145)", "oklch(74% 0.08 145)", "oklch(86% 0.08 145)", "oklch(95% 0.08 145)"]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus Champagne",
+        "canonical": "#e7c982",
+        "tonalRamp": ["oklch(15% 0.18 35)", "oklch(26% 0.18 35)", "oklch(38% 0.18 35)", "oklch(50% 0.18 35)", "oklch(62% 0.18 35)", "oklch(74% 0.18 35)", "oklch(86% 0.18 35)", "oklch(95% 0.18 35)"]
+      },
+      "danger": {
+        "role": "tertiary",
+        "displayName": "Risk Red",
+        "canonical": "#d06b5f",
+        "tonalRamp": ["oklch(15% 0.15 29)", "oklch(26% 0.15 29)", "oklch(38% 0.15 29)", "oklch(50% 0.15 29)", "oklch(62% 0.15 29)", "oklch(74% 0.15 29)", "oklch(86% 0.15 29)", "oklch(95% 0.15 29)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Instrument Display", "purpose": "Product identity, selected duration, and major numeric values." },
+      "headline": { "displayName": "Section Headline", "purpose": "Short route and section headings with technical authority." },
+      "title": { "displayName": "Module Title", "purpose": "Plan headings, stages, and compact module titles." },
+      "body": { "displayName": "Operational Body", "purpose": "Requirements, risk, product scope, and support guidance." },
+      "label": { "displayName": "Issued Label", "purpose": "Codes, field names, status, calibration marks, and metadata." }
+    },
+    "shadows": [
+      { "name": "modal-lift", "value": "0 1.5rem 4rem rgb(11 18 16 / 20%)", "purpose": "Command-palette panel only." },
+      { "name": "menu-lift", "value": "0 0.75rem 2rem rgb(11 18 16 / 18%)", "purpose": "Temporary mobile navigation menu only." }
+    ],
+    "motion": [
+      { "name": "duration-micro", "value": "120ms", "purpose": "Immediate control feedback." },
+      { "name": "duration-short", "value": "180ms", "purpose": "Hover and navigation-state transitions." },
+      { "name": "duration-long", "value": "420ms", "purpose": "The single calibrated duration reveal." },
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Duration reveal and settling transitions." },
+      { "name": "ease-in", "value": "cubic-bezier(0.7, 0, 0.84, 0)", "purpose": "Exit transitions when required." },
+      { "name": "ease-in-out", "value": "cubic-bezier(0.65, 0, 0.35, 1)", "purpose": "Reversible state changes." }
+    ],
+    "breakpoints": [
+      { "name": "instrument-compact", "value": "30rem" },
+      { "name": "standard-collapse", "value": "48rem" },
+      { "name": "route-collapse", "value": "56rem" },
+      { "name": "navigation-collapse", "value": "62rem" },
+      { "name": "instrument-stepdown", "value": "74rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary License Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one transactional action within a commercial module.",
+      "html": "<a class=\"ds-license-action\" href=\"#\"><span>Continue with 90 days</span><span aria-hidden=\"true\">→</span></a>",
+      "css": ".ds-license-action { min-height: 3.5rem; padding: 0.875rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: var(--color-accent-ink, #fff); background: var(--color-accent, #f04a18); border: 0; border-radius: 0; font: 600 1rem/1.2 var(--font-body, Barlow, sans-serif); text-decoration: none; transition: background-color 180ms ease; } .ds-license-action:hover { background: var(--color-accent-hover, #cf3710); } .ds-license-action:focus-visible { outline: 2px solid var(--color-focus, #f04a18); outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Text Action",
+      "kind": "button",
+      "description": "A subordinate action that stays typographic and leaves champagne ownership to the primary action.",
+      "html": "<a class=\"ds-text-action\" href=\"#\">Review product requirements <span aria-hidden=\"true\">↗</span></a>",
+      "css": ".ds-text-action { display: inline-flex; width: fit-content; color: var(--color-ink, #0b1210); font: 600 0.875rem/1.4 var(--font-body, Barlow, sans-serif); text-decoration-color: var(--color-rule-2, #87938a); text-underline-offset: 0.25rem; transition: color 180ms ease, text-decoration-color 180ms ease; } .ds-text-action:hover { color: var(--color-accent-hover, #cf3710); text-decoration-color: currentColor; } .ds-text-action:focus-visible { outline: 2px solid var(--color-focus, #f04a18); outline-offset: 3px; }"
+    },
+    {
+      "name": "Proposal Status",
+      "kind": "chip",
+      "description": "An issued uppercase status word, never a pill badge.",
+      "html": "<span class=\"ds-status\">Proposal</span>",
+      "css": ".ds-status { color: var(--color-accent, #f04a18); background: transparent; border: 0; border-radius: 0; font: 600 0.75rem/1.2 var(--font-display, 'Barlow Condensed', sans-serif); letter-spacing: 0.09em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Navigation Strip",
+      "kind": "nav",
+      "refersTo": "navigation-strip",
+      "description": "A compact forest-black product strip with one active rule and one transaction action.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Primary\"><strong>INVESTORS LOGICS</strong><div><a class=\"ds-nav-link ds-nav-active\" href=\"#\">Product</a><a class=\"ds-nav-link\" href=\"#\">Docs</a><a class=\"ds-nav-link\" href=\"#\">Support</a></div><a class=\"ds-nav-cta\" href=\"#\">Choose license</a></nav>",
+      "css": ".ds-nav { min-height: 4.5rem; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 2rem; color: var(--color-paper-2, #f8f9f5); background: var(--color-ink, #0b1210); font-family: var(--font-body, Barlow, sans-serif); } .ds-nav > strong { font-family: var(--font-display, 'Barlow Condensed', sans-serif); letter-spacing: 0.06em; } .ds-nav > div { height: 100%; display: flex; align-items: center; gap: 2rem; } .ds-nav-link { height: 100%; display: flex; align-items: center; color: #bdc8c0; border-bottom: 2px solid transparent; font-size: 0.875rem; text-decoration: none; } .ds-nav-link:hover { color: #fff; } .ds-nav-active { color: #fff; border-bottom-color: var(--color-accent, #f04a18); } .ds-nav-cta { justify-self: end; padding: 0.75rem 1rem; color: #fff; background: var(--color-accent, #f04a18); text-decoration: none; } .ds-nav-cta:hover { background: var(--color-accent-hover, #cf3710); } .ds-nav a:focus-visible { outline: 2px solid var(--color-focus, #f04a18); outline-offset: 3px; }"
+    },
+    {
+      "name": "Duration Datum",
+      "kind": "custom",
+      "refersTo": "duration-readout",
+      "description": "The signature 30/90/365 calibration selector with the selected term as the visual anchor.",
+      "html": "<fieldset class=\"ds-datum\"><legend>Choose license duration</legend><div class=\"ds-datum-readout\"><strong>90</strong><span>DAYS</span></div><div class=\"ds-datum-track\"><label><input type=\"radio\" name=\"term\"><b>30</b><small>days</small></label><label class=\"ds-datum-selected\"><input type=\"radio\" name=\"term\" checked><b>90</b><small>days</small></label><label><input type=\"radio\" name=\"term\"><b>365</b><small>days</small></label></div></fieldset>",
+      "css": ".ds-datum { margin: 0; padding: 1.5rem 3rem 2rem; color: var(--color-ink, #0b1210); background-color: var(--color-paper-2, #f8f9f5); background-image: repeating-radial-gradient(circle at 50% 45%, transparent 0 1.45rem, rgb(49 93 61 / 7%) 1.5rem 1.55rem); border: 1px solid var(--color-rule, #c7cec6); } .ds-datum legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); } .ds-datum-readout { min-height: 13rem; display: flex; align-items: center; justify-content: center; color: var(--color-accent, #f04a18); } .ds-datum-readout strong { font: 700 clamp(9rem, 22vw, 15rem)/0.72 var(--font-display, 'Barlow Condensed', sans-serif); letter-spacing: -0.04em; } .ds-datum-readout span { color: var(--color-ink, #0b1210); font: 700 2.25rem/1 var(--font-display, 'Barlow Condensed', sans-serif); writing-mode: vertical-rl; } .ds-datum-track { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--color-rule-2, #87938a); } .ds-datum-track label { position: relative; padding-top: 1.5rem; display: grid; justify-items: center; cursor: pointer; } .ds-datum-track input { position: absolute; opacity: 0; } .ds-datum-track label::before { position: absolute; top: -0.35rem; width: 0.65rem; height: 0.65rem; background: var(--color-paper-2, #f8f9f5); border: 1px solid var(--color-rule-2, #87938a); content: ''; } .ds-datum-track b { font: 700 1.625rem/1 var(--font-display, 'Barlow Condensed', sans-serif); } .ds-datum-track small { color: var(--color-muted, #5f6d63); text-transform: uppercase; } .ds-datum-selected { color: var(--color-accent, #f04a18); } .ds-datum-track .ds-datum-selected::before { background: var(--color-accent, #f04a18); border-color: var(--color-accent, #f04a18); box-shadow: 0 0 0 0.25rem var(--color-paper-2, #f8f9f5), 0 0 0 0.3rem var(--color-accent, #f04a18); } .ds-datum-track input:focus-visible + b { outline: 2px solid var(--color-focus, #f04a18); outline-offset: 0.25rem; }"
+    },
+    {
+      "name": "License Docket",
+      "kind": "card",
+      "refersTo": "license-docket",
+      "description": "A bordered order instrument that keeps term, price, scope, action, and system status together.",
+      "html": "<section class=\"ds-docket\" aria-label=\"Selected license proposal\"><header><span>Order configuration</span><b>Proposal</b></header><div class=\"ds-docket-row\"><span>License term</span><strong>90 days</strong></div><div class=\"ds-docket-price\"><span>USD</span><strong>$149</strong></div><dl><div><dt>Product</dt><dd>Compiled .ex5</dd></div><div><dt>Platform</dt><dd>MetaTrader 5</dd></div><div><dt>Source code</dt><dd>Not included</dd></div></dl><a href=\"#\">Continue with 90 days <span aria-hidden=\"true\">→</span></a><p>Frontend proposal only. Payment and activation are not connected.</p></section>",
+      "css": ".ds-docket { max-width: 24rem; color: var(--color-neutral, #27332c); background: var(--color-paper-2, #f8f9f5); border: 1px solid var(--color-rule-2, #87938a); border-radius: var(--radius-input, 0.0625rem); font-family: var(--font-body, Barlow, sans-serif); } .ds-docket header { min-height: 2.75rem; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between; color: #d7e0d9; background: var(--color-ink, #0b1210); font: 600 0.75rem/1.2 var(--font-display, 'Barlow Condensed', sans-serif); letter-spacing: 0.09em; text-transform: uppercase; } .ds-docket header b { color: var(--color-accent, #f04a18); } .ds-docket-row, .ds-docket-price, .ds-docket dl, .ds-docket > p { margin-inline: 1.5rem; } .ds-docket-row { padding: 1.5rem 0; display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-rule, #c7cec6); text-transform: uppercase; } .ds-docket-row span, .ds-docket-price span, .ds-docket dt { color: var(--color-muted, #5f6d63); font-size: 0.75rem; } .ds-docket-row strong { font-family: var(--font-display, 'Barlow Condensed', sans-serif); font-size: 1.625rem; } .ds-docket-price { padding: 2rem 0; display: flex; align-items: flex-start; gap: 0.35rem; } .ds-docket-price strong { color: var(--color-accent, #f04a18); font: 700 5rem/0.8 var(--font-display, 'Barlow Condensed', sans-serif); letter-spacing: -0.035em; } .ds-docket dl { margin-block: 0; padding: 1rem 0; border-block: 1px solid var(--color-rule, #c7cec6); } .ds-docket dl div { min-height: 1.8rem; display: flex; align-items: center; justify-content: space-between; } .ds-docket dd { margin: 0; color: var(--color-ink, #0b1210); font-size: 0.875rem; font-weight: 500; } .ds-docket > a { min-height: 3.5rem; margin: 1.5rem; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; color: #fff; background: var(--color-accent, #f04a18); text-decoration: none; } .ds-docket > a:hover { background: var(--color-accent-hover, #cf3710); } .ds-docket > a:focus-visible { outline: 2px solid var(--color-focus, #f04a18); outline-offset: 3px; } .ds-docket > p { margin-block: 0 1.5rem; color: var(--color-muted, #5f6d63); font-size: 0.75rem; line-height: 1.4; }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "search-field",
+      "description": "A nearly square utility field for documentation and route search.",
+      "html": "<label class=\"ds-search\"><span>Search documentation</span><input type=\"search\" placeholder=\"Search product, licensing, or support\"></label>",
+      "css": ".ds-search { display: grid; gap: 0.5rem; color: var(--color-muted, #5f6d63); font: 600 0.75rem/1.2 var(--font-display, 'Barlow Condensed', sans-serif); letter-spacing: 0.08em; text-transform: uppercase; } .ds-search input { min-height: 4rem; padding: 1rem 1.5rem; color: var(--color-ink, #0b1210); background: var(--color-paper-2, #f8f9f5); border: 1px solid var(--color-rule-2, #87938a); border-radius: var(--radius-input, 0.0625rem); font: 400 1rem/1.5 var(--font-body, Barlow, sans-serif); text-transform: none; } .ds-search input::placeholder { color: var(--color-muted, #5f6d63); } .ds-search input:hover { border-color: var(--color-ink, #0b1210); } .ds-search input:focus-visible { outline: 2px solid var(--color-focus, #f04a18); outline-offset: 3px; }"
+    },
+    {
+      "name": "Product Boundary",
+      "kind": "custom",
+      "description": "A two-layer scope module that distinguishes public product facts from protected intellectual property.",
+      "html": "<section class=\"ds-boundary\"><header><span>BBB · Product boundary</span><span>Public view</span></header><div class=\"ds-boundary-public\"><span>Market data</span><span>Rules-based evaluation</span><span>MT5 execution</span><span>Operational review</span></div><div class=\"ds-boundary-private\"><strong>Private strategy core</strong><span>Source, rules, parameters, and optimization remain inaccessible.</span></div><footer><span>Compiled delivery · .ex5</span><span>Time-limited commercial access</span></footer></section>",
+      "css": ".ds-boundary { color: #dce5de; background: var(--color-ink, #0b1210); border: 1px solid var(--color-ink, #0b1210); border-radius: var(--radius-input, 0.0625rem); overflow: hidden; font-family: var(--font-body, Barlow, sans-serif); } .ds-boundary header, .ds-boundary footer { min-height: 2.75rem; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; color: #9dad9f; font: 600 0.75rem/1.2 var(--font-display, 'Barlow Condensed', sans-serif); letter-spacing: 0.08em; text-transform: uppercase; } .ds-boundary header { border-bottom: 1px solid rgb(255 255 255 / 14%); } .ds-boundary footer { border-top: 1px solid rgb(255 255 255 / 14%); } .ds-boundary-public { padding: 1.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgb(255 255 255 / 14%); } .ds-boundary-public span { min-height: 4rem; padding: 1rem; display: flex; align-items: center; color: #e9efea; background: #132019; } .ds-boundary-private { padding: 2rem; display: grid; gap: 0.25rem; color: var(--color-ink, #0b1210); background-color: #c6d7c8; background-image: repeating-radial-gradient(circle at 72% 50%, transparent 0 1rem, rgb(49 93 61 / 14%) 1.03rem 1.08rem); } .ds-boundary-private strong { font: 700 1.625rem/1 var(--font-display, 'Barlow Condensed', sans-serif); text-transform: uppercase; } .ds-boundary-private span { color: #33483a; font-size: 0.875rem; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Confident Demo",
+    "overview": "Confident Demo pairs a direct Expert Advisor offer with a working-looking, code-native product surface: workflow nodes, sample data, clear demo limits, and a visible license decision. It is product-led rather than promotional, and it makes the evaluation path easy to understand before purchase.\n\nThe system is sober, technical, and transparent. Charcoal surfaces, warm ivory type, cool slate rules, champagne transaction signals, condensed type, and square construction create a world that feels issued and verifiable without pretending to be a live broker dashboard. It rejects trading-dashboard spectacle, editorial newsprint, decorative finance imagery, and any visual implication of guaranteed performance.",
+    "keyCharacteristics": [
+      "The license term is treated as a primary product attribute, not a badge or pricing footnote.",
+      "Fine registration lines and divided fields organize content instead of floating card stacks.",
+      "Champagne is rare and transactional: selection, price, focus, and the next action.",
+      "Public product facts and private intellectual property are separated visibly and plainly.",
+      "Dense technical labels coexist with readable, direct body copy and explicit risk language."
+    ],
+    "rules": [
+      { "name": "The Champagne Transaction Rule", "body": "Champagne identifies a decision, amount, state, or next action; it is never a general background decoration.", "section": "colors" },
+      { "name": "The Mineral Field Rule", "body": "Use tonal surfaces and fine rules to create hierarchy; do not introduce arbitrary card colors.", "section": "colors" },
+      { "name": "The Condensed Signal Rule", "body": "Use Barlow Condensed for structure, numbers, and issued labels; use Barlow for sentences and guidance.", "section": "typography" },
+      { "name": "The Contiguous Field Rule", "body": "Prefer one framed field subdivided by rules over a collection of detached cards with independent spacing.", "section": "layout" },
+      { "name": "The Flat-by-Default Rule", "body": "A shadow must communicate an overlay; it must never be used to make a static section feel more premium.", "section": "elevation" },
+      { "name": "The Issued Edge Rule", "body": "Keep core controls at 0–1px corner radius and reserve the small utility curve for secondary interface mechanics.", "section": "shapes" },
+      { "name": "The One Decision Signal Rule", "body": "Within a commercial module, one champagne action owns the decision while every other control remains structural or textual.", "section": "components" }
+    ],
+    "dos": [
+      "Do make duration, price, scope, and next action readable as one licensing decision.",
+      "Do preserve the charcoal, graphite, cool-slate, and champagne hierarchy across routes.",
+      "Do use linework, aligned fields, and condensed labels to make technical information scannable.",
+      "Do keep public product facts separate from protected source code, strategy logic, parameters, and optimization material.",
+      "Do state risk and unconnected payment or activation states plainly wherever they affect a decision.",
+      "Do preserve visible keyboard focus, readable contrast, reduced motion, and a 320px minimum responsive target."
+    ],
+    "donts": [
+      "Don't use trading dashboards, price charts, crypto motifs, or imagery that implies live performance.",
+      "Don't use editorial newsprint, serif display type, beige paper, or a magazine-like composition.",
+      "Don't use gradients, glow, glass effects, soft card stacks, or pill-shaped commercial controls.",
+      "Don't turn champagne into a decorative wash or allow multiple primary actions to compete.",
+      "Don't publish private implementation details or invent performance, compatibility, certification, activation, or payment claims."
+    ]
+  }
+}

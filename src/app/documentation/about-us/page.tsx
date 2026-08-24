@@ -1,182 +1,136 @@
-import React from "react";
-import PageBreadcrumb from "@/app/documentation/components/Content/PageBreadcrumb";
-import ContentLayout from "@/app/documentation/components/Content/ui/ContentLayout";
-import Title from "@/app/documentation/components/Content/ui/Title";
-import Subtitle from "@/app/documentation/components/Content/ui/Subtitle";
-import Paragraph from "@/app/documentation/components/Content/ui/Paragraph";
 
 export default function AboutUsPage() {
   return (
-    <ContentLayout>
-      <PageBreadcrumb />
+    <>
 
       {/* BLOQUE 1: TÍTULO PRINCIPAL */}
       <div>
-        <Title>About Us</Title>
-        <Paragraph>
-          Investors Logics, where innovation meets trading. Our mission is to
-          empower traders around the world by providing cutting-edge
-          technological solutions, robust educational resources, and unparalleled
-          support.
-        </Paragraph>
+        <h1>About Investors Logics</h1>
+        <p>
+          Investors Logics develops software for systematic trading. Our public
+          work focuses on explaining the product, its operating environment and
+          its limits with enough clarity for an informed evaluation.
+        </p>
       </div>
 
       {/* BLOQUE 2: OUR MISSION */}
       <div>
-        <Subtitle>Our Mission</Subtitle>
-        <Paragraph>
-          At Investors Logics, our core mission is to enhance the trading
-          experience for both retail and institutional traders. We aim to bridge
-          the gap between traditional trading methods and modern technology,
-          making sophisticated trading accessible to everyone.
-        </Paragraph>
+        <h2>Our purpose</h2>
+        <p>
+          We turn defined trading processes into documented software that can be
+          tested, operated and reviewed inside an established platform.
+        </p>
       </div>
 
       {/* BLOQUE 3: WHO WE ARE */}
       <div>
-        <Subtitle>Who We Are</Subtitle>
-        <Paragraph>
-          Investors Logics is a pioneering technology company specializing in the
-          development of advanced trading software and analytical tools. Founded
-          by a team of expert traders and software engineers, we harness the power
-          of machine learning, artificial intelligence, and extensive market
-          analysis to deliver superior trading tools.
-        </Paragraph>
+        <h2>What we build</h2>
+        <p>
+          Blue Boost Bot is our automated Expert Advisor for MetaTrader&nbsp;5.
+          It applies deterministic rules to a Forex trading process and includes
+          internal support for testing and operational review.
+        </p>
       </div>
 
       {/* BLOQUE 4: WHAT WE DO */}
       <div>
-        <Subtitle>What We Do</Subtitle>
+        <h2>How we communicate</h2>
 
         {/* Sección: Innovative Trading Solutions */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
-          Innovative Trading Solutions
+          Product clarity
         </h3>
-        <Paragraph>
-          We develop state-of-the-art trading platforms and algorithms that are
-          designed to improve market analysis, decision-making, and risk
-          management. Our products include:
-        </Paragraph>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>Custom Trading Indicators</li>
-          <li style={{ marginBottom: "0.4rem" }}>Expert Advisors (EAs) for MT5</li>
-          <li style={{ marginBottom: "0.4rem" }}>Algorithmic Trading Systems</li>
+        <p>
+          Public documentation should explain capability, platform requirements
+          and risk without exposing intellectual property or promising outcomes.
+          The current public product scope includes:
+        </p>
+        <ul>
+          <li>Blue Boost Bot for MetaTrader&nbsp;5</li>
+          <li>rules-based Forex automation</li>
+          <li>multi-instrument operating support</li>
+          <li>internal testing and observability tools</li>
         </ul>
 
         {/* Sección: Dedicated Support */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
-          Dedicated Support
+          Responsible support
         </h3>
-        <Paragraph>
-          Our team is committed to providing ongoing support to ensure our clients
-          can trade with confidence and clarity. Whether its technical assistance
-          or trading advice, were here to help every step of the way.
-        </Paragraph>
+        <p>
+          Support can help clarify product use and technical issues. It does not
+          replace independent financial, legal or tax advice, and no support
+          channel should request passwords or account credentials.
+        </p>
       </div>
 
       {/* BLOQUE 5: OUR VALUES */}
       <div>
-        <Subtitle>Our Values</Subtitle>
+        <h2>Working principles</h2>
 
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
-          Innovation
+          Specificity
         </h3>
-        <Paragraph>
-          We continuously explore new technologies and strategies to stay at the
-          forefront of the trading industry.
-        </Paragraph>
+        <p>
+          We name the platform, operating context and limits instead of relying
+          on vague claims.
+        </p>
 
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
-          Integrity
+          Confidentiality
         </h3>
-        <Paragraph>
-          Transparency and honesty are at the core of all our interactions and
-          offerings.
-        </Paragraph>
+        <p>
+          Product behaviour can be described publicly while the strategy,
+          parameters and internal results remain protected.
+        </p>
 
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
-          Excellence
+          Verification
         </h3>
-        <Paragraph>
-          We strive for excellence in every product we create and service we
-          provide, ensuring that our clients receive the best possible trading
-          experience.
-        </Paragraph>
+        <p>
+          Testing supports evaluation; it does not turn historical behaviour into
+          a forecast or a guarantee.
+        </p>
       </div>
 
       {/* BLOQUE 6: OUR HISTORY */}
       <div>
-        <Subtitle>Our History</Subtitle>
-        <Paragraph>
-          Founded in 2020, Investors Logics started as a small startup with the
-          vision of making sophisticated trading accessible to traders at all
-          levels.
-        </Paragraph>
+        <h2>Product focus</h2>
+        <p>
+          This site currently centres on Blue Boost Bot and the knowledge needed
+          to evaluate its MetaTrader&nbsp;5 operating environment responsibly.
+        </p>
       </div>
 
       {/* BLOQUE 7: MEET OUR TEAM */}
       <div>
-        <Subtitle>Meet Our Team</Subtitle>
-        <Paragraph>
-          Our team is composed of industry veterans, financial analysts, and
-          skilled developers who share a passion for trading and technology. Each
-          member brings unique expertise, ensuring that Investors Logics remains
-          at the cutting edge of the financial technology sector.
-        </Paragraph>
+        <h2>Before contacting us</h2>
+        <p>
+          Review the introduction, evaluation guide, platform notes and help
+          center. A focused question with non-sensitive context is easier to
+          answer accurately.
+        </p>
       </div>
 
       {/* BLOQUE 8: JOIN US */}
       <div>
-        <Subtitle>Join Us</Subtitle>
-        <Paragraph>
-          Whether youre a seasoned trader looking to optimize your strategies or
-          a newcomer eager to learn, Investors Logics has something to offer.
-          Explore our platforms, join our community, and start your journey to
-          becoming a more knowledgeable and successful trader.
-        </Paragraph>
+        <h2>Evaluate independently</h2>
+        <p>
+          Automated trading is not suitable for everyone. Consider your
+          experience, financial situation and risk tolerance, and do not use
+          capital you cannot afford to lose.
+        </p>
       </div>
 
       {/* BLOQUE 9: CIERRE */}
-      <Paragraph>
-        Thank you for choosing Investors Logics as your trusted trading partner.
-        For further information about our company or services, please dont
-        hesitate to contact us.
-      </Paragraph>
-    </ContentLayout>
+      <p>
+        For product or documentation questions, use the contact route. Never
+        send credentials, API keys or unrestricted account access.
+      </p>
+    </>
   );
 }

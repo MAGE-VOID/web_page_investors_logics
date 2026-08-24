@@ -1,87 +1,62 @@
-import React from "react";
-import PageBreadcrumb from "@/app/documentation/components/Content/PageBreadcrumb";
-import ContentLayout from "@/app/documentation/components/Content/ui/ContentLayout";
-import Title from "@/app/documentation/components/Content/ui/Title";
-import Subtitle from "@/app/documentation/components/Content/ui/Subtitle";
-import Paragraph from "@/app/documentation/components/Content/ui/Paragraph";
 
 export default function BrokersPage() {
-  // Estilo para los enlaces (color celeste y subrayado).
-  const linkStyle = {
-    color: "#00bfff",
-    textDecoration: "underline",
-  };
-
   return (
-    <ContentLayout>
-      <PageBreadcrumb />
+    <>
 
       {/* BLOQUE 1: Título Principal */}
       <div>
-        <Title>Brokers</Title>
-        <Paragraph>
-          Choosing the right broker is crucial for successful trading. This
-          guide helps you understand key factors to consider when selecting a
-          broker that aligns with your trading strategy and goals.
-        </Paragraph>
+        <h1>Choosing a broker</h1>
+        <p>
+          Investors Logics does not rank brokers on this page. Availability,
+          regulation, account conditions and MetaTrader&nbsp;5 support vary by
+          jurisdiction and can change, so verify each point directly.
+        </p>
       </div>
 
       {/* BLOQUE 2: Key Criteria for Choosing a Broker */}
       <div>
-        <Subtitle>Key Criteria for Choosing a Broker</Subtitle>
-        <Paragraph>
+        <h2>Key Criteria for Choosing a Broker</h2>
+        <p>
           When selecting a broker, consider these essential aspects to ensure
           they meet your investment needs and standards.
-        </Paragraph>
+        </p>
 
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
-            <strong>Recommendation:</strong> Look for brokers that offer a
-            platform with Metatrader 5, which are known for stability and
-            comprehensive tools.
+        <ul>
+          <li>
+            <strong>Platform:</strong> Confirm that the broker offers the desktop
+            MetaTrader&nbsp;5 environment required for Expert Advisors.
           </li>
         </ul>
 
         {/* Regulation and Reliability */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Regulation and Reliability
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             <strong>Importance:</strong> Ensures the broker is compliant with
             financial laws and regulations, providing a layer of security.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
-            <strong>Check:</strong> Verify the brokers registration with
-            regulatory bodies like the FCA, CySEC, or ASIC.
+          <li>
+            <strong>Check:</strong> Verify the broker and legal entity in the
+            official register for your jurisdiction. Do not rely on a logo or
+            licence number shown only on the broker’s website.
           </li>
         </ul>
 
         {/* Account Types */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Account Types
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             <strong>Importance:</strong> Different account types offer varying
             spreads, leverage, and commission structures to suit different
             trading styles.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
+          <li>
             <strong>Tip:</strong> Compare account features such as minimum
             deposits, spread types (fixed vs. variable), and leverage options.
           </li>
@@ -89,21 +64,15 @@ export default function BrokersPage() {
 
         {/* Fees and Commissions */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Fees and Commissions
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             <strong>Importance:</strong> Understanding the cost structure is
             crucial as fees can impact your profitability.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
+          <li>
             <strong>Advice:</strong> Evaluate the brokers fee transparency,
             looking for any hidden charges in spreads, commissions, or overnight
             financing.
@@ -112,140 +81,75 @@ export default function BrokersPage() {
 
         {/* Customer Support */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Customer Support
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             <strong>Importance:</strong> Robust support is essential, especially
             for new traders who might encounter issues or have questions.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
-            <strong>Expectation:</strong> Ensure the broker offers 24/7 customer
-            support via multiple channels such as live chat, email, and phone.
+          <li>
+            <strong>Expectation:</strong> Test the support channels and confirm
+            their operating hours before an urgent issue occurs.
           </li>
         </ul>
 
         {/* Execution Speed and Reliability */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Execution Speed and Reliability
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             <strong>Importance:</strong> Fast and reliable trade execution can
             significantly impact the effectiveness of your trading strategy.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
-            <strong>Suggestion:</strong> Test the brokers execution speeds and
-            look for any reviews about slippage or requotes.
+          <li>
+            <strong>Suggestion:</strong> Use a controlled environment to observe
+            connection stability, spreads, commissions, swaps and execution behaviour.
           </li>
         </ul>
 
         {/* Educational and Analytical Resources */}
         <h3
-          style={{
-            marginTop: "1rem",
-            marginBottom: "0.5rem",
-            fontWeight: "bold",
-            fontSize: "1.2rem",
-          }}
         >
           Educational and Analytical Resources
         </h3>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
+        <ul>
+          <li>
             <strong>Importance:</strong> Resources like tutorials, webinars, and
             analytical tools can enhance your trading skills.
           </li>
-          <li style={{ marginBottom: "0.4rem" }}>
+          <li>
             <strong>Benefit:</strong> Choose brokers that provide comprehensive
             educational content and advanced analytical tools.
           </li>
         </ul>
       </div>
 
-      {/* BLOQUE 3: RECOMMENDED BROKERS */}
+      {/* BLOQUE 3: NO RANKED RECOMMENDATION */}
       <div>
-        <Subtitle>Recommended Brokers</Subtitle>
-        <ul style={{ marginLeft: "1.5rem", marginBottom: "1.5rem" }}>
-          <li style={{ marginBottom: "0.4rem" }}>
-            <a
-              href="https://www.icmarkets.com/global/en/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={linkStyle}
-            >
-              IC Markets
-            </a>
-          </li>
-          <li style={{ marginBottom: "0.4rem" }}>
-            <a
-              href="https://fbs.com/en/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={linkStyle}
-            >
-              FBS
-            </a>
-          </li>
-          <li style={{ marginBottom: "0.4rem" }}>
-            <a
-              href="https://fxview.com/global"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={linkStyle}
-            >
-              FXView
-            </a>
-          </li>
-          <li style={{ marginBottom: "0.4rem" }}>
-            <a
-              href="https://www.fxpro.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={linkStyle}
-            >
-              FXPro
-            </a>
-          </li>
-          <li style={{ marginBottom: "0.4rem" }}>
-            <a
-              href="https://pepperstone.com/en/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={linkStyle}
-            >
-              Pepperstone
-            </a>
-          </li>
-        </ul>
+        <h2>Compatibility is not endorsement</h2>
+        <p>
+          A broker offering MetaTrader&nbsp;5 is not automatically suitable for
+          Blue Boost Bot or for your circumstances. Confirm the specific entity,
+          account type, costs, symbol availability and Expert Advisor permissions.
+        </p>
       </div>
 
       {/* BLOQUE 4: EVALUATING YOUR NEEDS */}
       <div>
-        <Paragraph>
-          For more detailed information on each recommended broker or to explore
-          additional options suited to your trading requirements, please contact
-          their support team for personalized advice.
-        </Paragraph>
-        <Paragraph>
-          We are here to help you make informed decisions that maximize your
-          trading potential.
-        </Paragraph>
+        <p>
+          Ask the broker to clarify its own services and conditions. Investors
+          Logics support can explain public product compatibility but cannot make
+          an individual broker selection for you.
+        </p>
+        <p>
+          Recheck the broker’s conditions before moving from a test environment
+          to any decision involving live funds.
+        </p>
       </div>
-    </ContentLayout>
+    </>
   );
 }

@@ -1,92 +1,248 @@
-/* Menu.module.css */
-
-/* Contenedor para manejar layout. 
-   "justify" no tiene por qué justificarse horizontalmente, 
-   pero mantiene la idea de agrupar icono+menú 
-   y ubicar la lógica de "clic fuera" con ref. */
-.justify {
-  position: relative; /* Para posicionar menudiv dentro */
-}
-
-/* Contenedor que puede ayudar a ocultar scrolls o espacios extra */
-.container {
-  overflow: hidden;
-  width: 100%;
-}
-
-/* Ícono de menú (hamburguesa) */
-.menuIcon {
+.menu {
   display: none;
-  font-size: 30px;
-  cursor: pointer;
-  transition: transform 0.3s ease; /* Transición para animación de rotación */
-  color: #fff; /* Ejemplo: color blanco para el icono */
+  position: relative;
 }
 
-/* 
-     Mostramos el ícono en pantallas pequeñas 
-     y ocultamos el menú desktop 
-  */
-@media (max-width: 549px) {
-  .menuIcon {
+.menuIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: grid;
+  place-items: center;
+  color: var(--color-ink-2);
+  border: 1px solid var(--color-rule-2);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.menuIcon::-webkit-details-marker {
+  display: none;
+}
+
+.menuIcon:hover {
+  border-color: var(--color-ink);
+}
+
+.menuIcon:focus-visible {
+  outline-offset: 0.2rem;
+}
+
+.menuGlyph,
+.menuGlyph::before,
+.menuGlyph::after {
+  width: 1rem;
+  height: 1px;
+  display: block;
+  background: currentColor;
+  content: "";
+}
+
+.menuGlyph {
+  position: relative;
+}
+
+.menuGlyph::before {
+  position: absolute;
+  inset-block-start: -0.32rem;
+}
+
+.menuGlyph::after {
+  position: absolute;
+  inset-block-start: 0.32rem;
+}
+
+.menu[open] .menuGlyph {
+  background: transparent;
+}
+
+.menu[open] .menuGlyph::before {
+  inset-block-start: 0;
+  rotate: 45deg;
+}
+
+.menu[open] .menuGlyph::after {
+  inset-block-start: 0;
+  rotate: -45deg;
+}
+
+.menuLinks {
+  position: absolute;
+  inset-block-start: calc(100% + 0.75rem);
+  inset-inline-end: 0;
+  width: min(19rem, calc(100vw - 2rem));
+  padding: var(--space-2xs);
+  color: var(--color-ink);
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule-2);
+  border-radius: 0.25rem;
+  box-shadow: var(--shadow-modal);
+}
+
+.menuLink {
+  min-height: 2.75rem;
+  padding-inline: var(--space-sm);
+  display: flex;
+  align-items: center;
+  color: var(--color-neutral);
+  border-radius: 0.25rem;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.menuLink:hover {
+  color: var(--color-ink);
+  background: var(--color-paper-3);
+}
+
+.menuAction {
+  min-height: 2.75rem;
+  margin-block-start: var(--space-2xs);
+  padding-inline: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  color: var(--color-accent-ink);
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.menuAction:hover {
+  color: var(--color-accent-ink);
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.menuAction span {
+  font-size: 1.25em;
+  line-height: 1;
+}
+
+@media (max-width: 62rem) {
+  .menu {
     display: block;
   }
-
-  .menuIcon.active {
-    transform: rotate(90deg); /* Rota el ícono para simular una "X" */
-  }
-
-  /* Menú emergente */
-  .menudiv {
-    position: absolute;
-    top: 80px; /* Ajusta para que no tape el header */
-    right: 0; /* Desplazado a la derecha */
-    width: 250px;
-    padding: 15px;
-    background-color: #111111;
-    border-radius: 10px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.496);
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-
-    /* Inicia oculto (fuera de vista) */
-    opacity: 0;
-    transform: translateY(-5%);
-    pointer-events: none;
-
-    /* Transiciones suaves */
-    transition: transform 0.75s ease-in-out, opacity 0.2s 0.1s ease-in-out;
-  }
-
-  /* Cuando el menú está abierto */
-  .menudiv.show {
-    opacity: 1;
-    transform: translateY(5%);
-    pointer-events: auto;
-  }
-
-  /* Estilos para los enlaces del menú móvil */
-  .menu-link {
-    background-color: rgba(255, 255, 255, 0.1);
-    font-size: 15px;
-    border-radius: 8px;
-    padding: 15px 20px;
-    margin-bottom: 10px;
-    color: #fff;
-    text-decoration: none;
-    transition: background-color 0.2s, color 0.2s;
-  }
-
-  .menu-link:hover {
-    background-color: rgba(0, 191, 255, 0.3);
-    color: #00bfff;
-  }
 }
 
-/* En pantallas >= 550px, ocultamos estos enlaces móviles */
-@media (min-width: 550px) {
-  .menudiv {
-    display: none;
-  }
+/* Mobile navigation follows the same index-sheet geometry as the masthead. */
+.menuIcon {
+  width: 2.55rem;
+  height: 2.55rem;
+  color: var(--color-ink-2);
+  background: var(--color-paper-2);
+  border-color: var(--color-rule-2);
+  border-radius: var(--radius-input);
+}
+
+.menuIcon:hover {
+  color: var(--color-ink);
+  border-color: var(--color-accent);
+}
+
+.menuLinks {
+  inset-block-start: calc(100% + 0.55rem);
+  padding: 0.35rem;
+  background: var(--color-paper-2);
+  border-color: var(--color-rule-2);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-modal);
+}
+
+.menuLink {
+  border-radius: var(--radius-input);
+  letter-spacing: 0.02em;
+}
+
+.menuLink:hover {
+  background: var(--color-paper-3);
+}
+
+.menuAction {
+  border-radius: var(--radius-input);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* Linear-inspired mobile menu: one lifted surface, no decorative stack. */
+.menuIcon {
+  width: 2.25rem;
+  height: 2.25rem;
+  background: var(--color-paper-2);
+  border-color: var(--color-rule);
+  border-radius: var(--radius-input);
+}
+
+.menuIcon:hover {
+  border-color: var(--color-accent);
+}
+
+.menuLinks {
+  inset-block-start: calc(100% + 0.5rem);
+  padding: 0.4rem;
+  background: var(--color-paper-2);
+  border-color: var(--color-rule-2);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-modal);
+}
+
+.menuLink {
+  min-height: 2.6rem;
+  border-radius: var(--radius-input);
+  letter-spacing: 0;
+}
+
+.menuLink:hover {
+  background: var(--color-paper-3);
+}
+
+.menuAction {
+  min-height: 2.6rem;
+  border-radius: var(--radius-input);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* BMW-inspired mobile disclosure: rectangular, direct, blue action. */
+.menuIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--color-night-2);
+  border-color: var(--color-rule-2);
+  border-radius: 0;
+}
+
+.menuIcon:hover {
+  border-color: var(--color-accent);
+}
+
+.menuLinks {
+  inset-block-start: calc(100% + 0.75rem);
+  padding: 0;
+  background: var(--color-paper-2);
+  border-color: var(--color-rule-2);
+  border-radius: 0;
+  box-shadow: var(--shadow-modal);
+}
+
+.menuLink {
+  min-height: 2.9rem;
+  padding-inline: 1rem;
+  border-radius: 0;
+  letter-spacing: 0.02em;
+}
+
+.menuLink:hover {
+  background: var(--color-paper-3);
+}
+
+.menuAction {
+  min-height: 2.9rem;
+  margin-block-start: 0;
+  border-radius: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }

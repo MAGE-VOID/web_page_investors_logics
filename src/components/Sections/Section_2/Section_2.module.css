@@ -1,83 +1,961 @@
-.section_2 {
-  height: auto; /* Cambiado a 'auto' para ajustar la altura según el contenido */
-  width: auto;
+.capabilitySection {
+  width: min(100%, var(--layout-max));
+  margin-inline: auto;
+  padding: clamp(4.5rem, 9vw, 8rem) var(--page-gutter);
+  background: var(--color-paper-2);
+  border-top: 1px solid var(--color-rule-2);
+}
+
+.capabilityIntro {
+  display: grid;
+  grid-template-columns: minmax(20rem, 0.95fr) minmax(20rem, 1.05fr);
+  gap: clamp(2rem, 7vw, 8rem);
+  align-items: end;
+}
+
+.capabilityIntro h2 {
+  max-width: 13ch;
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: var(--text-section);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.91;
+  text-wrap: balance;
+}
+
+.capabilityIntro > p {
+  max-width: 48ch;
+  margin: 0 0 0.2rem;
+  color: var(--color-neutral);
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+.capabilityList {
+  margin-block-start: clamp(2.75rem, 6vw, 5.5rem);
+  border-top: 1px solid var(--color-rule-2);
+}
+
+.capabilityList article {
+  min-width: 0;
+  padding: 1.35rem 0;
+  display: grid;
+  grid-template-columns: minmax(11rem, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(1.5rem, 5vw, 6rem);
+  align-items: start;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.capabilityList h3 {
+  max-width: 20ch;
+  margin: 0;
+  color: var(--color-ink-2);
+  font-family: var(--font-body);
+  font-size: var(--text-title);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+.capabilityList p {
+  max-width: 48ch;
+  margin: 0;
+  color: var(--color-neutral);
+  font-size: 0.92rem;
+  line-height: 1.58;
+}
+
+.boundarySection {
+  padding: clamp(4.5rem, 8vw, 7.5rem) max(var(--page-gutter), calc((100vw - var(--layout-max)) / 2 + var(--page-gutter)));
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.8fr) minmax(22rem, 1.2fr);
+  gap: clamp(2rem, 9vw, 10rem);
+  color: var(--color-ink-2);
+  background: var(--color-night);
+  border-top: 1px solid var(--color-rule-2);
+}
+
+.boundarySection h2 {
+  max-width: 12ch;
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: var(--text-section);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 0.89;
+}
+
+.boundaryCopy {
+  max-width: 55ch;
+  align-self: end;
+}
+
+.boundaryCopy p {
+  color: var(--color-neutral);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.boundaryCopy p + p {
+  margin-block-start: 1rem;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+}
+
+.boundaryLinks {
+  margin-block-start: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+}
+
+.boundaryLinks a {
+  color: var(--color-ink-2);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 0.28rem;
+}
+
+.boundaryLinks a:hover {
+  color: var(--color-accent);
+}
+
+.conversionBand {
+  width: min(100%, var(--layout-max));
+  margin-inline: auto;
+  padding: clamp(4.5rem, 8vw, 7rem) var(--page-gutter);
+  display: grid;
+  grid-template-columns: minmax(20rem, 0.9fr) minmax(24rem, 1.1fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  align-items: end;
+  background: var(--color-paper);
+  border-top: 1px solid var(--color-rule-2);
+}
+
+.conversionIntro h2 {
+  max-width: 12ch;
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: var(--text-section);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+}
+
+.conversionIntro > p:last-child {
+  max-width: 44ch;
+  margin: 1.25rem 0 0;
+  color: var(--color-neutral);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.licensePicker {
+  min-width: 0;
+  padding: 1.2rem 1.25rem 1.1rem;
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule-2);
+  border-radius: var(--radius-card);
+}
+
+.licensePicker fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.licensePicker legend {
+  margin-block-end: 0.8rem;
+  color: var(--color-ink-2);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.planChoices {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.planChoices label {
+  position: relative;
+  min-height: 3.9rem;
+  padding: 0.75rem 0.85rem;
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.7fr) minmax(7rem, 0.7fr) auto;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-ink-2);
+  background: var(--color-paper-3);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--dur-short) ease, border-color var(--dur-short) ease;
+}
+
+.planChoices label:hover {
+  border-color: var(--color-rule-2);
+}
+
+.planChoices label.planSelected {
+  color: var(--color-accent-ink);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.planChoices input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.planCopy strong,
+.planCopy small {
+  display: block;
+}
+
+.planCopy strong {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  line-height: 1;
+}
+
+.planCopy small {
+  margin-block-start: 0.3rem;
+  color: var(--color-muted);
+  font-size: 0.74rem;
+}
+
+.planSelected .planCopy small {
+  color: var(--color-accent-ink);
+}
+
+.planLabel {
+  color: var(--color-muted);
+  font-size: 0.68rem;
+  line-height: 1.2;
+  text-align: end;
+}
+
+.planSelected .planLabel {
+  color: var(--color-accent-ink);
+  font-weight: 700;
+}
+
+.primaryAction {
+  min-height: 3.15rem;
+  margin-block-start: 0.75rem;
+  padding: 0.8rem 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: #111111;
-  color: #e0e0e0;
-  padding: 20px 0; /* Agregado padding para espaciado vertical */
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--color-accent-ink);
+  background: var(--color-accent);
+  border-radius: var(--radius-input);
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-.card {
-  width: 90%;
-  height: 10%;
-  max-width: 87rem;
-  display: flex;
-  flex-direction: column; /* Cambia la orientación por defecto a vertical */
-  border-radius: 15px;
-  overflow: hidden;
-  background-color: transparent;
-  transition: flex-direction 0.3s ease; /* Suaviza la transición de cambios */
+.primaryAction:hover {
+  background: var(--color-accent-hover);
 }
 
-@media (min-width: 768px) {
-  /* Establece un punto de quiebre para pantallas más grandes */
-  .card {
-    height: 75%;
-    flex-direction: row; /* Restablece la orientación a horizontal en pantallas grandes */
+.licenseNote {
+  margin: 0.65rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.7rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+@media (max-width: 62rem) {
+  .capabilityIntro,
+  .boundarySection,
+  .conversionBand {
+    grid-template-columns: 1fr;
+  }
+
+  .capabilityIntro,
+  .boundarySection {
+    gap: 1.5rem;
+  }
+
+  .conversionBand {
+    gap: 2rem;
+  }
+
+  .licensePicker {
+    width: min(100%, 42rem);
   }
 }
 
-.cardText {
-  flex: 1;
-  margin: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  color: #ccc;
+@media (max-width: 48rem) {
+  .capabilityList article {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
 }
 
-.cardText h1 {
-  color: #ffffff;
-  margin-bottom: 30px;
-  font-size: 1.6rem;
-  text-align: left;
+@media (max-width: 38rem) {
+  .capabilitySection {
+    padding-block: 4rem 5rem;
+  }
+
+  .boundarySection {
+    padding-inline: 1rem;
+  }
+
+  .boundaryLinks {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .conversionBand {
+    padding-inline: 1rem;
+  }
+
+  .licensePicker {
+    padding-inline: 0.8rem;
+  }
+
+  .planChoices label {
+    min-height: 4.4rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.6rem;
+  }
+
+  .planLabel {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .planCopy {
+    grid-column: 1;
+  }
 }
 
-.cardText p {
+/* Obsidian Index essentials and access selector. */
+.capabilitySection {
+  padding-top: clamp(5.5rem, 10vw, 9rem);
+  padding-bottom: clamp(5.5rem, 10vw, 9rem);
+  background: var(--color-paper);
+  border-top-color: var(--color-rule);
+}
+
+.capabilityIntro {
+  grid-template-columns: minmax(17rem, 0.8fr) minmax(20rem, 1.2fr);
+  gap: clamp(2rem, 9vw, 10rem);
+}
+
+.capabilityIntro h2 {
+  max-width: 10ch;
+  font-size: var(--text-section);
+  letter-spacing: -0.06em;
+}
+
+.capabilityIntro > p {
+  max-width: 40ch;
+  color: var(--color-neutral);
+}
+
+.capabilityList {
+  margin-top: clamp(3rem, 7vw, 6rem);
+  border-top-color: var(--color-rule-2);
+}
+
+.capabilityList article {
+  padding-block: 1.55rem;
+  grid-template-columns: minmax(13rem, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(1.5rem, 7vw, 8rem);
+  border-bottom-color: var(--color-rule);
+}
+
+.capabilityList article::before {
+  display: block;
+  grid-column: 1;
+  width: 2.25rem;
+  height: 2px;
+  margin-bottom: 0.7rem;
+  background: var(--color-accent);
+  content: "";
+}
+
+.capabilityList article > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(1.5rem, 7vw, 8rem);
+}
+
+.capabilityList h3 {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  letter-spacing: -0.045em;
+}
+
+.capabilityList p {
+  color: var(--color-neutral);
+}
+
+.boundarySection {
+  padding-top: clamp(5.5rem, 10vw, 9rem);
+  padding-bottom: clamp(5.5rem, 10vw, 9rem);
+  background: var(--color-night);
+  border-top-color: var(--color-rule-2);
+}
+
+.boundarySection h2 {
+  max-width: 10ch;
+  font-size: var(--text-section);
+  letter-spacing: -0.065em;
+}
+
+.boundaryCopy {
+  position: relative;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--color-rule-2);
+}
+
+.boundaryCopy::before {
+  display: block;
+  margin-bottom: 1.4rem;
+  color: var(--color-accent);
+  content: "PUBLIC SCOPE";
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.boundaryCopy p {
+  color: var(--color-ink-2);
+  font-size: 1.02rem;
+}
+
+.boundaryCopy p + p {
+  color: var(--color-muted);
+}
+
+.boundaryLinks {
+  gap: 1.8rem;
+}
+
+.boundaryLinks a {
+  color: var(--color-ink-2);
+  text-decoration-thickness: 1px;
+}
+
+.boundaryLinks a:hover {
+  color: var(--color-accent-hover);
+}
+
+.conversionBand {
+  padding-top: clamp(5.5rem, 10vw, 9rem);
+  padding-bottom: clamp(5.5rem, 10vw, 9rem);
+  gap: clamp(2rem, 8vw, 9rem);
+  background: var(--color-paper);
+  border-top-color: var(--color-rule);
+}
+
+.conversionIntro h2 {
+  max-width: 10ch;
+  font-size: var(--text-section);
+  letter-spacing: -0.065em;
+}
+
+.conversionIntro > p:last-child {
+  max-width: 38ch;
+  color: var(--color-neutral);
+}
+
+.licensePicker {
+  padding: 1.45rem 1.35rem 1.2rem;
+  background: var(--color-paper-2);
+  border-color: var(--color-rule-2);
+  border-inline-start: 2px solid var(--color-accent);
+  border-radius: var(--radius-card);
+  box-shadow: 0.75rem 0.75rem 0 var(--color-night);
+}
+
+.licensePicker legend {
+  color: var(--color-ink-2);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.planChoices {
+  gap: 0;
+  border-top: 1px solid var(--color-rule-2);
+}
+
+.planChoices label {
+  min-height: 4.1rem;
+  padding-inline: 0.9rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--color-rule);
+  border-radius: 0;
+}
+
+.planChoices label:hover {
+  background: var(--color-paper-3);
+  border-color: var(--color-rule);
+}
+
+.planChoices label.planSelected {
+  color: var(--color-ink);
+  background: var(--color-accent-soft);
+  border-color: var(--color-rule-2);
+  box-shadow: inset 0.2rem 0 0 var(--color-accent);
+}
+
+.planCopy strong {
+  color: var(--color-ink);
+}
+
+.planCopy small,
+.planLabel {
+  color: var(--color-muted);
+}
+
+.planSelected .planCopy small,
+.planSelected .planLabel {
+  color: var(--color-ink-2);
+}
+
+.planSelected .planLabel {
+  color: var(--color-accent);
+}
+
+.primaryAction {
+  min-height: 3.25rem;
+  margin-top: 1rem;
+  border-radius: var(--radius-input);
+  letter-spacing: 0.015em;
+}
+
+.licenseNote {
+  color: var(--color-muted);
+}
+
+@media (max-width: 62rem) {
+  .capabilityList article > div {
+    grid-template-columns: minmax(11rem, 0.7fr) minmax(0, 1.3fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .capabilityList article > div {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+}
+
+@media (max-width: 38rem) {
+  .licensePicker {
+    box-shadow: 0.45rem 0.45rem 0 var(--color-night);
+  }
+}
+
+/* Linear-inspired scope and pricing surfaces. */
+.capabilitySection {
+  padding-top: clamp(5rem, 9vw, 8rem);
+  padding-bottom: clamp(5rem, 9vw, 8rem);
+  background: var(--color-paper);
+  border-top-color: var(--color-rule);
+}
+
+.capabilityIntro {
+  grid-template-columns: minmax(17rem, 0.85fr) minmax(20rem, 1.15fr);
+  gap: clamp(2rem, 8vw, 8rem);
+}
+
+.capabilityIntro h2 {
+  max-width: 12ch;
+  font-size: var(--text-section);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+}
+
+.capabilityIntro > p {
+  max-width: 44ch;
+  color: var(--color-neutral);
+}
+
+.capabilityList {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.capabilityList article {
+  padding: 1.2rem clamp(1rem, 2.5vw, 1.75rem);
+  display: block;
+  border-bottom-color: var(--color-rule);
+}
+
+.capabilityList article:last-child {
+  border-bottom: 0;
+}
+
+.capabilityList article::before {
+  display: none;
+  content: none;
+}
+
+.capabilityList article > div {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(1.5rem, 7vw, 8rem);
+}
+
+.capabilityList h3 {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.capabilityList p {
+  color: var(--color-neutral);
   font-size: 0.9rem;
-  margin-bottom: 35px;
-  text-align: left;
 }
 
-.cardText button {
-  padding: 10px 20px;
-  font-size: 0.9rem;
-  color: #111111;
-  background-color: #00bfff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  align-self: flex-start;
+.boundarySection {
+  padding-top: clamp(5rem, 9vw, 8rem);
+  padding-bottom: clamp(5rem, 9vw, 8rem);
+  background: var(--color-paper-2);
+  border-top-color: var(--color-rule);
 }
 
-.cardText button:hover {
-  background-color: #009bdd;
+.boundarySection h2 {
+  max-width: 12ch;
+  font-size: var(--text-section);
+  font-weight: 600;
+  letter-spacing: -0.05em;
 }
 
-.cardImage {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
+.boundaryCopy {
+  padding-top: 0;
+  border-top: 0;
 }
 
-.cardImage img {
-  width: auto;
-  height: 75%;
-  margin-right: -50px;
+.boundaryCopy::before {
+  display: none;
+  content: none;
+}
+
+.boundaryCopy p {
+  color: var(--color-ink-2);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.boundaryCopy p + p {
+  color: var(--color-muted);
+}
+
+.boundaryLinks a {
+  color: var(--color-accent-hover);
+  text-decoration-color: transparent;
+}
+
+.boundaryLinks a:hover {
+  color: var(--color-ink);
+  text-decoration-color: var(--color-accent);
+}
+
+.conversionBand {
+  padding-top: clamp(5rem, 9vw, 8rem);
+  padding-bottom: clamp(5rem, 9vw, 8rem);
+  background: var(--color-paper);
+  border-top-color: var(--color-rule);
+}
+
+.conversionIntro h2 {
+  max-width: 12ch;
+  font-size: var(--text-section);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+}
+
+.conversionIntro > p:last-child {
+  max-width: 42ch;
+  color: var(--color-neutral);
+}
+
+.licensePicker {
+  padding: 1.25rem;
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-card);
+  box-shadow: none;
+}
+
+.licensePicker legend {
+  color: var(--color-ink-2);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.planChoices {
+  gap: 0.35rem;
+  border-top: 0;
+}
+
+.planChoices label {
+  min-height: 3.5rem;
+  padding: 0.65rem 0.75rem;
+  background: var(--color-paper-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius-input);
+}
+
+.planChoices label:hover {
+  background: var(--color-paper-3);
+  border-color: var(--color-rule-2);
+}
+
+.planChoices label.planSelected {
+  color: var(--color-ink);
+  background: var(--color-accent-soft);
+  border-color: rgb(94 106 210 / 55%);
+  box-shadow: none;
+}
+
+.planCopy strong {
+  color: var(--color-ink);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.planCopy small,
+.planLabel {
+  color: var(--color-muted);
+}
+
+.planSelected .planCopy small,
+.planSelected .planLabel {
+  color: var(--color-ink-2);
+}
+
+.planSelected .planLabel {
+  color: var(--color-accent-hover);
+}
+
+.primaryAction {
+  min-height: 2.8rem;
+  margin-top: 0.75rem;
+  border-radius: var(--radius-input);
+  font-weight: 500;
+}
+
+.licenseNote {
+  color: var(--color-muted);
+}
+
+@media (max-width: 48rem) {
+  .capabilityList article > div {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
+  }
+}
+
+@media (max-width: 38rem) {
+  .licensePicker {
+    box-shadow: none;
+  }
+}
+
+/* BMW-inspired decision bands: flat, rectangular and easy to compare. */
+.capabilitySection {
+  display: none;
+}
+
+.boundarySection {
+  padding-top: clamp(4.5rem, 8vw, 7rem);
+  padding-bottom: clamp(4.5rem, 8vw, 7rem);
+  padding-inline: max(var(--page-gutter), calc((100vw - var(--layout-max)) / 2 + var(--page-gutter)));
+  grid-template-columns: minmax(18rem, 0.9fr) minmax(22rem, 1.1fr);
+  gap: clamp(2rem, 8vw, 8rem);
+  color: var(--color-ink-2);
+  background: var(--color-night);
+  border-top-color: var(--color-rule-2);
+  border-bottom-color: var(--color-rule-2);
+}
+
+.boundarySection h2 {
+  max-width: 12ch;
+  color: var(--color-ink);
+  font-size: var(--text-section);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.boundaryCopy {
+  max-width: 50ch;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.boundaryCopy::before {
+  display: none;
+  content: none;
+}
+
+.boundaryCopy p {
+  color: var(--color-ink-2);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.boundaryCopy p + p {
+  color: var(--color-muted);
+}
+
+.boundaryLinks {
+  margin-top: 2rem;
+  gap: 1.5rem;
+}
+
+.boundaryLinks a {
+  color: var(--color-accent-hover);
+  text-decoration-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.boundaryLinks a:hover {
+  color: var(--color-ink);
+  text-decoration-color: var(--color-accent);
+}
+
+.conversionBand {
+  width: min(100%, var(--layout-max));
+  padding-top: clamp(4.5rem, 8vw, 7rem);
+  padding-bottom: clamp(4.5rem, 8vw, 7rem);
+  grid-template-columns: minmax(20rem, 0.9fr) minmax(24rem, 1.1fr);
+  gap: clamp(2rem, 8vw, 8rem);
+  background: var(--color-paper);
+  border-top-color: var(--color-rule-2);
+}
+
+.conversionIntro h2 {
+  max-width: 12ch;
+  color: var(--color-ink);
+  font-size: var(--text-section);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.conversionIntro > p:last-child {
+  max-width: 42ch;
+  color: var(--color-neutral);
+  line-height: 1.6;
+}
+
+.licensePicker {
+  padding: 1.25rem 1.2rem 1.1rem;
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule-2);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.licensePicker legend {
+  color: var(--color-ink-2);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.planChoices {
+  gap: 0;
+  border-top: 1px solid var(--color-rule-2);
+}
+
+.planChoices label {
+  min-height: 4.1rem;
+  padding: 0.75rem 0.85rem;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--color-rule);
+  border-radius: 0;
+}
+
+.planChoices label:hover {
+  background: var(--color-paper-3);
+  border-color: var(--color-rule);
+}
+
+.planChoices label.planSelected {
+  color: var(--color-ink);
+  background: var(--color-accent-soft);
+  border-color: var(--color-accent);
+  border-inline-start: 1px solid var(--color-accent);
+}
+
+.planCopy strong {
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+.planCopy small,
+.planLabel {
+  color: var(--color-muted);
+}
+
+.planSelected .planCopy small,
+.planSelected .planLabel {
+  color: var(--color-ink-2);
+}
+
+.planSelected .planLabel {
+  color: var(--color-accent-hover);
+}
+
+.primaryAction {
+  min-height: 3rem;
+  margin-top: 0.8rem;
+  border-radius: 0;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.licenseNote {
+  color: var(--color-muted);
+}
+
+@media (max-width: 62rem) {
+  .boundarySection,
+  .conversionBand {
+    grid-template-columns: 1fr;
+  }
+
+  .boundarySection {
+    padding-inline: var(--page-gutter);
+  }
+}
+
+@media (max-width: 38rem) {
+  .boundarySection,
+  .conversionBand {
+    padding-inline: 1rem;
+  }
 }

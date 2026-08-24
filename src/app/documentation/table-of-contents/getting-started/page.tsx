@@ -1,124 +1,110 @@
-import React from "react";
-import PageBreadcrumb from "@/app/documentation/components/Content/PageBreadcrumb";
-import ContentLayout from "@/app/documentation/components/Content/ui/ContentLayout";
-import Title from "@/app/documentation/components/Content/ui/Title";
-import Subtitle from "@/app/documentation/components/Content/ui/Subtitle";
-import Paragraph from "@/app/documentation/components/Content/ui/Paragraph";
 
 export default function GettingStartedPage() {
   return (
-    <ContentLayout>
-      <PageBreadcrumb />
+    <>
 
       {/* Bloque 1: Introducción */}
       <div>
-        <Title>Getting Started with Investors Logics</Title>
-        <Paragraph>
-          Welcome to Investors Logics! We specialize in providing advanced
-          algorithmic trading strategies via MetaTrader 5 (MT5), ensuring that
-          our clients can leverage cutting-edge technology to enhance their
-          trading effectiveness. Whether you&apos;re new to trading or seeking
-          to refine your strategies, our tools are designed to meet a wide array
-          of trading needs.
-        </Paragraph>
+      <h1>How to get started</h1>
+      <p>
+          Follow the sequence below before requesting access or considering live
+          funds. This guide stays public and does not publish private settings.
+        </p>
       </div>
 
       {/* Bloque 2: Quick Start Guide */}
       <div>
-        <Subtitle>Quick Start Guide</Subtitle>
+        <h2>Seven checks before access</h2>
         
-        <ol style={{ marginBottom: "1.5rem", paddingInlineStart: "0.5rem" }}>
-          <li style={{ marginBottom: "1rem" }}>
-            <strong>1. Set Up Your Broker Account</strong>
-            <ul style={{ margin: "0.5rem 0 0 1.5rem", listStyleType: "disc" }}>
+        <ol>
+          <li>
+            <strong>1. Decide if the product fits</strong>
+            <ul>
               <li>
-                Choose a broker that meets your trading needs and offers
-                MetaTrader&nbsp;5 compatibility.
+                Review the risks of Forex and leveraged trading in relation to
+                your experience, objectives and financial situation.
               </li>
               <li>
-                Register and verify your account according to the broker’s
-                guidelines to ensure secure and compliant trading.
+                Do not use money you cannot afford to lose.
               </li>
             </ul>
           </li>
           
-          <li style={{ marginBottom: "1rem" }}>
-            <strong>2. Learn to Use MetaTrader 5</strong>
-            <ul style={{ margin: "0.5rem 0 0 1.5rem", listStyleType: "disc" }}>
+          <li>
+            <strong>2. Prepare MetaTrader&nbsp;5</strong>
+            <ul>
               <li>
-                Familiarize yourself with the MT5 platform to effectively manage
-                and execute trades.
+                Install MetaTrader&nbsp;5 from an official source or a broker
+                that supports it.
               </li>
               <li>
-                Explore MetaTrader&nbsp;5 tutorials and resources to fully
-                understand its features and capabilities.
-              </li>
-            </ul>
-          </li>
-
-          <li style={{ marginBottom: "1rem" }}>
-            <strong>3. Deploy a VPS or Local Server</strong>
-            <ul style={{ margin: "0.5rem 0 0 1.5rem", listStyleType: "disc" }}>
-              <li>
-                Set up a Virtual Private Server (VPS) or a local server to run
-                your trading applications with stability and reduced latency.
+                Learn how Expert Advisors, permissions, logs and account
+                connections work before adding automation.
               </li>
             </ul>
           </li>
 
-          <li style={{ marginBottom: "1rem" }}>
-            <strong>4. Select Your Trading Product</strong>
-            <ul style={{ margin: "0.5rem 0 0 1.5rem", listStyleType: "disc" }}>
+          <li>
+            <strong>3. Check your broker</strong>
+            <ul>
               <li>
-                Choose the trading product that best fits your trading style and
-                requirements.
+                Confirm the broker supports MetaTrader&nbsp;5 and review symbol
+                names, account model, costs and execution conditions.
               </li>
             </ul>
           </li>
 
-          <li style={{ marginBottom: "1rem" }}>
-            <strong>5. Configure Your Trading Environment</strong>
-            <ul style={{ margin: "0.5rem 0 0 1.5rem", listStyleType: "disc" }}>
+          <li>
+            <strong>4. Choose where MT5 will run</strong>
+            <ul>
               <li>
-                Install and configure your chosen trading indicators or expert
-                advisors on MT5.
-              </li>
-              <li>
-                Customize settings to tailor your tools to your specific trading
-                strategy.
+                Decide whether a maintained local computer or a suitable VPS
+                better fits your continuity, security and monitoring needs.
               </li>
             </ul>
           </li>
 
-          <li style={{ marginBottom: "1rem" }}>
-            <strong>6. Practice and Test</strong>
-            <ul style={{ margin: "0.5rem 0 0 1.5rem", listStyleType: "disc" }}>
+          <li>
+            <strong>5. Use the official product route</strong>
+            <ul>
               <li>
-                Utilize demo accounts provided by your broker on MT5 to practice
-                trading without financial risk.
+                Use only the official package and documentation supplied through
+                an approved Investors Logics channel.
               </li>
               <li>
-                Test your strategies in a controlled environment to understand
-                potential performance under various market conditions.
+                Do not infer settings from screenshots, public marketing copy or
+                third-party messages.
               </li>
             </ul>
           </li>
 
-          <li style={{ marginBottom: "1rem" }}>
-            <strong>7. Start Trading</strong>
-            <ul style={{ margin: "0.5rem 0 0 1.5rem", listStyleType: "disc" }}>
+          <li>
+            <strong>6. Evaluate in a controlled environment</strong>
+            <ul>
               <li>
-                Begin trading with real funds once you are confident in your
-                understanding of the tools.
+                Verify installation, permissions, logs and expected platform
+                behaviour without relying on a test as proof of future returns.
               </li>
               <li>
-                Continuously monitor and adjust your setups as you gain more
-                insight and data from active trading.
+                Record the environment used so differences can be investigated.
+              </li>
+            </ul>
+          </li>
+
+          <li>
+            <strong>7. Decide independently</strong>
+            <ul>
+              <li>
+                Review what testing did and did not establish before making any
+                decision involving live capital.
+              </li>
+              <li>
+                Maintain monitoring, backups and an outage plan if the system is operated.
               </li>
             </ul>
           </li>
         </ol>
       </div>
-    </ContentLayout>
+    </>
   );
 }

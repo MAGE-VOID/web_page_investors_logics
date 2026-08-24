@@ -1,0 +1,29 @@
+[
+  {
+    "date": "2026-08-14",
+    "scope": "app",
+    "macrostructure": "Long Document / Narrative Workflow / Catalogue",
+    "theme": "Newsprint",
+    "enrichment": "none",
+    "nav": "N6 Newspaper masthead",
+    "footer": "Ft4 Dense typographic",
+    "brief": "Complete editorial redesign around the public Blue Boost Bot product context"
+  },
+  {
+    "date": "2026-08-13",
+    "scope": "app",
+    "macrostructure": "Split Studio / Workbench / Index-First",
+    "theme": "Cobalt",
+    "enrichment": "none",
+    "nav": "N13 Inline command palette",
+    "footer": "Ft2 Inline rule",
+    "brief": "Complete professional redesign of the Investors Logics Vite application"
+  },
+  {
+    "date": "2026-08-13",
+    "macrostructure": "Marquee Hero",
+    "theme": "Midnight",
+    "enrichment": "E5 Custom Illustration · tier-B SVG",
+    "brief": "Restore Investors Logics visual identity after the Vite simplification"
+  }
+]

@@ -1,156 +1,431 @@
-/* src/components/HeaderModule/Header.module.css */
-
-/* --------------------------------------------------
-   Contenedor de los enlaces
--------------------------------------------------- */
-.linkdiv {
-  gap: 45px;
-  display: flex;
-  margin-left: auto; /* Alinea el bloque de enlaces hacia la derecha */
-}
-
-/* 
-   -------- LÓGICA DE RESALTADO A PARTIR DE 550px -------- 
-*/
-@media (min-width: 550px) {
-  /* Estilos base de los enlaces */
-  .info-link {
-    position: relative;
-    text-decoration: none;
-    font-size: 16px;
-    color: #777777;
-    padding-bottom: 0px;
-    transition: color 0.2s ease-in-out;
-  }
-
-  /* Línea inferior animada (por defecto, no se ve) */
-  .info-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0px;
-    height: 1px;
-    background-color: #00bfff;
-    transform: scaleX(0);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out 0.1s;
-    box-shadow: 0px 0px 0px rgba(0, 191, 255, 0);
-  }
-
-  /* Hover general: el link se pinta de azul y la línea se extiende */
-  .info-link:hover {
-    color: #00bfff;
-  }
-  .info-link:hover::after {
-    transform: scaleX(1);
-    box-shadow: 0px -2px 10px rgba(0, 191, 255, 1);
-  }
-
-  /* 
-     -------- ESTILOS PARA EL LINK ACTIVO --------
-     El enlace activo se muestra azul y con la línea extendida 
-     si NO estamos sobrevolando .linkdiv (o si no pasamos el mouse por otros enlaces).
-  */
-  .activeLink {
-    color: #00bfff;
-  }
-  .activeLink::after {
-    transform: scaleX(1);
-    box-shadow: 0px -2px 10px rgba(0, 191, 255, 1);
-  }
-
-  /* 
-     Cuando el mouse está sobre CUALQUIER link de .linkdiv, 
-     pero NO estamos sobre el link activo, entonces el link activo
-     pierde el resaltado (color base gris y línea retraída).
-  */
-  .linkdiv:hover .activeLink:not(:hover) {
-    color: #777777;
-  }
-  .linkdiv:hover .activeLink:not(:hover)::after {
-    transform: scaleX(0);
-    box-shadow: none;
-  }
-
-  /*
-     Pero si estás EXACTAMENTE sobre el enlace activo,
-     se queda el efecto (color azul + línea extendida).
-     => .activeLink:hover
-  */
-  .activeLink:hover {
-    color: #00bfff;
-  }
-  .activeLink:hover::after {
-    transform: scaleX(1);
-    box-shadow: 0px -2px 10px rgba(0, 191, 255, 1);
-  }
-}
-
-/* --------------------------------------------------
-   Logo
--------------------------------------------------- */
-.logo {
-  width: 100%;
-  max-width: 160px;
-  min-width: 160px;
-}
-
-/* --------------------------------------------------
-   Header principal
--------------------------------------------------- */
 .header {
-  background-color: #111111;
-  color: white;
-  padding: 0.8rem;
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 50;
+  min-height: var(--header-height);
+  color: var(--color-ink-2);
+  background: var(--color-night);
+  border-bottom: 1px solid var(--color-rule-2);
+}
+
+.bar {
+  width: min(100%, var(--layout-max));
+  min-height: var(--header-height);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+  display: grid;
+  grid-template-columns: minmax(15rem, 1fr) auto minmax(15rem, 1fr);
+  align-items: center;
+  gap: clamp(1rem, 3vw, 3rem);
+}
+
+.brand,
+.actions,
+.nav {
   display: flex;
+  align-items: center;
+}
+
+.brand {
+  min-width: 0;
+  gap: 0.7rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.logoImage {
+  width: clamp(8rem, 11vw, 9.8rem);
+  height: auto;
+  object-fit: contain;
+}
+
+.brandDivider {
+  width: 1px;
+  height: 1.5rem;
+  background: var(--color-rule-2);
+}
+
+.productName {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.nav {
+  justify-content: center;
+  gap: clamp(0.85rem, 2vw, 1.9rem);
+}
+
+.navLink {
+  min-height: var(--header-height);
+  padding-inline: 0.15rem;
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-muted);
+  border-bottom: 2px solid transparent;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--dur-short) ease, border-color var(--dur-short) ease;
+}
+
+.navLink:hover,
+.activeLink {
+  color: var(--color-ink);
+}
+
+.activeLink {
+  border-bottom-color: var(--color-accent);
+}
+
+.actions {
+  justify-content: flex-end;
+  gap: 0.65rem;
+}
+
+.licenseAction {
+  min-height: 2.7rem;
+  padding: 0.62rem 0.95rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  position: relative;
+  gap: 0.7rem;
+  color: var(--color-accent-ink);
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-input);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color var(--dur-short) ease, border-color var(--dur-short) ease;
 }
 
-.header::after {
-  content: "";
+.licenseAction:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.licenseAction:focus-visible,
+.navLink:focus-visible {
+  outline-offset: -0.15rem;
+}
+
+.licenseAction span {
+  font-size: 1.15em;
+  line-height: 1;
+}
+
+.skipLink {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent,
-    #111111 25%,
-    gray 50%,
-    #111111 75%,
-    transparent
-  );
+  inset-block-start: -4rem;
+  inset-inline-start: 1rem;
+  z-index: 1;
+  padding: 0.65rem 0.85rem;
+  color: var(--color-accent-ink);
+  background: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-decoration: none;
+  transition: inset-block-start var(--dur-short) ease;
 }
 
-.justify {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  max-width: 87rem;
+.skipLink:focus {
+  inset-block-start: 0.5rem;
 }
 
-/* Oculta los enlaces en pantallas muy pequeñas (<= 549px) */
-@media (max-width: 549px) {
-  .linkdiv {
+@media (max-width: 64rem) {
+  .bar {
+    grid-template-columns: 1fr auto;
+  }
+
+  .nav,
+  .licenseAction {
     display: none;
   }
 }
 
-/* Ajustes de padding en pantallas más grandes */
-@media (min-width: 768px) {
-  .header {
-    padding-left: 4rem;
-    padding-right: 4rem;
+@media (max-width: 34rem) {
+  .bar {
+    min-height: 4rem;
+    padding-inline: 1rem;
+  }
+
+  .productName,
+  .brandDivider {
+    display: none;
+  }
+
+  .logoImage {
+    width: 7.7rem;
+  }
+
+  .actions {
+    gap: 0.4rem;
   }
 }
-@media (min-width: 1024px) {
-  .header {
-    padding-left: 5rem;
-    padding-right: 5rem;
+
+/* Obsidian Index header: editorial masthead, not a dashboard toolbar. */
+.header {
+  min-height: var(--header-height);
+  color: var(--color-ink-2);
+  background: var(--color-paper);
+  border-bottom-color: var(--color-rule);
+}
+
+.header::before {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline: 0;
+  height: 2px;
+  background: var(--color-accent);
+  content: "";
+}
+
+.bar {
+  min-height: var(--header-height);
+  grid-template-columns: minmax(14rem, 1fr) auto minmax(14rem, 1fr);
+  gap: clamp(1.25rem, 3vw, 3.5rem);
+}
+
+.brand {
+  gap: 0.8rem;
+}
+
+.logoImage {
+  width: clamp(8.3rem, 12vw, 10.5rem);
+}
+
+.brandDivider {
+  height: 1.35rem;
+  background: var(--color-rule);
+}
+
+.productName {
+  color: var(--color-accent);
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+}
+
+.nav {
+  gap: clamp(1rem, 2.4vw, 2.2rem);
+}
+
+.navLink {
+  color: var(--color-muted);
+  border-bottom-width: 1px;
+  font-size: 0.78rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.navLink:hover,
+.activeLink {
+  color: var(--color-ink);
+}
+
+.activeLink {
+  border-bottom-color: var(--color-accent);
+}
+
+.actions {
+  gap: 0.75rem;
+}
+
+.licenseAction {
+  min-height: 2.55rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--radius-input);
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.licenseAction:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+@media (max-width: 64rem) {
+  .bar {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+/* BMW-inspired masthead: restrained nav, rectangular blue action, no app chrome. */
+.header {
+  min-height: var(--header-height);
+  color: var(--color-ink-2);
+  background: var(--color-night);
+  border-bottom-color: var(--color-rule);
+}
+
+.header::before {
+  display: none;
+}
+
+.bar {
+  min-height: var(--header-height);
+  grid-template-columns: minmax(15rem, 1fr) auto minmax(15rem, 1fr);
+  gap: clamp(1rem, 3vw, 3rem);
+}
+
+.brand {
+  gap: 0.7rem;
+}
+
+.logoImage {
+  width: clamp(8rem, 11vw, 9.75rem);
+}
+
+.brandDivider {
+  height: 1.25rem;
+  background: var(--color-rule-2);
+}
+
+.productName {
+  color: var(--color-ink-2);
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav {
+  gap: clamp(1rem, 2.4vw, 2rem);
+}
+
+.navLink {
+  min-height: var(--header-height);
+  color: var(--color-muted);
+  border-bottom: 2px solid transparent;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.navLink:hover,
+.activeLink {
+  color: var(--color-ink);
+}
+
+.activeLink {
+  border-bottom-color: var(--color-accent);
+}
+
+.licenseAction {
+  min-height: 2.7rem;
+  padding: 0.7rem 1.1rem;
+  color: var(--color-accent-ink);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  border-radius: 0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.licenseAction:hover {
+  color: var(--color-accent-ink);
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+@media (max-width: 64rem) {
+  .bar {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+/* Linear-inspired navigation: compact, quiet, and surface-first. */
+.header {
+  min-height: var(--header-height);
+  color: var(--color-ink-2);
+  background: var(--color-paper);
+  border-bottom-color: var(--color-rule);
+}
+
+.header::before {
+  display: none;
+}
+
+.bar {
+  min-height: var(--header-height);
+  grid-template-columns: minmax(14rem, 1fr) auto minmax(14rem, 1fr);
+  gap: clamp(1rem, 3vw, 3rem);
+}
+
+.brand {
+  gap: 0.65rem;
+}
+
+.logoImage {
+  width: clamp(7.75rem, 11vw, 9.25rem);
+}
+
+.brandDivider {
+  height: 1.1rem;
+  background: var(--color-rule);
+}
+
+.productName {
+  color: var(--color-ink-2);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+.nav {
+  gap: clamp(0.8rem, 1.8vw, 1.6rem);
+}
+
+.navLink {
+  min-height: var(--header-height);
+  color: var(--color-muted);
+  border-bottom: 1px solid transparent;
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.navLink:hover,
+.activeLink {
+  color: var(--color-ink);
+}
+
+.activeLink {
+  border-bottom-color: var(--color-accent);
+}
+
+.actions {
+  gap: 0.55rem;
+}
+
+.licenseAction {
+  min-height: 2.25rem;
+  padding: 0.45rem 0.8rem;
+  color: var(--color-accent-ink);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  border-radius: var(--radius-input);
+  font-size: 0.78rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.licenseAction:hover {
+  color: var(--color-accent-ink);
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+@media (max-width: 64rem) {
+  .bar {
+    grid-template-columns: 1fr auto;
   }
 }

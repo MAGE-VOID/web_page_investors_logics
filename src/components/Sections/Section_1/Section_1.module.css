@@ -1,25 +1,602 @@
-/* Section_1.module.css */
-.section_1 {
-  overflow: hidden;
-  width: 100%;
-  background: #111111;  /* Confirmar que este es el fondo deseado */
-  position: relative;
+.proofStrip {
+  width: min(100%, var(--layout-max));
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: var(--color-paper-2);
+  border-block: 1px solid var(--color-rule-2);
+}
+
+.proofItem {
+  min-width: 0;
+  min-height: 5.4rem;
+  padding: 0.9rem 1rem 0.9rem 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  transition: opacity 1s ease; /* Mover la transición aquí si se aplica siempre */
+  align-items: baseline;
+  gap: 0.75rem;
 }
 
-.bg {
-  background: #111111;
+.proofItem + .proofItem {
+  padding-inline-start: 1rem;
+  border-inline-start: 1px solid var(--color-rule);
 }
 
-/* Section_1.module.css */
+.proofItem strong,
+.proofDetail {
+  display: block;
+}
 
-@media (max-width: 360px) {
-  .imageGroupStyle {
-    width: 120px; 
-    height: 120px;
+.proofItem strong {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.proofDetail {
+  color: var(--color-muted);
+  font-size: 0.76rem;
+  line-height: 1.25;
+}
+
+.workflowSection {
+  width: min(100%, var(--layout-max));
+  margin-inline: auto;
+  padding: clamp(4.5rem, 9vw, 7.5rem) var(--page-gutter);
+  border-top: 1px solid var(--color-rule-2);
+}
+
+.sectionIntro {
+  display: grid;
+  grid-template-columns: minmax(20rem, 0.95fr) minmax(20rem, 1.05fr);
+  gap: clamp(2rem, 7vw, 8rem);
+  align-items: end;
+}
+
+.sectionIntro h2 {
+  max-width: 13ch;
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: var(--text-section);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.91;
+  text-wrap: balance;
+}
+
+.sectionIntro > p {
+  max-width: 45ch;
+  margin: 0 0 0.2rem;
+  color: var(--color-neutral);
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+.workflowList {
+  margin: clamp(2.75rem, 6vw, 5.25rem) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--color-rule-2);
+  border-bottom: 1px solid var(--color-rule-2);
+  list-style: none;
+}
+
+.workflowList li {
+  position: relative;
+  min-width: 0;
+  min-height: 13.5rem;
+  padding: 1.3rem clamp(1rem, 2.6vw, 2rem) 1.8rem;
+}
+
+.workflowList li + li {
+  border-inline-start: 1px solid var(--color-rule);
+}
+
+.workflowList li::before {
+  content: "";
+  position: absolute;
+  inset-block-start: -1px;
+  inset-inline-start: 0;
+  width: 2.4rem;
+  height: 2px;
+  background: var(--color-accent);
+}
+
+.stepTopline {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--color-muted);
+  font-size: 0.7rem;
+  line-height: 1.3;
+}
+
+.stepTopline > span:first-child {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.stepTopline > span:last-child {
+  max-width: 15ch;
+  text-align: right;
+}
+
+.workflowList h3 {
+  margin: 2.35rem 0 0;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.96;
+}
+
+.workflowList p {
+  max-width: 30ch;
+  margin: 0.75rem 0 0;
+  color: var(--color-neutral);
+  font-size: 0.9rem;
+  line-height: 1.58;
+}
+
+@media (max-width: 68rem) {
+  .proofStrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .proofItem:nth-child(odd) {
+    padding-inline-start: 0;
+    border-inline-start: 0;
+  }
+
+  .proofItem:nth-child(n + 3) {
+    border-top: 1px solid var(--color-rule);
+  }
+}
+
+@media (max-width: 54rem) {
+  .sectionIntro {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sectionIntro h2 {
+    max-width: 13ch;
+  }
+
+  .workflowList {
+    grid-template-columns: 1fr;
+  }
+
+  .workflowList li {
+    min-height: 0;
+    padding-block: 1.4rem 2rem;
+  }
+
+  .workflowList li + li {
+    border-inline-start: 0;
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .workflowList li::before {
+    width: 2rem;
+  }
+
+  .workflowList h3 {
+    margin-block-start: 2rem;
+  }
+}
+
+/* BMW-inspired review band: facts and sequence share one calm engineering field. */
+.reviewSection {
+  color: var(--color-ink-2);
+  background: var(--color-paper-2);
+  border-bottom: 1px solid var(--color-rule-2);
+}
+
+.proofStrip {
+  width: min(100%, var(--layout-max));
+  min-height: 5.25rem;
+  background: transparent;
+  border-block-color: var(--color-rule-2);
+}
+
+.proofItem {
+  min-height: 5.25rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.proofItem + .proofItem {
+  border-inline-start-color: var(--color-rule);
+}
+
+.proofItem strong {
+  color: var(--color-ink);
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.proofDetail {
+  color: var(--color-muted);
+  font-size: 0.76rem;
+}
+
+.workflowSection {
+  width: min(100%, var(--layout-max));
+  padding-top: clamp(4.5rem, 8vw, 7rem);
+  padding-bottom: clamp(5rem, 9vw, 8rem);
+  border-top: 0;
+}
+
+.sectionIntro {
+  grid-template-columns: minmax(17rem, 0.9fr) minmax(20rem, 1.1fr);
+  gap: clamp(2rem, 8vw, 8rem);
+  align-items: end;
+}
+
+.sectionIntro h2 {
+  max-width: 12ch;
+  color: var(--color-ink);
+  font-size: var(--text-section);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.sectionIntro > p {
+  max-width: 42ch;
+  color: var(--color-neutral);
+  line-height: 1.6;
+}
+
+.workflowList {
+  margin-top: clamp(2.75rem, 6vw, 5rem);
+  background: transparent;
+  border-top-color: var(--color-rule-2);
+  border-bottom-color: var(--color-rule-2);
+  border-radius: 0;
+  overflow: visible;
+}
+
+.workflowList li,
+.workflowList li:first-child {
+  min-height: 14.5rem;
+  padding: 1.3rem clamp(1rem, 2.5vw, 2rem) 1.8rem;
+}
+
+.workflowList li:first-child {
+  padding-inline-start: 0;
+}
+
+.workflowList li + li {
+  border-inline-start-color: var(--color-rule);
+}
+
+.workflowList li::before {
+  display: block;
+  width: 2rem;
+  height: 1px;
+  background: var(--color-accent);
+}
+
+.stepTopline {
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.stepTopline > span:first-child {
+  color: var(--color-accent-hover);
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.stepTopline > span:last-child {
+  color: var(--color-muted);
+  font-size: 0.68rem;
+}
+
+.workflowList h3 {
+  margin-top: 2.55rem;
+  color: var(--color-ink);
+  font-size: clamp(1.45rem, 2.1vw, 1.85rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.workflowList p {
+  max-width: 29ch;
+  margin-top: 0.75rem;
+  color: var(--color-neutral);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 54rem) {
+  .workflowList li,
+  .workflowList li:first-child {
+    min-height: 0;
+    padding-inline: 0;
+  }
+
+  .workflowList li + li {
+    border-inline-start: 0;
+    border-top-color: var(--color-rule);
+  }
+}
+
+/* Linear-inspired review rail: one structured surface instead of three floating cards. */
+.proofStrip {
+  background: var(--color-paper);
+  border-block-color: var(--color-rule);
+}
+
+.proofItem {
+  min-height: 4.75rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+.proofItem + .proofItem {
+  border-inline-start-color: var(--color-rule);
+}
+
+.proofItem strong {
+  color: var(--color-ink-2);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.proofDetail {
+  color: var(--color-muted);
+}
+
+.workflowSection {
+  padding-top: clamp(5rem, 9vw, 8rem);
+  padding-bottom: clamp(5rem, 9vw, 8rem);
+  border-top-color: var(--color-rule);
+}
+
+.sectionIntro {
+  grid-template-columns: minmax(17rem, 0.85fr) minmax(20rem, 1.15fr);
+  gap: clamp(2rem, 8vw, 8rem);
+}
+
+.sectionIntro h2 {
+  max-width: 12ch;
+  font-size: var(--text-section);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.sectionIntro > p {
+  max-width: 44ch;
+  color: var(--color-neutral);
+  line-height: 1.55;
+}
+
+.workflowList {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.workflowList li,
+.workflowList li:first-child {
+  min-height: 12rem;
+  padding: 1.25rem clamp(1rem, 2.5vw, 1.75rem) 1.5rem;
+}
+
+.workflowList li::before {
+  display: none;
+}
+
+.workflowList li + li {
+  border-inline-start-color: var(--color-rule);
+}
+
+.stepTopline {
+  color: var(--color-muted);
+  font-size: 0.74rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.stepTopline > span:first-child {
+  color: var(--color-accent-hover);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.stepTopline > span:last-child {
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  text-transform: none;
+}
+
+.workflowList h3 {
+  margin-top: 2.25rem;
+  color: var(--color-ink);
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.workflowList p {
+  max-width: 31ch;
+  margin-top: 0.65rem;
+  color: var(--color-neutral);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 54rem) {
+  .workflowList {
+    border-radius: var(--radius-card);
+  }
+
+  .workflowList li,
+  .workflowList li:first-child {
+    min-height: 0;
+    padding-inline: 1rem;
+  }
+
+  .workflowList li + li {
+    border-inline-start: 0;
+    border-top-color: var(--color-rule);
+  }
+}
+
+@media (max-width: 38rem) {
+  .proofStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .proofItem,
+  .proofItem:nth-child(odd),
+  .proofItem:nth-child(n + 3) {
+    min-height: 4.8rem;
+    padding-inline: 0;
+    border-inline-start: 0;
+    border-top: 0;
+  }
+
+  .proofItem + .proofItem {
+    padding-inline-start: 0;
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .workflowSection {
+    padding-block: 4rem 5rem;
+  }
+}
+
+/* Obsidian Index proof rail and review sequence. */
+.proofStrip {
+  background: var(--color-paper);
+  border-block-color: var(--color-rule-2);
+}
+
+.proofItem {
+  min-height: 5.75rem;
+  padding-top: 1.05rem;
+  padding-bottom: 1.05rem;
+}
+
+.proofItem + .proofItem {
+  border-inline-start-color: var(--color-rule);
+}
+
+.proofItem strong {
+  color: var(--color-accent);
+  font-size: 1.15rem;
+}
+
+.proofDetail {
+  color: var(--color-muted);
+  letter-spacing: 0.02em;
+}
+
+.workflowSection {
+  padding-top: clamp(5.5rem, 10vw, 9rem);
+  padding-bottom: clamp(5.5rem, 10vw, 9rem);
+  border-top-color: var(--color-rule);
+}
+
+.sectionIntro {
+  grid-template-columns: minmax(18rem, 0.8fr) minmax(20rem, 1.2fr);
+  gap: clamp(2rem, 9vw, 10rem);
+}
+
+.sectionIntro h2 {
+  max-width: 11ch;
+  font-size: var(--text-section);
+  letter-spacing: -0.06em;
+}
+
+.sectionIntro > p {
+  max-width: 42ch;
+  color: var(--color-neutral);
+}
+
+.workflowList {
+  margin-top: clamp(3rem, 7vw, 6rem);
+  border-top-color: var(--color-rule-2);
+  border-bottom-color: var(--color-rule-2);
+}
+
+.workflowList li {
+  min-height: 15rem;
+  padding: 1.45rem clamp(1rem, 3vw, 2.4rem) 2rem;
+}
+
+.workflowList li:first-child {
+  padding-inline-start: 0;
+}
+
+.workflowList li + li {
+  border-inline-start-color: var(--color-rule-2);
+}
+
+.workflowList li::before {
+  width: 3.25rem;
+  height: 3px;
+  background: var(--color-accent);
+}
+
+.stepTopline {
+  color: var(--color-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.stepTopline > span:first-child {
+  color: var(--color-accent);
+  font-family: var(--font-outlier);
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.stepTopline > span:last-child {
+  color: var(--color-muted);
+  font-size: 0.65rem;
+}
+
+.workflowList h3 {
+  margin-top: 3rem;
+  font-size: clamp(1.55rem, 2.2vw, 2.1rem);
+  letter-spacing: -0.05em;
+}
+
+.workflowList p {
+  max-width: 28ch;
+  color: var(--color-neutral);
+}
+
+@media (max-width: 54rem) {
+  .workflowList li {
+    min-height: 0;
+    padding-inline: 0;
+  }
+
+  .workflowList li::before {
+    width: 2.5rem;
   }
 }

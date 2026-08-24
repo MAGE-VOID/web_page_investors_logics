@@ -1,22 +1,314 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "../../tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: clip;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
 
 html {
-  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 1rem);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   margin: 0;
+  color: var(--color-neutral);
+  background: var(--color-paper);
+  font-size: var(--text-base);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
 }
 
-#root {
-  min-height: 100vh;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
 }
 
-.route-message {
-  min-height: 50vh;
-  padding: 4rem 2rem;
-  color: #ffffff;
-  background: #111111;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+button,
+input,
+textarea,
+select {
+  color: inherit;
+  font: inherit;
+}
+
+button,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+a,
+button,
+summary,
+input,
+textarea,
+select {
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline-color: var(--color-focus);
+}
+
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+::selection {
+  color: var(--color-ink);
+  background: var(--color-accent-soft);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.site-layout {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-paper);
+}
+
+.site-content {
+  min-width: 0;
+  flex: 1;
+}
+
+.route-page {
+  width: min(100%, var(--page-max));
+  margin-inline: auto;
+  padding: 0 var(--page-gutter) var(--space-4xl);
+}
+
+.route-intro {
+  padding: clamp(4.5rem, 8vw, 7.5rem) 0 var(--space-2xl);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-lg);
+  border-bottom: 1px solid var(--color-rule-2);
+}
+
+.route-intro h1 {
+  max-width: 12ch;
+  font-size: var(--text-display-s);
+  line-height: 0.9;
+}
+
+.route-intro__body {
+  max-width: 60ch;
+  display: grid;
+  gap: var(--space-sm);
+  color: var(--color-neutral);
+  font-size: var(--text-body-lg);
+  line-height: 1.6;
+}
+
+.route-section {
+  padding-block: var(--space-3xl);
+}
+
+.route-link {
+  color: var(--color-ink);
+  font-weight: 600;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 0.25rem;
+}
+
+.route-link:hover {
+  color: var(--color-security-strong);
+}
+
+@media (min-width: 60rem) {
+  .route-intro {
+    grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.9fr);
+    gap: var(--space-2xl);
+  }
+}
+
+@media (pointer: coarse) {
+  .route-link {
+    min-height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}
+
+/* Obsidian Index visual pass: open fields, sharp rules, one warm action signal. */
+body {
+  background: var(--color-paper);
+  letter-spacing: 0.005em;
+}
+
+.site-layout {
+  background: var(--color-paper);
+}
+
+.route-page {
+  padding-bottom: clamp(5rem, 10vw, 10rem);
+}
+
+.route-intro {
+  padding-top: clamp(5.5rem, 10vw, 9rem);
+  border-bottom-color: var(--color-rule);
+}
+
+.route-intro h1,
+.route-section h2 {
+  letter-spacing: -0.055em;
+}
+
+.route-link {
+  text-decoration-thickness: 1px;
+}
+
+@media (max-width: 40rem) {
+  .route-page {
+    padding-bottom: 5rem;
+  }
+}
+
+/* Linear-inspired replacement pass: near-black canvas, charcoal surface ladder, no atmospheric chrome. */
+body {
+  color: var(--color-neutral);
+  background: var(--color-paper);
+  font-family: var(--font-body);
+  letter-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+::selection {
+  color: var(--color-ink);
+  background: var(--color-accent-soft);
+}
+
+.site-layout {
+  background: var(--color-paper);
+}
+
+.route-intro h1,
+.route-section h2 {
+  letter-spacing: -0.04em;
+}
+
+.route-link {
+  color: var(--color-accent-hover);
+  text-decoration-color: var(--color-accent);
+}
+
+.route-link:hover {
+  color: var(--color-ink);
+}
+
+/* BMW-inspired replacement pass: a product launch surface with dark bands and engineered blue. */
+body {
+  color: var(--color-neutral);
+  background: var(--color-paper);
+  font-family: var(--font-body);
+  letter-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  color: var(--color-ink);
+  background: var(--color-accent-soft);
+}
+
+.site-layout {
+  background: var(--color-paper);
+}
+
+.route-intro h1,
+.route-section h2 {
+  letter-spacing: -0.02em;
+}
+
+.route-link {
+  color: var(--color-accent-hover);
+  text-decoration-color: var(--color-accent);
 }

@@ -1,6 +1,6 @@
 # Investors Logics
 
-Single-page React application built with Vite, TypeScript, React Router, Tailwind CSS, styled-components, and Three.js.
+Single-page React application built with Vite, TypeScript, React Router, and CSS Modules.
 
 ## Requirements
 
@@ -15,7 +15,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:4000](http://localhost:4000).
+Open [http://localhost:5173](http://localhost:5173).
 
 ## Checks and production build
 
@@ -26,7 +26,7 @@ npm run build
 npm run start
 ```
 
-The production preview also uses [http://localhost:4000](http://localhost:4000).
+The production preview also uses [http://localhost:4173](http://localhost:4173).
 
 ## Deployment
 
