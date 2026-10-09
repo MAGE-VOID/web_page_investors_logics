@@ -1,0 +1,45 @@
+/* Exact header rules extracted from the reference CSSOM. Own brand and destinations. */
+.site-header { top: var(--sh-top,14px); z-index: 60; width: min(1080px, calc(100% - 28px)); font-family: var(--font-evo-sans,"Inter",system-ui,sans-serif); backdrop-filter: blur(22px) saturate(200%); background: var(--sh-surface); border: 1px solid var(--sh-edge); box-shadow: inset 0 1px 0 var(--sh-edge-lit), var(--sh-lift); border-radius: 17px; justify-content: space-between; align-items: center; padding: 10px 12px 10px 18px; transition: top .45s cubic-bezier(.22,1,.36,1); display: flex; position: fixed; left: 50%; transform: translate(-50%); }
+.site-header, .site-header[data-sh-mode="light"] { --sh-surface: #f4f2eedb; --sh-ink: #1c1712; --sh-muted: #565049; --sh-line: #1c161124; --sh-edge: #ffffff9e; --sh-edge-lit: #ffffffe6; --sh-lift: 0 9px 26px -12px #16131f57; --sh-blog-ink: #1c1712; }
+.site-header a { text-decoration: none; }
+.sh-left { align-items: center; gap: 10px; min-width: 0; display: flex; }
+.site-header .sh-logo { letter-spacing: -.02em; color: var(--sh-ink); align-items: center; gap: 9px; font-size: 16px; font-weight: 700; display: flex; }
+.site-header .sh-glyph { background: linear-gradient(135deg, color-mix(in srgb, var(--sh-accent) 55%, #fff), var(--sh-accent)); color: #16150f; border-radius: 9px; place-items: center; width: 27px; height: 27px; font-size: 13px; font-weight: 700; display: grid; flex: none; }
+.sh-logo-txt { white-space: nowrap; }
+.sh-products { position: relative; }
+.site-header .sh-pm-trigger { color: var(--sh-ink); border: 1px solid color-mix(in srgb, var(--sh-accent) 45%, transparent); background: color-mix(in srgb, var(--sh-accent) 14%, transparent); cursor: pointer; white-space: nowrap; border-radius: 999px; align-items: center; gap: 7px; padding: 8px 14px; font-size: 13.5px; font-weight: 600; transition: background .18s, border-color .18s, color .18s, box-shadow .18s, transform .12s; display: inline-flex; }
+.sh-pm-trigger:hover, .sh-pm-trigger[aria-expanded="true"] { background: color-mix(in srgb, var(--sh-accent) 24%, transparent); border-color: color-mix(in srgb, var(--sh-accent) 62%, transparent); box-shadow: 0 2px 13px color-mix(in srgb, var(--sh-accent) 24%, transparent); }
+.sh-pm-trigger:active { transform: scale(.96); }
+.site-header .sh-pm-grid { color: var(--sh-accent); flex: 0 0 auto; }
+.sh-pm-grid rect { fill: currentColor; }
+.site-header .sh-pm-caret { color: var(--sh-accent); font-size: 9px; transition: transform .2s; }
+.sh-pm-trigger[aria-expanded="true"] .sh-pm-caret { transform: rotate(180deg); }
+.sh-pm-menu { z-index: 70; width: 286px; max-height: calc(100svh - var(--sh-top,14px) - 80px); overscroll-behavior: contain; background: linear-gradient(158deg, #1e1912f7, #16120cf2); border: 1px solid #ffffff1a; border-radius: 16px; flex-direction: column; gap: 2px; padding: 7px; animation: shPmIn .18s ease; display: flex; position: absolute; top: calc(100% + 9px); left: 0; overflow-y: auto; box-shadow: 0 22px 58px #0009, inset 0 1px #ffffff0f; }
+.sh-pm-menu[hidden] { display: none; }
+.sh-pm-item { border-radius: 11px; flex-direction: column; gap: 2px; padding: 9px 12px; transition: background .16s; display: flex; }
+.sh-pm-item:hover { background: #ffffff0f; }
+.sh-pm-current { background: color-mix(in srgb, var(--sh-accent) 13%, transparent); }
+.site-header .sh-pm-label { letter-spacing: -.01em; color: #f3efe6; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; display: flex; }
+.site-header .sh-pm-desc { color: #9d98b4; font-size: 11.5px; }
+.site-header .sh-pm-here { font-family: var(--font-evo-mono,ui-monospace,monospace); letter-spacing: .08em; text-transform: uppercase; color: var(--sh-accent); background: color-mix(in srgb, var(--sh-accent) 16%, transparent); border-radius: 999px; padding: 2px 7px; font-size: 8.5px; font-weight: 700; }
+@keyframes shPmIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+.sh-links { gap: 2px; display: flex; }
+.site-header .sh-links a { color: var(--sh-muted); white-space: nowrap; border-radius: 10px; padding: 8px 12px; font-size: 13.5px; font-weight: 500; transition: .25s; }
+.site-header .sh-links a:hover { color: var(--sh-ink); background: color-mix(in srgb, var(--sh-ink) 7%, transparent); }
+.site-header .sh-links a.on { color: var(--sh-ink); box-shadow: inset 0 -2px 0 var(--sh-accent); }
+.sh-actions { flex: 0 0 auto; align-items: center; gap: 8px; display: flex; }
+.site-header .sh-blog { color: var(--sh-blog-ink); white-space: nowrap; background: #ff6719; border-radius: 13px; padding: 9px 14px; font-size: 13.5px; font-weight: 600; transition: transform .14s cubic-bezier(.34,1.12,.64,1), filter .2s; box-shadow: inset 0 1px #ffffff4d, 0 6px 16px #ff67194d; }
+.sh-blog:hover { filter: brightness(1.05); transform: translateY(-1px); }
+.sh-blog:active { transform: translateY(0) scale(.96); }
+.site-header .sh-signin { color: var(--sh-ink); border: 1px solid var(--sh-line); white-space: nowrap; border-radius: 11px; padding: 8px 14px; font-size: 13.5px; font-weight: 600; transition: background .18s, border-color .18s, transform .12s; }
+.sh-signin:hover { background: color-mix(in srgb, var(--sh-ink) 6%, transparent); border-color: color-mix(in srgb, var(--sh-ink) 18%, transparent); }
+.sh-signin:active { transform: scale(.96); }
+@media (max-width: 860px) { .sh-links { display: none; } }
+@media (max-width: 640px) { .site-header { padding-left: 14px; } .sh-left, .sh-actions { gap: 6px; } .sh-pm-trigger { padding: 8px 9px; } .sh-pm-menu { width: min(286px, calc(100vw - 84px)); left: 0; right: auto; } }
+@media (max-width: 520px) { .sh-logo-txt, .sh-pm-txt { display: none; } .sh-pm-trigger { gap: 5px; padding: 8px 10px; } .sh-actions { gap: 5px; } .sh-blog { padding: 9px 12px; } }
+.site-header[data-sh-fold] { transition: top .45s cubic-bezier(.22,1,.36,1), transform .28s, visibility .28s linear; }
+.site-header[data-sh-fold="true"] { transform: translateX(-50%) translateY(calc(-100% - var(--sh-top,14px) - 24px)); visibility: hidden; }
+.site-header[data-sh-fold="false"] { visibility: visible; transition: top .45s cubic-bezier(.22,1,.36,1), transform .28s, visibility; }
+@media (prefers-reduced-transparency: reduce) { .site-header { backdrop-filter: none; --sh-surface: #eeece7; } }
+@media (forced-colors: active) { .site-header { box-shadow: none; --sh-ink: CanvasText; --sh-muted: CanvasText; --sh-line: CanvasText; --sh-blog-ink: CanvasText; background: Canvas; border-color: CanvasText; } }
+@media (prefers-reduced-motion: reduce) { .site-header, .site-header *, .sh-pm-menu { transition: none !important; animation: none !important; } }

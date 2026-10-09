@@ -1,74 +1,28 @@
+import { Link } from "react-router-dom";
+import Icon from "@/components/UI/Icon";
 import styles from "./Section_1.module.css";
 
-const proofItems = [
-  {
-    title: ".ex5",
-    detail: "Compiled Expert Advisor",
-  },
-  {
-    title: "MT5",
-    detail: "Desktop platform",
-  },
-  {
-    title: "30 · 90 · 365",
-    detail: "Time-limited access",
-  },
-  {
-    title: "Self-directed",
-    detail: "Your environment",
-  },
-] as const;
-
 const steps = [
-  {
-    number: "01",
-    title: "Understand the bot",
-    body: "Compiled .ex5 file for MetaTrader 5. Source code stays private.",
-    detail: "Product",
-  },
-  {
-    number: "02",
-    title: "Check your setup",
-    body: "Confirm your desktop MT5, broker connection and the conditions you can supervise.",
-    detail: "Your environment",
-  },
-  {
-    number: "03",
-    title: "Choose a term",
-    body: "Select 30, 90 or 365 days, then send the request. Payment and activation follow separately.",
-    detail: "Access",
-  },
+  { title: "Check your environment", text: "You need MetaTrader 5, a compatible broker account and a connected computer or VPS.", link: "/documentation/best-brokers", action: "Check compatibility" },
+  { title: "Arrange your access", text: "Confirm the terms, receive the compiled bot and follow the installation guide.", link: "/documentation/table-of-contents/getting-started", action: "Read the setup guide" },
+  { title: "Start on a demo account", text: "Get familiar with the workflow before considering live capital. Keep the platform running and monitored.", link: "/documentation/infrastructure/virtual-private-server", action: "Prepare your platform" },
 ] as const;
 
 export default function Section_1() {
   return (
-    <section id="how-it-works" className={styles.reviewSection} aria-labelledby="workflow-title">
-      <div className={styles.proofStrip} aria-label="Public product facts">
-        {proofItems.map((item) => (
-          <div className={styles.proofItem} key={item.title}>
-            <strong>{item.title}</strong>
-            <span className={styles.proofDetail}>{item.detail}</span>
-          </div>
-        ))}
-      </div>
-
-      <div className={styles.workflowSection}>
-        <div className={styles.sectionIntro}>
-          <h2 id="workflow-title">Three things to decide.</h2>
-          <p>
-            Keep the first decision simple: the file, your MT5 setup, then the access window.
-          </p>
-        </div>
-
-        <ol className={styles.workflowList}>
-          {steps.map((step) => (
-            <li key={step.number}>
-              <div className={styles.stepTopline}>
-                <span>{step.number}</span>
-                <span>{step.detail}</span>
-              </div>
+    <section id="how-it-works" className={styles.section} aria-labelledby="workflow-title">
+      <div className={styles.inner}>
+        <header className={styles.heading}>
+          <h2 id="workflow-title">A clear way to get started.</h2>
+          <p>A compatible environment matters as much as the software.</p>
+        </header>
+        <ol className={styles.steps}>
+          {steps.map((step, index) => (
+            <li key={step.title}>
+              <span className={styles.stepNumber} aria-hidden="true">{index + 1}</span>
               <h3>{step.title}</h3>
-              <p>{step.body}</p>
+              <p>{step.text}</p>
+              <Link to={step.link}>{step.action}<Icon name="arrow-up-right" /></Link>
             </li>
           ))}
         </ol>

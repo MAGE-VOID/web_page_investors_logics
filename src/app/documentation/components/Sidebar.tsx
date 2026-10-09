@@ -1,4 +1,5 @@
 import type { MouseEvent } from "react";
+import Icon from "@/components/UI/Icon";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import styles from "./Sidebar/Sidebar.module.css";
 import { menuData } from "./Sidebar/SidebarData";
@@ -72,8 +73,8 @@ export default function Sidebar() {
     <aside className={styles.sidebar}>
       <details className={styles.mobileIndex}>
         <summary>
-          <span>Browse the reference</span>
-          <span aria-hidden="true">+</span>
+          <span>Browse the guides</span>
+          <Icon name="chevron-right" className={styles.mobileArrow} />
         </summary>
         <nav aria-label="Documentation navigation">
           <SidebarMenu mobile />
@@ -81,12 +82,12 @@ export default function Sidebar() {
       </details>
 
       <nav className={styles.desktopIndex} aria-label="Documentation navigation">
-        <p className={styles.navHeading}>Reference index</p>
-        <p className={styles.edition}>Public edition · Product strategy excluded</p>
+        <p className={styles.navHeading}>Find your next step.</p>
+        <p className={styles.edition}>A practical guide to your software.</p>
         <SidebarMenu />
         <div className={styles.sidebarFooter}>
-          <p>Need help with the public setup?</p>
-          <Link to="/documentation/contact">Contact support <span aria-hidden="true">↗</span></Link>
+          <p>Need a hand with your setup?</p>
+          <Link to="/documentation/contact">Contact support <Icon name="arrow-up-right" /></Link>
         </div>
       </nav>
     </aside>

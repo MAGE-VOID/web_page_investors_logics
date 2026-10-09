@@ -1,58 +1,71 @@
-import FAQBox from "@/app/documentation/components/Content/ui/FAQBox";
+import { Link } from "react-router-dom";
+import { licenseIncludes, productFeatures } from "@/data/product";
 
 export default function IntroductionPage() {
   return (
     <>
-      <h1>Introduction to Blue Boost Bot</h1>
+      <h1>Meet Blue Boost Bot</h1>
       <p className="doc-lede">
-        Blue Boost Bot is a compiled Expert Advisor for MetaTrader&nbsp;5. It is
-        offered as time-limited access to an <code>.ex5</code> file for users who
-        want to evaluate an automated Forex workflow in their own environment.
+        Blue Boost Bot is a Forex trading robot for MetaTrader 5. Also called
+        an Expert Advisor or EA, it uses programmed rules to analyze the
+        market, place trades and manage positions in your own broker account.
       </p>
 
-      <h2>What you are getting</h2>
+      <h2>What does the bot do?</h2>
+      <ul>
+        {productFeatures.map((feature) => (
+          <li key={feature.title}><strong>{feature.title}.</strong> {feature.text}</li>
+        ))}
+      </ul>
       <p>
-        The product runs inside MetaTrader 5 and uses the platform’s market data,
-        account connection and Expert Advisor controls. Your broker, account,
-        symbols, costs and platform state all affect the environment.
+        The bot can work across compatible Forex instruments. Your broker,
+        account conditions and available instruments must be checked before use.
+        Automation does not remove the need to monitor your account.
       </p>
 
-      <h2>What this guide covers</h2>
+      <h2>What is included?</h2>
+      <ul>
+        {licenseIncludes.map((item) => <li key={item}>{item}</li>)}
+      </ul>
       <p>
-        These pages explain the product scope, MT5 requirements, broker checks,
-        infrastructure, security, testing principles and risk. They are here to
-        help you decide whether the setup fits before requesting access.
+        The proposed rentals offer 30, 90 or 365 days with the same Expert
+        Advisor. You can also ask about purchasing the bot; purchase pricing,
+        access duration and conditions need confirmation. The software is
+        supplied as a compiled <code>.ex5</code> file, not source code or
+        ownership of the strategy. This is not a signal subscription or an
+        account management service.
       </p>
 
-      <h2>What remains private</h2>
+      <h2>What do I need?</h2>
       <p>
-        Public documentation does not publish formulas, parameters, execution
-        rules, optimization material or private results. Do not infer settings
-        from a public page or an unverified message.
+        A compatible MetaTrader 5 installation, a supported broker account and
+        a computer or VPS that can stay running and connected. You control the
+        account, platform and monitoring. Start with a demo account to become
+        familiar with the setup.
       </p>
-
-      <h2>What automation does not change</h2>
       <p>
-        Automation can make a defined process more repeatable. It cannot
-        guarantee execution, profitability or protection from changing market
-        conditions. You remain responsible for broker selection, account setup,
-        monitoring and risk decisions.
+        <Link to="/documentation/table-of-contents/getting-started">Read the setup guide</Link>
+        {" "}for the next steps, or{" "}
+        <Link to="/documentation/contact">ask us about compatibility</Link>
+        {" "}before requesting a license.
       </p>
 
-      <h2>Common questions</h2>
-      <FAQBox title="Which platform does Blue Boost Bot use?">
-        Blue Boost Bot runs as an Expert Advisor inside MetaTrader&nbsp;5. Review
-        the platform page before preparing an evaluation environment.
-      </FAQBox>
-      <FAQBox title="Does the product use artificial intelligence?">
-        The inspected product is based on programmed, deterministic MQL5 logic.
-        It should not be described as AI or machine learning without a separate,
-        verifiable component.
-      </FAQBox>
-      <FAQBox title="Does automation remove trading risk?">
-        No. Forex trading can produce partial or total loss. Broker conditions,
-        connectivity, configuration and market behaviour can all affect results.
-      </FAQBox>
+      <h2>Purchase or rental?</h2>
+      <p>
+        <Link to="/products#license-options">Compare the proposed rental periods</Link>
+        {" "}or <Link to="/contact?mode=purchase">ask about purchase terms</Link>.
+        Both paths prepare an email request. Confirm the final price, access
+        terms, payment, delivery and activation details before paying.
+        This website does not collect payments.
+      </p>
+
+      <h2>Understand the risk</h2>
+      <p>
+        Blue Boost Bot is trading software, not a promise of income. Forex
+        trading can result in a partial or total loss of capital. A demo account
+        can help you understand operation, but demo and historical results do
+        not guarantee future performance.
+      </p>
     </>
   );
 }

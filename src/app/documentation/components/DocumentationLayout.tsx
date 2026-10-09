@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Link, Outlet } from "react-router-dom";
 import Layout from "@/components/Layout/Layout";
+import Icon from "@/components/UI/Icon";
 import PageBreadcrumb from "./Content/PageBreadcrumb";
 import Sidebar from "./Sidebar";
 import styles from "./DocumentationLayout.module.css";
@@ -14,22 +15,20 @@ export default function DocumentationLayout({ children }: DocumentationLayoutPro
     <Layout>
       <div className={styles.center}>
         <div className={styles.referenceHeader}>
-          <div>
-            <p>BLUE BOOST BOT <span>/</span> PUBLIC GUIDE</p>
-            <strong>Product documentation</strong>
-          </div>
-          <div className={styles.referenceMeta}>
-            <p>Simple answers for the product, MT5 setup and access request.</p>
-            <Link to="/products">View the bot <span aria-hidden="true">↗</span></Link>
-          </div>
+          <Link to="/documentation" className={styles.referenceTitle}>Blue Boost Handbook</Link>
+          <Link className={styles.referenceAction} to="/documentation/contact">Ask a question <Icon name="arrow-up-right" /></Link>
         </div>
         <div className={styles.mainContainer}>
           <Sidebar />
           <div className={styles.content}>
-            <div className={styles.article}>
-              <PageBreadcrumb />
+            <div className={styles.breadcrumb}><PageBreadcrumb /></div>
+            <article className={styles.article}>
               {children ?? <Outlet />}
-            </div>
+            </article>
+            <nav className={styles.articleFooter} aria-label="More help">
+              <Link to="/documentation">All guides</Link>
+              <Link to="/documentation/contact">Need a hand? Contact support <Icon name="arrow-up-right" /></Link>
+            </nav>
           </div>
         </div>
       </div>

@@ -1,0 +1,8 @@
+.scene { position: relative; width: 100%; aspect-ratio: 1 / 1; isolation: isolate; contain: layout paint; }
+.poster, .stage { position: absolute; inset: 0; width: 100%; height: 100%; }
+.poster { opacity: 1; pointer-events: none; transition: opacity 500ms ease; }
+.stage { opacity: 0; transition: opacity 500ms ease; touch-action: pan-y; }
+.stage canvas { display: block; width: 100%; height: 100%; }
+.scene[data-ready] .poster { opacity: 0; }
+.scene[data-ready] .stage { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .poster, .stage { transition: none; } }

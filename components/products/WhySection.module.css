@@ -1,0 +1,49 @@
+.section { padding-block: 94px 72px; scroll-margin-top: 92px; }
+.heading { max-width: 700px; margin-bottom: 30px; }
+.eyebrow { margin: 0 0 14px; color: var(--ink-3); font-family: var(--font-mono), monospace; font-size: 10px; font-weight: 500; line-height: 1.5; letter-spacing: .1em; }
+.heading > p:last-child { margin: 17px 0 0; color: var(--ink-2); font-size: 15px; line-height: 1.6; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+
+.card {
+  min-width: 0;
+  padding: 22px;
+  border-radius: 20px;
+  background: var(--card);
+  box-shadow: 0 1px 0 var(--line), 0 12px 32px -24px rgba(22, 21, 15, .35);
+}
+
+.visual { position: relative; height: 184px; overflow: hidden; border-radius: 14px; background: var(--stage); }
+.visual > span { position: absolute; top: 12px; left: 13px; z-index: 1; color: var(--stage-muted); font-family: var(--font-mono), monospace; font-size: 9px; letter-spacing: .07em; }
+.visual svg { display: block; width: 100%; height: 100%; }
+.card h3 { margin: 24px 0 13px; font-size: 20px; font-weight: 700; line-height: 1.3; letter-spacing: -.035em; }
+.card > p { margin: 0; color: var(--ink-2); font-size: 14px; line-height: 1.65; }
+.card > a { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; margin-top: 15px; color: var(--ink); font-size: 12px; font-weight: 600; text-decoration: none; }
+.card > a span { color: var(--ink-3); transition: transform .3s var(--ease-out); }
+.card > a:focus-visible { border-radius: 3px; outline: 3px solid var(--gain); outline-offset: 4px; }
+
+.card[data-revealed="true"] { animation: principle-in .7s var(--ease-out) both; }
+@keyframes principle-in { from { opacity: .7; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+@media (hover: hover) and (pointer: fine) {
+  .card > a:hover span { transform: translate(2px, -2px); }
+}
+
+@media (max-width: 980px) {
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 26px; }
+  .visual { grid-row: 1 / 4; height: 100%; min-height: 184px; }
+  .card h3 { margin-top: 6px; }
+  .card > a { justify-self: start; align-self: end; }
+}
+
+@media (max-width: 620px) {
+  .section { padding-block: 68px 48px; }
+  .card { display: block; padding: 20px; }
+  .visual { height: 184px; }
+  .card h3 { margin-top: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card[data-revealed="true"] { animation: none; }
+  .card > a span { transition: none; }
+}

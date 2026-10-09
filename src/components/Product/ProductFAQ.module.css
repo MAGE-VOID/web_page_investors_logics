@@ -1,0 +1,18 @@
+.section { width: min(100%, var(--page-max)); margin-inline: auto; display: grid; grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr); align-items: start; gap: clamp(2.5rem, 6vw, 6rem); padding: var(--section-space) var(--page-gutter); scroll-margin-top: 3.5rem; }
+.intro h2 { max-width: 14ch; font-size: var(--text-section); }
+.intro p { max-width: 30ch; margin-top: 1.25rem; font-size: 1.0625rem; }
+.intro > a { margin-top: 1rem; }
+.questions { min-width: 0; border-top: 1px solid var(--color-rule-2); }
+.questions details { border-bottom: 1px solid var(--color-rule); }
+.questions summary { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 4.75rem; padding-block: 1.25rem; color: var(--color-ink-2); font-size: 1.0625rem; font-weight: 500; line-height: 1.5; list-style: none; }
+.questions summary::-webkit-details-marker { display: none; }
+.questions summary:hover, .questions details[open] summary { color: var(--color-accent); }
+.questions details[open] summary { padding-bottom: 0.75rem; }
+.questions details > p { max-width: 65ch; padding: 0 2.5rem 1.75rem 0; font-size: var(--text-sm); line-height: 1.85; }
+.toggle { position: relative; flex-shrink: 0; width: 1.25rem; height: 1.25rem; }
+.toggle::before, .toggle::after { content: ""; position: absolute; background: currentColor; }
+.toggle::before { height: 1px; width: 0.875rem; left: 0.1875rem; top: calc(50% - 0.5px); }
+.toggle::after { width: 1px; height: 0.875rem; top: 0.1875rem; left: calc(50% - 0.5px); transition: transform var(--dur-short); }
+.questions details[open] .toggle::after { transform: rotate(90deg); }
+@media (max-width: 52rem) { .section { grid-template-columns: 1fr; gap: 2.5rem; } .intro p { max-width: none; } }
+@media (max-width: 30rem) { .questions summary { gap: 1rem; font-size: 1rem; } .questions details > p { padding-right: 0; } }

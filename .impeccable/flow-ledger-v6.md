@@ -57,3 +57,17 @@
 - **Reorganization:** merged public facts and the ordered review sequence into one band, removed the duplicate capabilities section, moved the public boundary directly before the access selector, and renamed the nav route to “How it works”.
 - **Style replacement:** adopted the BMW analysis language—dark navy launch bands, engineered blue, bold Barlow hierarchy, rectangular controls, open comparison rows and contrast-driven depth.
 - **Constraints preserved:** no product visualizations, charts, gradients, glow, glass, testimonials, unsupported performance claims or private strategy detail.
+
+## Pass 9 · reference-system replacement · Aura Index
+
+- **Reference pattern:** NameThatUI's visual-dictionary/index structure plus Aura Gradients' layered CSS atmosphere. The page now leads with a question, names the product facts and uses compact decision cards instead of a launch-sheet rhythm.
+- **Replacement:** replaced the flat BMW navy/blue treatment with near-black violet surfaces, rounded catalog cards, a lavender decision signal and layered violet/sapphire/cyan gradients on hero, boundary, selected panels, request summary and footer.
+- **Flow kept concise:** the homepage remains question → public index → three checks → responsibility boundary → one access selector. The duplicate capabilities block stays removed.
+- **Constraints preserved:** no product visualizations, charts, raster media, fake testimonials, unsupported performance claims, or private strategy details. Gradients are CSS atmosphere only.
+
+## Pass 10 · hierarchy correction · Precision Catalog
+
+- **Problem:** the Aura pass still carried too many rounded surfaces, decorative gradients and card-like workflow blocks for a simple access decision.
+- **Correction:** moved the system to graphite fields, cobalt wayfinding and solid comparison rows. The hero remains atmospheric but only one restrained aura field survives; facts now form a rail and workflow reads as an index list.
+- **Copy correction:** replaced the question-led hook with a direct product statement so the visitor knows the file, platform and access model immediately.
+- **Constraints preserved:** no product visualizations, charts, raster media, fake testimonials, unsupported performance claims, or private strategy details.

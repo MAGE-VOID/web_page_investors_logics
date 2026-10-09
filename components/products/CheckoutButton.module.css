@@ -1,0 +1,10 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.button svg { flex-shrink: 0; }

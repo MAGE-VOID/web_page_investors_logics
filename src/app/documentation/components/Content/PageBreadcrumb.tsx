@@ -23,11 +23,11 @@ export default function PageBreadcrumb() {
 
   return (
     <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-      <Link to="/documentation">Documentation</Link>
+      {segments.length ? <Link to="/documentation">Guides</Link> : <span aria-current="page">All guides</span>}
       {segments.map((segment, index) => (
         <Fragment key={`${segment}-${index}`}>
           <span className={styles.separator} aria-hidden="true">/</span>
-          <span className={styles.current}>{labels[segment] ?? transformSlugToTitle(segment)}</span>
+          <span className={styles.current} aria-current={index === segments.length - 1 ? "page" : undefined}>{labels[segment] ?? transformSlugToTitle(segment)}</span>
         </Fragment>
       ))}
     </nav>

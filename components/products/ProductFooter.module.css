@@ -1,0 +1,16 @@
+/* Geometry extracted from the source footer: 4 tracks, 32px gap, 56px gutters. */
+.footer { min-width: 0; color: #201b16; }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; padding: 56px 20px; border-top: 1px solid #eae4db; background: #faf7f3; }
+.brand { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; color: inherit; font-size: 16px; line-height: 24px; font-weight: 600; text-decoration: none; }
+.brand svg { flex: none; }
+.brand span { margin-left: 4px; color: #57504a; font: 400 10px/15px var(--font-mono); letter-spacing: .05em; }
+.brandColumn p { max-width: 384px; margin-bottom: 16px; color: #57504a; font-size: 14px; line-height: 20px; }
+.brandColumn .risk { font-size: 12px; line-height: 18px; }
+.grid nav h2 { margin: 0 0 12px; color: #57504a; font: 400 10px/15px var(--font-mono); letter-spacing: .05em; text-transform: uppercase; }
+.grid nav ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.grid nav a { color: #57504a; font-size: 14px; line-height: 20px; text-decoration: none; }
+.grid nav a:hover { color: #201b16; }
+.bottom { display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; gap: 8px; padding: 16px 20px; border-top: 1px solid #eae4db; color: #57504a; font: 400 11px/17.05px var(--font-mono); text-transform: uppercase; }
+@media (min-width: 640px) { .grid { padding-inline: 32px; } .bottom { padding-inline: 32px; } }
+@media (min-width: 768px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .bottom { flex-direction: row; align-items: center; } }
+@media (min-width: 1024px) { .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); padding-inline: 56px; } .brandColumn { grid-column: span 2; } .bottom { padding-inline: 56px; } }

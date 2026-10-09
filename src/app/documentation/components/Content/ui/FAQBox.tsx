@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Icon from "@/components/UI/Icon";
 import styles from "./FAQBox.module.css";
 
 interface FAQBoxProps {
@@ -15,17 +16,7 @@ export default function FAQBox({ title, subtitle, children }: FAQBoxProps) {
           <strong className={styles.title}>{title}</strong>
           {subtitle && <span className={styles.subtitle}>{subtitle}</span>}
         </div>
-        <span className={styles.arrowIcon} aria-hidden="true">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="M9 18l6-6-6-6"
-              stroke="currentColor"
-              strokeWidth="3"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span>
+        <Icon name="chevron-right" className={styles.arrowIcon} />
       </summary>
       <div className={styles.contentInner}>{children}</div>
     </details>

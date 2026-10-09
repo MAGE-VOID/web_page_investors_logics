@@ -3,18 +3,19 @@ import { useNavigate } from "react-router-dom";
 import styles from "./CommandPalette.module.css";
 
 const destinations = [
-  { label: "Documentation", detail: "Open the documentation index", to: "/documentation" },
-  { label: "Introduction", detail: "Understand the public product brief", to: "/documentation/introduction" },
+  { label: "Blue Boost Bot", detail: "Explore our Forex trading robot for MetaTrader 5", to: "/#demo" },
+  { label: "Buying and renting", detail: "Explore purchase enquiries and proposed rental periods", to: "/products#license-options" },
+  { label: "Help and guides", detail: "Find installation and product guidance", to: "/documentation" },
+  { label: "Product guide", detail: "See what the bot does and what your license includes", to: "/documentation/introduction" },
   { label: "Algorithmic Trading", detail: "Review the principles and limits", to: "/documentation/table-of-contents/algorithmic-trading" },
-  { label: "Getting Started", detail: "Prepare an evaluation environment", to: "/documentation/table-of-contents/getting-started" },
+  { label: "Getting Started", detail: "Set up the bot and start on demo", to: "/documentation/table-of-contents/getting-started" },
   { label: "Trading Platform", detail: "Understand the role of MetaTrader 5", to: "/documentation/table-of-contents/platforms" },
   { label: "Resources", detail: "Browse support resources", to: "/documentation/table-of-contents/resources" },
   { label: "VPS Operations", detail: "Review continuity and maintenance", to: "/documentation/infrastructure/virtual-private-server" },
   { label: "Cybersecurity", detail: "Protect accounts and recognise scams", to: "/documentation/infrastructure/cybersecurity-and-scams" },
   { label: "Choosing a Broker", detail: "Use the compatibility checklist", to: "/documentation/best-brokers" },
-  { label: "Help Center", detail: "Read public product answers", to: "/documentation/assistance-and-policies/help-center" },
-  { label: "Blue Boost Bot", detail: "Review the product and public workflow", to: "/products" },
-  { label: "Contact", detail: "Find assistance routes", to: "/contact" },
+  { label: "Help Center", detail: "Answers about licenses, brokers and setup", to: "/documentation/assistance-and-policies/help-center" },
+  { label: "Contact support", detail: "Get help from Investors Logics", to: "/documentation/contact" },
 ];
 
 export default function CommandPalette() {
@@ -68,7 +69,7 @@ export default function CommandPalette() {
         className={styles.trigger}
         type="button"
         onClick={openPalette}
-        aria-label="Search public reference"
+        aria-label="Search guides and products"
         aria-haspopup="dialog"
       >
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -82,6 +83,7 @@ export default function CommandPalette() {
       <dialog
         ref={dialogRef}
         className={styles.dialog}
+        aria-label="Search guides and products"
         onClose={() => {
           setQuery("");
           setActiveIndex(0);
@@ -108,7 +110,7 @@ export default function CommandPalette() {
               onKeyDown={(event) => {
                 if (event.key === "ArrowDown") {
                   event.preventDefault();
-                  setActiveIndex((index) => Math.min(index + 1, results.length - 1));
+                  setActiveIndex((index) => Math.max(0, Math.min(index + 1, results.length - 1)));
                 }
                 if (event.key === "ArrowUp") {
                   event.preventDefault();
@@ -119,9 +121,10 @@ export default function CommandPalette() {
                   selectDestination(activeIndex);
                 }
               }}
-              placeholder="Search documentation…"
+              placeholder="Search the bot, pricing or guides…"
               autoComplete="off"
               role="combobox"
+              aria-autocomplete="list"
               aria-controls="command-results"
               aria-expanded="true"
               aria-activedescendant={results[activeIndex] ? `command-${activeIndex}` : undefined}
@@ -129,7 +132,7 @@ export default function CommandPalette() {
             <button className={styles.close} type="button" onClick={closePalette} aria-label="Close search">Esc</button>
           </div>
 
-          <div id="command-results" className={styles.results} role="listbox">
+          <div id="command-results" className={styles.results} role="listbox" aria-label="Matching pages">
             {results.length ? (
               results.map((item, index) => (
                 <button
@@ -147,7 +150,7 @@ export default function CommandPalette() {
                 </button>
               ))
             ) : (
-              <p className={styles.empty}>No matching pages. Try a broader term.</p>
+              <p className={styles.empty}>No matching pages. Try “license”, “MT5” or “broker”.</p>
             )}
           </div>
 

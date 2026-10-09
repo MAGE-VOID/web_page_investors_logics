@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="canvas figure" data-motion="paused" viewBox="0 0 1200 480"
+        width="1200" height="480" role="img" aria-labelledby="hero-titleId hero-descriptionId">
+        <title id="hero-titleId">Investors Logics — a study in motion</title>
+        <desc id="hero-descriptionId">A folded satin-metal ribbon surrounds the Investors Logics two-candle emblem. Sculpted edges, a recessed layer and a slow reflection give the abstract form depth. The emblem stays still. This is brand artwork, not a physical product or trading data.</desc>
+<style>.figure {
+  --sculpture-cycle: 12s;
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.canvas path, .canvas use { stroke-linecap: round; stroke-linejoin: round; }
+.lowerRibbon { animation: layer-breath var(--sculpture-cycle) ease-in-out infinite; }
+.lowerEdge { fill: none; stroke: #64869d; stroke-width: .8; opacity: .6; }
+.foldSeam { fill: none; stroke: #d8e7eb; stroke-width: .8; opacity: .23; }
+.satinCut { fill: none; stroke: #ecf1ed; stroke-width: .75; opacity: .3; }
+.frontCut { fill: none; stroke: #e0edf1; stroke-width: .8; opacity: .45; }
+.innerLip { fill: none; stroke: #edf2ec; stroke-width: 1; opacity: .7; }
+.innerShadow { fill: none; stroke: #09131d; stroke-width: 1; opacity: .75; }
+.markCut { fill: none; stroke: #fff8eb; stroke-width: .6; opacity: .65; }
+
+.ribbonReflection {
+  opacity: 0;
+  animation: satin-reflection var(--sculpture-cycle) cubic-bezier(.4, 0, .2, 1) infinite;
+}
+
+.markReflection {
+  opacity: 0;
+  animation: emblem-reflection var(--sculpture-cycle) cubic-bezier(.4, 0, .2, 1) infinite;
+}
+
+.edgeLight {
+  fill: none;
+  stroke: #e9f4f5;
+  stroke-width: 2;
+  stroke-dasharray: 7 93;
+  stroke-dashoffset: 7;
+  opacity: 0;
+  animation: perimeter-light var(--sculpture-cycle) linear infinite;
+}
+
+.figure[data-motion="paused"] .canvas * { animation-play-state: paused; }
+
+/* One long material study: edge travel, surface reflection, then a quiet hold. */
+@keyframes perimeter-light {
+  0% { stroke-dashoffset: 7; opacity: 0; }
+  6% { opacity: .75; }
+  69% { opacity: .75; }
+  78%, 100% { stroke-dashoffset: -100; opacity: 0; }
+}
+
+@keyframes satin-reflection {
+  0%, 8% { transform: translateX(-240px); opacity: 0; }
+  16% { opacity: .65; }
+  48% { opacity: .65; }
+  62%, 100% { transform: translateX(610px); opacity: 0; }
+}
+
+@keyframes emblem-reflection {
+  0%, 26% { transform: translateX(0); opacity: 0; }
+  32% { opacity: .7; }
+  46% { opacity: .7; }
+  54%, 100% { transform: translateX(225px); opacity: 0; }
+}
+
+@keyframes layer-breath {
+  0%, 100% { transform: translateY(0); }
+  44%, 58% { transform: translateY(5px); }
+}
+
+/* Trim empty canvas, not the sculpture or emblem. */
+@media (max-width: 47.5rem) {
+  .figure { aspect-ratio: 780 / 480; }
+  .canvas {
+    position: absolute;
+    width: 153.846154%;
+    max-width: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canvas * { animation: none !important; }
+  .ribbonReflection, .markReflection, .edgeLight { opacity: 0; }
+}
+</style>
+<rect width="1200" height="480" fill="#101923"/>
+        <defs>
+          <linearGradient id="hero-satinId" x1="340" y1="102" x2="819" y2="368" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#253d50" />
+            <stop offset=".19" stop-color="#6f899b" />
+            <stop offset=".35" stop-color="#d0dee5" />
+            <stop offset=".47" stop-color="#eff0e9" />
+            <stop offset=".57" stop-color="#9ab2c2" />
+            <stop offset=".78" stop-color="#456075" />
+            <stop offset="1" stop-color="#213b50" />
+          </linearGradient>
+          <linearGradient id="hero-foldId" x1="480" y1="398" x2="866" y2="218" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#374f60" />
+            <stop offset=".24" stop-color="#6c899c" />
+            <stop offset=".6" stop-color="#b5ccd9" />
+            <stop offset=".88" stop-color="#e5eeed" />
+            <stop offset="1" stop-color="#839fb3" />
+          </linearGradient>
+          <linearGradient id="hero-returnId" x1="350" y1="245" x2="545" y2="416" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#b1c6d2" />
+            <stop offset=".17" stop-color="#6f8ca0" />
+            <stop offset=".7" stop-color="#253e50" />
+            <stop offset="1" stop-color="#1c3040" />
+          </linearGradient>
+          <linearGradient id="hero-bevelId" x1="427" y1="80" x2="684" y2="441" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#eff3ef" />
+            <stop offset=".34" stop-color="#a8bfce" />
+            <stop offset=".58" stop-color="#335167" />
+            <stop offset=".84" stop-color="#b6cfdf" />
+            <stop offset="1" stop-color="#496a80" />
+          </linearGradient>
+          <linearGradient id="hero-undersideId" x1="345" y1="150" x2="820" y2="407" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#0b141e" />
+            <stop offset=".37" stop-color="#263f52" />
+            <stop offset=".7" stop-color="#456276" />
+            <stop offset="1" stop-color="#122636" />
+          </linearGradient>
+          <linearGradient id="hero-metalId" x1="-.3" y1="0" x2="1" y2="1">
+            <stop stop-color="#fffaf0" />
+            <stop offset=".37" stop-color="#e5eeed" />
+            <stop offset=".61" stop-color="#a3bdce" />
+            <stop offset=".8" stop-color="#dce7ea" />
+            <stop offset="1" stop-color="#859fb3" />
+          </linearGradient>
+          <linearGradient id="hero-reflectionId">
+            <stop stop-color="#f4f8f5" stop-opacity="0" />
+            <stop offset=".42" stop-color="#f4f8f5" stop-opacity=".04" />
+            <stop offset=".5" stop-color="#f4f8f5" stop-opacity=".5" />
+            <stop offset=".58" stop-color="#f4f8f5" stop-opacity=".08" />
+            <stop offset="1" stop-color="#f4f8f5" stop-opacity="0" />
+          </linearGradient>
+          <radialGradient id="hero-shadowId">
+            <stop stop-color="#030910" stop-opacity=".75" />
+            <stop offset=".5" stop-color="#030910" stop-opacity=".3" />
+            <stop offset="1" stop-color="#030910" stop-opacity="0" />
+          </radialGradient>
+
+          <path id="hero-perimeterId" pathLength="100"
+            d="M428 77 700 44c19-2 38 4 52 16l155 133c36 31 29 84-14 105L571 452c-23 11-49 8-69-8L318 299c-28-22-33-59-11-86l72-93c12-24 27-40 49-43Z" />
+          <path id="hero-ribbonId" fill-rule="evenodd" clip-rule="evenodd"
+            d="M428 77 700 44c19-2 38 4 52 16l155 133c36 31 29 84-14 105L571 452c-23 11-49 8-69-8L318 299c-28-22-33-59-11-86l72-93c12-24 27-40 49-43ZM462 141l230-28c7-1 14 1 19 5l126 109c7 6 5 16-3 20L550 381c-4 2-9 1-13-2L378 254c-4-3-4-9-1-13l51-68c9-18 19-30 34-32Z" />
+          <clipPath id="hero-ribbonClipId"><use href="#hero-ribbonId" /></clipPath>
+
+          
+          <path id="hero-shortId" fill-rule="evenodd"
+            d="M-34-25h26a4 4 0 0 1 4 4v42a4 4 0 0 1-4 4h-26a4 4 0 0 1-4-4v-42a4 4 0 0 1 4-4ZM-30-17v34h18v-34ZM-25-35h8v10h-8ZM-25 25h8v10h-8Z" />
+          <path id="hero-tallId"
+            d="M8-68h26a4 4 0 0 1 4 4V64a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V-64a4 4 0 0 1 4-4ZM17-83h8v15h-8ZM17 68h8v15h-8Z" />
+          <clipPath id="hero-markClipId"><use href="#hero-shortId" /><use href="#hero-tallId" /></clipPath>
+        </defs>
+
+        <ellipse cx="614" cy="449" rx="316" ry="29" fill="url(#hero-shadowId)" />
+
+        
+        <g class="lowerRibbon">
+          <g transform="translate(7 15)">
+            <use href="#hero-ribbonId" fill="url(#hero-undersideId)" />
+            <use class="lowerEdge" href="#hero-perimeterId" />
+          </g>
+        </g>
+        <g transform="translate(0 -8)">
+          <use href="#hero-ribbonId" transform="translate(0 11)" fill="#132736" />
+          <use href="#hero-ribbonId" fill="url(#hero-satinId)" />
+
+          
+          <g clip-path="url(#hero-ribbonClipId)">
+            <path d="M302 212 378 254 550 389 539 470 300 306Z" fill="url(#hero-returnId)" />
+            <path d="m537 379 300-152 99-12 8 98-366 158-76-27Z" fill="url(#hero-foldId)" />
+            <path class="foldSeam" d="m539 384-5 63M838 228l66-18" />
+            <path class="satinCut" d="m450 98 255-30c12-1 21 2 30 9l145 124" />
+            <path class="frontCut" d="m566 430 321-151c17-8 26-21 27-36" />
+            <g class="ribbonReflection">
+              <path d="M260-130h150l310 730H570Z" fill="url(#hero-reflectionId)" />
+            </g>
+          </g>
+
+          <use href="#hero-ribbonId" fill="none" stroke="url(#hero-bevelId)" stroke-width="1.4" />
+          <path class="innerLip" d="m462 142 230-28c7-1 14 1 19 5l126 109" />
+          <path class="innerShadow" d="m462 147 230-28c7-1 14 1 19 5l126 109" />
+          <use class="edgeLight" href="#hero-perimeterId" />
+        </g>
+
+        
+        <g transform="translate(604 231) scale(1.05)">
+          <g transform="translate(5 5)" fill="#3a566b">
+            <use href="#hero-shortId" /><use href="#hero-tallId" />
+          </g>
+          <g fill="url(#hero-metalId)" stroke="#dce8eb" stroke-width=".5">
+            <use href="#hero-shortId" /><use href="#hero-tallId" />
+          </g>
+          <path class="markCut" d="M-34-25h26M8-68h26M17-83h8M-25-35h8M4-59v115" />
+          <g clip-path="url(#hero-markClipId)">
+            <g class="markReflection">
+              <path d="M-130-110h45l85 220h-45Z" fill="url(#hero-reflectionId)" />
+            </g>
+          </g>
+        </g>
+      </svg>

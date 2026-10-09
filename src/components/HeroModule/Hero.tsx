@@ -1,78 +1,44 @@
 import { Link } from "react-router-dom";
+import Icon from "@/components/UI/Icon";
+import BrandScene from "./BrandScene";
 import styles from "./Hero.module.css";
 
-const productFacts = [
-  ["Format", ".ex5 compiled file"],
-  ["Platform", "MetaTrader 5"],
-  ["Access", "30 / 90 / 365 days"],
-] as const;
+interface HeroProps {
+  staticPreview?: boolean;
+}
 
-export default function Hero() {
+export default function Hero({ staticPreview = false }: HeroProps) {
   return (
-    <section id="demo" className={styles.hero} aria-labelledby="product-title">
-      <div className={styles.heroGrid}>
-        <div className={styles.heroIntro}>
-          <h1 id="product-title">Blue Boost Bot for MetaTrader 5.</h1>
-          <p className={styles.lede}>
-            A compiled <code>.ex5</code> with time-limited access. Check your MT5 setup, choose a term and request the next step.
-          </p>
-
-          <div className={styles.heroActions}>
-            <a className={styles.primaryAction} href="#license-options">
-              Choose access <span aria-hidden="true">↓</span>
-            </a>
-            <Link className={styles.secondaryAction} to="/documentation/table-of-contents/getting-started">
-              Read the setup guide <span aria-hidden="true">→</span>
-            </Link>
+    <section id="bot-overview" className={styles.hero} aria-labelledby="product-title">
+      <div className={styles.inner}>
+        <div className={styles.introduction}>
+          <header className={styles.copy}>
+            <h1 id="product-title" className={styles.title}>
+              <span>Blue Boost</span>{" "}
+              <span className={styles.titleEnd}>Bot<span className={styles.period}>.</span></span>
+            </h1>
+            <p className={styles.statement}>Your workflow, automated.</p>
+            <p className={styles.description}>
+              A Forex Expert Advisor for MetaTrader 5. Programmed analysis,
+              execution and position management — in your own trading account.
+            </p>
+            <div className={styles.actions}>
+              <Link className={"button button-primary " + styles.primary} to="/products#license-options">
+                View licenses <Icon name="arrow-up-right" />
+              </Link>
+              <Link className={styles.secondary} to="/documentation/introduction">
+                Explore the bot <Icon name="arrow-up-right" />
+              </Link>
+            </div>
+            <p className={styles.terms}>
+              Proposed rentals from <strong>$59 USD.</strong>{" "}
+              <span>Purchase terms on request.</span>
+            </p>
+          </header>
+          <div className={styles.artwork}>
+            <BrandScene staticOnly={staticPreview} />
           </div>
-
-          <p className={styles.heroNote}>No performance promise. No source code sale. No live account connected.</p>
-
-          <dl className={styles.heroMeta} aria-label="Product summary">
-            <div>
-              <dt>Format</dt>
-              <dd>Compiled .ex5</dd>
-            </div>
-            <div>
-              <dt>Runs on</dt>
-              <dd>MetaTrader 5</dd>
-            </div>
-            <div>
-              <dt>Access</dt>
-              <dd>Time-limited</dd>
-            </div>
-          </dl>
         </div>
-
-        <aside className={styles.preview} aria-label="Blue Boost Bot product facts">
-          <div className={styles.previewTopline}>
-            <div>
-              <strong>Blue Boost Bot</strong>
-              <span>Public product facts</span>
-            </div>
-            <span className={styles.previewStatus}>.EX5 / MT5</span>
-          </div>
-
-          <div className={styles.previewPanel}>
-            <div className={styles.previewHeading}>
-              <h2>Everything you need to choose.</h2>
-              <p>One file, one platform and one access term. The strategy remains private.</p>
-            </div>
-
-            <dl className={styles.previewRows}>
-              {productFacts.map(([label, value]) => (
-                <div key={label}>
-                  <dt>{label}</dt>
-                  <dd>{value}</dd>
-                </div>
-              ))}
-            </dl>
-
-            <div className={styles.previewFooter}>
-              <strong>Request access only when the fit is clear.</strong>
-            </div>
-          </div>
-        </aside>
       </div>
     </section>
   );

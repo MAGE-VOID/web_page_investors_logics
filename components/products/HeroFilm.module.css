@@ -1,0 +1,29 @@
+/* Only the first-paint artwork needs local CSS. Page layout is source CSS. */
+.poster:global(.pw-poster)[aria-hidden] {
+  display: block;
+  padding: 0;
+}
+
+:global([data-pw-hero-live]) .poster:global(.pw-poster)[aria-hidden] {
+  display: none;
+}
+
+.posterArt {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.compact {
+  display: none;
+}
+
+@media (max-width: 619px) {
+  .wide {
+    display: none;
+  }
+
+  .compact {
+    display: block;
+  }
+}

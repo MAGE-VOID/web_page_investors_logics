@@ -1,0 +1,96 @@
+.demo {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 160px;
+  overflow: hidden;
+  background: #0b1020;
+  color: #d6dbe6;
+  contain: layout paint;
+  container-type: inline-size;
+}
+
+.poster,
+.canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.poster {
+  opacity: 1;
+}
+
+.posterCompact {
+  display: none;
+}
+
+.canvas {
+  opacity: 0;
+}
+
+.demo[data-ready] .canvas {
+  opacity: 1;
+}
+
+.demo[data-ready] .poster {
+  visibility: hidden;
+}
+
+.posterText,
+.disclaimer {
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+}
+
+.disclaimer {
+  position: absolute;
+  z-index: 1;
+  left: clamp(16px, 3.2%, 40px);
+  max-width: calc(100% - 32px);
+  pointer-events: none;
+}
+
+.disclaimer {
+  top: 34px;
+  color: #a9b4c8;
+  font-size: 10px;
+  line-height: 1.5;
+  letter-spacing: -.01em;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@container (max-width: 620px) {
+  .posterWide {
+    display: none;
+  }
+
+  .posterCompact {
+    display: block;
+  }
+
+  .disclaimer {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poster,
+  .canvas {
+    transition: none;
+  }
+}

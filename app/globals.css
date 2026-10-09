@@ -1,0 +1,41 @@
+@import "../tokens.css";
+@import "../styles/proea-base.css";
+@import "../styles/proea-products.css";
+@import "../styles/reference-header.css";
+
+*, *::before, *::after { box-sizing: border-box; }
+html { min-width: 320px; scrollbar-gutter: stable; text-rendering: optimizeLegibility; }
+body { margin: 0; background: #fafaf8; color: #16150f; font-family: var(--font-sans); font-size: 16px; line-height: 1.55; letter-spacing: -.012em; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, p, ul, ol, dl, dd, figure { margin: 0; }
+h1, h2, h3, h4 { font-family: var(--font-sans); text-wrap: balance; }
+h2, .section-heading { font-size: clamp(28px, calc(1.5vw + 20px), 40px); font-weight: 800; line-height: 1.02; letter-spacing: -.045em; }
+p { text-wrap: pretty; }
+button, input, textarea, select { font: inherit; color: inherit; }
+button, summary, input[type="radio"], input[type="range"] { cursor: pointer; }
+button { -webkit-tap-highlight-color: transparent; }
+button:disabled { cursor: not-allowed; opacity: .5; }
+a { color: inherit; text-underline-offset: .25em; }
+img, svg { display: block; max-width: 100%; }
+input, textarea, select { min-width: 0; }
+textarea { resize: vertical; }
+code { font-family: var(--font-mono); font-size: .9em; }
+::selection { color: var(--ink); background: var(--accent-4); }
+:where(a, button, summary, input, textarea, select):focus-visible { outline: 3px solid var(--gain); outline-offset: 4px; }
+main:focus { outline: none; }
+.page-container { width: min(1240px, 100%); margin-inline: auto; padding-inline: 20px; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; z-index: 100; top: 12px; left: 16px; padding: 12px 20px; border-radius: 999px; background: var(--ink); color: white; transform: translateY(-200%); }
+.skip-link:focus { transform: none; }
+.primary-button, .secondary-button { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px; border-radius: 999px; text-decoration: none; font-weight: 700; line-height: 1.25; text-align: center; transition: background .25s var(--ease-out), color .25s var(--ease-out); }
+.primary-button { isolation: isolate; min-height: 52px; padding: 0 26px; border: 0; background: var(--ink); color: white; font-size: 15.5px; box-shadow: 0 14px 30px -16px rgb(22 21 15 / 75%); }
+.primary-button::before { content: ""; position: absolute; z-index: -1; inset: -2px; padding: 2px; border-radius: inherit; background: var(--pastel-gradient); mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; opacity: .18; filter: blur(3px); pointer-events: none; animation: button-halo 5s var(--ease-out) infinite paused; }
+.primary-button:hover::before, .primary-button:focus-visible::before { animation-play-state: running; }
+.primary-button:hover { background: #29271e; }
+.secondary-button { min-height: 44px; padding: 0 20px; border: 1px solid #d6d3ca; background: transparent; color: var(--ink); font-size: 14px; }
+.secondary-button:hover { background: var(--wash); }
+@keyframes button-halo { 0%, 100% { opacity: .16; } 50% { opacity: .3; } }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
