@@ -16,17 +16,17 @@ export default function GettingStartedPage() {
         instruments are supported before purchasing.
       </p>
       <p>
-        See the <Link to="/documentation#mt5">MT5 guide</Link>
-        {" "}and <Link to="/documentation#broker">broker checklist</Link>.
+        See the <Link to="/home/documentation#mt5">MT5 guide</Link>
+        {" "}and <Link to="/home/documentation#broker">broker checklist</Link>.
         If you are unsure about compatibility,{" "}
-        <Link to="/contact">ask us about your setup</Link>.
+        <Link to="/home/contact">ask us about your setup</Link>.
       </p>
 
       <h3>2. Request your license</h3>
       <p>
         Choose a proposed rental period on the{" "}
-        <Link to="/#license-options">license page</Link> or{" "}
-        <Link to="/contact?mode=purchase">enquire about purchasing</Link>,
+        <Link to="/home#license-options">license page</Link> or{" "}
+        <Link to="/home/contact?mode=purchase">enquire about purchasing</Link>,
         then prepare an email request. Purchase pricing and access duration
         need confirmation. Confirm the final price, access terms, payment
         method, delivery and activation details before paying.
@@ -43,7 +43,7 @@ export default function GettingStartedPage() {
       <p>
         Choose where MetaTrader 5 will run: a compatible computer or a VPS.
         The platform must stay running and connected for the bot to operate.
-        The <Link to="/documentation#vps">VPS guide</Link>
+        The <Link to="/home/documentation#vps">VPS guide</Link>
         {" "}explains that option.
       </p>
 
@@ -62,7 +62,7 @@ export default function GettingStartedPage() {
 
       <div className="doc-help">
         <p>Need help with a step?</p>
-        <Link to="/contact">Ask a setup question <span aria-hidden="true">→</span></Link>
+        <Link to="/home/contact">Ask a setup question <span aria-hidden="true">→</span></Link>
       </div>
     </>
   );

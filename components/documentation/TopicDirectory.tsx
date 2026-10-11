@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import Icon from "@/components/UI/Icon";
 
 const topics = [
-  ["Understand the Expert Advisor", "What Blue Boost Bot does, what is included and what you need.", "/documentation#introduction", "The product"],
-  ["Prepare MetaTrader 5", "Account connection, permissions and the MT5 environment.", "/documentation#mt5", "Your setup"],
-  ["Check broker compatibility", "The account and instrument checks to make before buying.", "/documentation#broker", "Your setup"],
-  ["Keep the platform running", "A computer or VPS, a connection and ongoing monitoring.", "/documentation#vps", "Everyday use"],
-  ["Understand your license", "Access periods, activation questions and running costs.", "/contact#help", "Licensing"],
-  ["Talk to Investors Logics", "Ask about the software, compatibility or installation.", "/contact", "Support"],
+  ["Understand the Expert Advisor", "What Blue Boost Bot does, what is included and what you need.", "/home/documentation#introduction", "The product"],
+  ["Prepare MetaTrader 5", "Account connection, permissions and the MT5 environment.", "/home/documentation#mt5", "Your setup"],
+  ["Check broker compatibility", "The account and instrument checks to make before buying.", "/home/documentation#broker", "Your setup"],
+  ["Keep the platform running", "A computer or VPS, a connection and ongoing monitoring.", "/home/documentation#vps", "Everyday use"],
+  ["Understand your license", "Access periods, activation questions and running costs.", "/home/contact#help", "Licensing"],
+  ["Talk to Investors Logics", "Ask about the software, compatibility or installation.", "/home/contact", "Support"],
 ] as const;
 
 export default function DocumentationMainPage() {
@@ -26,7 +26,7 @@ export default function DocumentationMainPage() {
           <h2 id="start-heading">New to Blue Boost Bot?</h2>
           <p>Begin with the setup guide, from checking compatibility to your first demo environment.</p>
         </div>
-        <Link to="/documentation#installation">Read the setup guide <Icon name="arrow-right" /></Link>
+        <Link to="/home/documentation#installation">Read the setup guide <Icon name="arrow-right" /></Link>
       </section>
       <div className="doc-filter">
         <label htmlFor="help-topic-filter">Find a guide</label>
@@ -50,7 +50,7 @@ export default function DocumentationMainPage() {
       )}
       <div className="doc-help">
         <p>Looking for a license?</p>
-        <Link to="/#license-options">Compare periods and pricing <Icon name="arrow-right" /></Link>
+        <Link to="/home#license-options">Compare periods and pricing <Icon name="arrow-right" /></Link>
       </div>
     </>
   );

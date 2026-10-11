@@ -4,7 +4,7 @@ import reactHooks from "eslint-plugin-react-hooks";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  { ignores: ["dist/**", ".next/**", "reference/**", "legacy/**", "src/app/**", "src/components/**", "src/data/**", "src/styles/**"] },
+  { ignores: ["dist/**", ".next/**", "reference/**", "app/cv/reference/**", "legacy/**", "src/app/**", "src/components/**", "src/data/**", "src/styles/**"] },
   {
     files: ["**/*.{js,jsx,ts,tsx}"],
     extends: [js.configs.recommended, ...tseslint.configs.recommended],

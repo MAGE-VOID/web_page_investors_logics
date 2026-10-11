@@ -97,13 +97,13 @@ export default function PricingSuite() {
             <h3>Rent Blue Boost Bot</h3>
             <span className="pv-o-ap">${licensePlans[0].price}–{licensePlans[2].price}<small>USD</small></span>
             <span className="pv-o-note">{licensePlans.map(plan => plan.days).join(" / ")} days. Compiled .ex5 access.</span>
-            <a className="pv-o-go" href="/contact?mode=rental"><span>Request rental terms <span aria-hidden="true">→</span></span></a>
+            <a className="pv-o-go" href="/home/contact?mode=rental"><span>Request rental terms <span aria-hidden="true">→</span></span></a>
           </article>
           <article className="pv-o-alt">
             <h3>Purchase Blue Boost Bot</h3>
             <span className="pv-o-ap">Enquire</span>
             <span className="pv-o-note">Price and access duration confirmed individually.</span>
-            <a className="pv-o-go" href="/contact?mode=purchase"><span>Request purchase conditions <span aria-hidden="true">→</span></span></a>
+            <a className="pv-o-go" href="/home/contact?mode=purchase"><span>Request purchase conditions <span aria-hidden="true">→</span></span></a>
           </article>
         </div>
         <p className="pv-o-fine">The catalogue and its collection prices are temporary design content, not available products or a discount. Proposed Blue Boost Bot rentals: ${licensePlans[0].price} / {licensePlans[0].days} days, ${licensePlans[1].price} / {licensePlans[1].days} days, ${licensePlans[2].price} / {licensePlans[2].days} days. Final delivery, activation, price and license terms must be confirmed before payment. Source code and the underlying strategy are not included.</p>

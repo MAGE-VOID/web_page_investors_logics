@@ -44,16 +44,16 @@ export default function IntroductionPage() {
         familiar with the setup.
       </p>
       <p>
-        <Link to="/documentation#installation">Read the setup guide</Link>
+        <Link to="/home/documentation#installation">Read the setup guide</Link>
         {" "}for the next steps, or{" "}
-        <Link to="/contact">ask us about compatibility</Link>
+        <Link to="/home/contact">ask us about compatibility</Link>
         {" "}before requesting a license.
       </p>
 
       <h3>Purchase or rental?</h3>
       <p>
-        <Link to="/#license-options">Compare the proposed rental periods</Link>
-        {" "}or <Link to="/contact?mode=purchase">ask about purchase terms</Link>.
+        <Link to="/home#license-options">Compare the proposed rental periods</Link>
+        {" "}or <Link to="/home/contact?mode=purchase">ask about purchase terms</Link>.
         Both paths prepare an email request. Confirm the final price, access
         terms, payment, delivery and activation details before paying.
         This website does not collect payments.

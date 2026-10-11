@@ -21,7 +21,7 @@ export default function HelpCenterPage() {
       <h3>Setup and support</h3>
       <FAQBox title="Where do I start with installation?">
         Follow the{" "}
-        <Link to="/documentation#installation">setup guide</Link>
+        <Link to="/home/documentation#installation">setup guide</Link>
         {" "}to prepare MT5 and your broker account. Once you receive the bot,
         follow the installation and activation instructions supplied with
         your license. Begin on demo before considering live trading.
@@ -30,7 +30,7 @@ export default function HelpCenterPage() {
         Check that MetaTrader 5 is open and connected to the intended account,
         and review its Expert Advisor permissions and visible error messages.
         If you need help,{" "}
-        <Link to="/contact">contact us</Link> with your MT5 version
+        <Link to="/home/contact">contact us</Link> with your MT5 version
         and the error text. Never send passwords or full account credentials.
       </FAQBox>
       <FAQBox title="Can I run it alongside another trading robot?">
@@ -41,7 +41,7 @@ export default function HelpCenterPage() {
 
       <div className="doc-help">
         <p>Still have a question?</p>
-        <Link to="/contact">Contact Investors Logics <span aria-hidden="true">→</span></Link>
+        <Link to="/home/contact">Contact Investors Logics <span aria-hidden="true">→</span></Link>
       </div>
     </>
   );

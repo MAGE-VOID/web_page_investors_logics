@@ -23,8 +23,8 @@ export default function DocumentationContactPage() {
       </p>
       <p>
         Want to rent the bot?{" "}
-        <Link to="/#license-options">Compare the proposed rental periods</Link>.
-        {" "}Prefer to buy? <Link to="/contact?mode=purchase">Ask about purchase terms</Link>;
+        <Link to="/home#license-options">Compare the proposed rental periods</Link>.
+        {" "}Prefer to buy? <Link to="/home/contact?mode=purchase">Ask about purchase terms</Link>;
         pricing and access duration need confirmation.
       </p>
 

@@ -118,7 +118,7 @@ export default function ResourcesPage() {
             <strong>Troubleshooting and FAQs:</strong> Solutions to common
             platform issues.{" "}
             <a
-              href="/contact#help"
+              href="/home/contact#help"
             >
               Investors Logics FAQs
             </a>

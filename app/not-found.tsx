@@ -1,5 +1,11 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function NotFound() {
-  return <main id="main-content" tabIndex={-1} className="page-container" style={{ paddingBlock: "100px 140px" }}><p className="mono" style={{ color: "var(--ink-3)", marginBottom: 20 }}>404 / PAGE NOT FOUND</p><h1 style={{ fontSize: "clamp(40px, 6vw, 72px)", lineHeight: 1, letterSpacing: "-.045em" }}>A different direction.</h1><p style={{ color: "var(--ink-2)", marginBlock: "24px 32px" }}>This page isn’t here. Explore the tools or find a guide instead.</p><Link className="primary-button" to="/">Explore products <span aria-hidden="true">↗</span></Link></main>;
+  useEffect(() => { document.title = "404 — Página no encontrada"; }, []);
+
+  return (
+    <main lang="es" style={{ minHeight: "100dvh", display: "grid", placeItems: "center", padding: 24, textAlign: "center" }}>
+      <h1 style={{ margin: 0, fontFamily: "system-ui, sans-serif", fontSize: 18, fontWeight: 400, lineHeight: 1.5, letterSpacing: "normal" }}>404 — Página no encontrada</h1>
+    </main>
+  );
 }

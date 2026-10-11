@@ -31,15 +31,15 @@ export default function AboutUsPage() {
         through this website.
       </p>
       <p>
-        <Link to="/#license-options">Explore Blue Boost Bot options</Link>
+        <Link to="/home#license-options">Explore Blue Boost Bot options</Link>
       </p>
 
       <h3>Help before you choose</h3>
       <p>
         Explore the{" "}
-        <Link to="/documentation#introduction">product guide</Link> and{" "}
-        <Link to="/documentation#installation">setup steps</Link>,
-        or <Link to="/contact">contact Investors Logics</Link>
+        <Link to="/home/documentation#introduction">product guide</Link> and{" "}
+        <Link to="/home/documentation#installation">setup steps</Link>,
+        or <Link to="/home/contact">contact Investors Logics</Link>
         {" "}with questions about the bot, compatibility or licensing.
       </p>
 

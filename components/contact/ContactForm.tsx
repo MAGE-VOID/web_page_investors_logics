@@ -28,7 +28,7 @@ export default function ContactForm({ initialMode, initialPlan, productId }: { i
 
   return (
     <div className={"page-container " + styles.page}>
-      <Link to="/#license-options" className={styles.back}><span aria-hidden="true">←</span> Back to the collection</Link>
+      <Link to="/home#license-options" className={styles.back}><span aria-hidden="true">←</span> Back to the collection</Link>
       <header className={styles.heading}><p className="mono">INVESTORS LOGICS / ENQUIRIES</p><h1>A conversation.<br /><span>Before you commit.</span></h1><p>{concept ? `Ask about ${conceptName}, an illustrative concept. No purchase or payment is available for this preview.` : "Choose your access, ask about your setup and review the terms with us before making a payment."}</p></header>
       <div className={styles.grid}>
         <form className={styles.form} onSubmit={prepareEnquiry}>
@@ -44,7 +44,7 @@ export default function ContactForm({ initialMode, initialPlan, productId }: { i
           <p className={styles.summaryLabel}>{concept ? "CONCEPT PREVIEW" : "YOUR SOFTWARE ENQUIRY"}</p><h2 id={group + "-summary"}>{concept ? conceptName : "Blue Boost Bot"}</h2><p>{concept ? "Illustrative product. Not offered for sale." : "Expert Advisor for MetaTrader 5"}</p>
           <div className={styles.selected} aria-live="polite" aria-atomic="true">{concept ? <strong>Ask about the concept</strong> : mode === "rental" ? <><span>{selected.days}-day rental<small>Proposed price · USD</small></span><strong>${selected.price}</strong></> : <span>Purchase terms<small>Price and access duration on request</small></span>}</div>
           {!concept && <ul><li>Compiled .ex5 software</li><li>Your own MT5 environment</li><li>Installation documentation</li></ul>}
-          <p className={styles.boundary}>{concept ? "The concept name, sample price and demo are temporary design content. There is no commercial bundle or checkout attached to them." : "The license covers software, not trading capital. Source code and ownership of the strategy are not included. Final conditions are confirmed by email."}</p><Link to="/legal">License information <span aria-hidden="true">↗</span></Link>
+          <p className={styles.boundary}>{concept ? "The concept name, sample price and demo are temporary design content. There is no commercial bundle or checkout attached to them." : "The license covers software, not trading capital. Source code and ownership of the strategy are not included. Final conditions are confirmed by email."}</p><Link to="/home/legal">License information <span aria-hidden="true">↗</span></Link>
         </aside>
       </div>
     </div>

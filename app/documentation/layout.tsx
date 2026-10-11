@@ -3,19 +3,19 @@ import type { ReactNode } from "react";
 import "./documentation.css";
 
 const guides = [
-  ["Introduction", "/documentation#introduction"],
-  ["Getting started", "/documentation#installation"],
-  ["MetaTrader 5", "/documentation#mt5"],
-  ["Broker compatibility", "/documentation#broker"],
-  ["Forex & leverage", "/documentation#forex"],
-  ["What automation does", "/documentation#automation"],
-  ["Computer & VPS", "/documentation#vps"],
-  ["Security & scams", "/documentation#security"],
-  ["Platform resources", "/documentation#resources"],
-  ["Help center", "/contact#help"],
-  ["Terms & risk", "/legal"],
-  ["About Investors Logics", "/#about"],
-  ["Contact", "/contact"],
+  ["Introduction", "/home/documentation#introduction"],
+  ["Getting started", "/home/documentation#installation"],
+  ["MetaTrader 5", "/home/documentation#mt5"],
+  ["Broker compatibility", "/home/documentation#broker"],
+  ["Forex & leverage", "/home/documentation#forex"],
+  ["What automation does", "/home/documentation#automation"],
+  ["Computer & VPS", "/home/documentation#vps"],
+  ["Security & scams", "/home/documentation#security"],
+  ["Platform resources", "/home/documentation#resources"],
+  ["Help center", "/home/contact#help"],
+  ["Terms & risk", "/home/legal"],
+  ["About Investors Logics", "/home#about"],
+  ["Contact", "/home/contact"],
 ] as const;
 
 function GuideLinks() {
@@ -26,7 +26,7 @@ export default function DocumentationLayout({ children }: { children: ReactNode 
   return (
     <main id="main-content" tabIndex={-1} className="documentation-page">
       <div className="page-container documentation-grid">
-        <aside className="documentation-sidebar"><Link className="documentation-index" to="/documentation">Product guides <span aria-hidden="true">↗</span></Link><GuideLinks /></aside>
+        <aside className="documentation-sidebar"><Link className="documentation-index" to="/home/documentation">Product guides <span aria-hidden="true">↗</span></Link><GuideLinks /></aside>
         <details className="documentation-directory"><summary>Browse the guides <span aria-hidden="true">＋</span></summary><GuideLinks /></details>
         <div className="documentation-content">{children}</div>
       </div>

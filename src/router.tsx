@@ -5,7 +5,11 @@ import NotFound from "@/app/not-found";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "cv",
+    lazy: async () => ({ Component: (await import("@/app/cv/page")).default }),
+  },
+  {
+    path: "home",
     Component: RootLayout,
     handle: { title: "Investors Logics — Trading tools, with intent" },
     children: [
@@ -25,7 +29,7 @@ export const router = createBrowserRouter([
         handle: { title: "Terms & risk · Investors Logics" },
         lazy: async () => ({ Component: (await import("@/app/legal/page")).default }),
       },
-      { path: "*", Component: NotFound, handle: { title: "Page not found · Investors Logics" } },
     ],
   },
+  { path: "*", Component: NotFound },
 ]);

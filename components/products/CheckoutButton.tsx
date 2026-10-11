@@ -8,7 +8,7 @@ interface CheckoutButtonProps {
 }
 
 /** An enquiry link, not a payment processor or a license activation flow. */
-export default function CheckoutButton({ href = "/contact", children = "Ask about a license", className }: CheckoutButtonProps) {
+export default function CheckoutButton({ href = "/home/contact", children = "Ask about a license", className }: CheckoutButtonProps) {
   return (
     <a className={["primary-button", styles.button, className].filter(Boolean).join(" ")} href={href}>
       {children}

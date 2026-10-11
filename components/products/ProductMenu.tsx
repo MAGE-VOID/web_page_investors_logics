@@ -24,10 +24,10 @@ export default function ProductMenu() {
         <span className="sh-pm-txt">Products</span><span className="sh-pm-caret" aria-hidden="true">▾</span>
       </button>
       <nav id={menuId} className="sh-pm-menu" aria-label="Browse Investors Logics" hidden={!open}>
-        <Link className="sh-pm-item sh-pm-current" to="/" onClick={() => setOpen(false)}><span className="sh-pm-label">Products <span className="sh-pm-here">Explore</span></span><span className="sh-pm-desc">The collection and its original demonstrations.</span></Link>
-        {categories.map(category => <Link className="sh-pm-item" key={category.id} to={"/#" + category.id} onClick={() => setOpen(false)}><span className="sh-pm-label">{category.label}</span><span className="sh-pm-desc">{category.question}</span></Link>)}
-        <Link className="sh-pm-item" to="/#pricing" onClick={() => setOpen(false)}><span className="sh-pm-label">Pricing &amp; licensing</span><span className="sh-pm-desc">Sample collection and Blue Boost access.</span></Link>
-        <Link className="sh-pm-item" to="/documentation" onClick={() => setOpen(false)}><span className="sh-pm-label">Documentation</span><span className="sh-pm-desc">Public setup, product and support guides.</span></Link>
+        <Link className="sh-pm-item sh-pm-current" to="/home" onClick={() => setOpen(false)}><span className="sh-pm-label">Products <span className="sh-pm-here">Explore</span></span><span className="sh-pm-desc">The collection and its original demonstrations.</span></Link>
+        {categories.map(category => <Link className="sh-pm-item" key={category.id} to={"/home#" + category.id} onClick={() => setOpen(false)}><span className="sh-pm-label">{category.label}</span><span className="sh-pm-desc">{category.question}</span></Link>)}
+        <Link className="sh-pm-item" to="/home#pricing" onClick={() => setOpen(false)}><span className="sh-pm-label">Pricing &amp; licensing</span><span className="sh-pm-desc">Sample collection and Blue Boost access.</span></Link>
+        <Link className="sh-pm-item" to="/home/documentation" onClick={() => setOpen(false)}><span className="sh-pm-label">Documentation</span><span className="sh-pm-desc">Public setup, product and support guides.</span></Link>
       </nav>
     </div>
   );

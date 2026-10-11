@@ -15,7 +15,8 @@ npm ci
 npm run dev
 ```
 
-Puerto configurado: [http://127.0.0.1:4000](http://127.0.0.1:4000).
+Puerto configurado: 4000. Abre la página principal en
+[http://127.0.0.1:4000/home](http://127.0.0.1:4000/home).
 Si está ocupado por la antigua página, detén ese servidor desde su propia
 terminal o inicia una vista independiente:
 
@@ -29,41 +30,56 @@ localmente, usa `npm run preview` o `npm run start`. El puerto sigue siendo 4000
 Si ya tienes un servidor abierto, reinícialo para cargar la configuración actual.
 
 Para publicar, sirve `dist/` y configura el hosting para devolver `index.html`
-en `/documentation`, `/contact` y `/legal`, conservando la URL solicitada.
+en `/home` y sus páginas `/home/documentation`, `/home/contact` y `/home/legal`,
+además de `/cv`, conservando la URL solicitada.
 Es una reescritura interna del hosting, no una redirección. Permite abrir y
 recargar las páginas directamente. Las URLs que no corresponden a una ruta
 registrada muestran la página 404 de la aplicación.
 
 ## Rutas públicas
 
-Solo hay cuatro rutas directas, sin alias ni redirecciones:
+Hay cuatro páginas públicas agrupadas bajo la ruta padre `/home` y un espacio
+independiente `/cv`, sin alias ni redirecciones:
 
 | Ruta | Contenido |
 | --- | --- |
-| `/` | Catálogo, precios, preguntas frecuentes e información de Investors Logics. |
-| `/documentation` | Todas las guías públicas en una página, con índice y anclas. |
-| `/contact` | Consultas de compra/alquiler, centro de ayuda e información de soporte. |
-| `/legal` | Términos, condiciones y advertencias de riesgo existentes. |
+| `/home` | Catálogo, precios, preguntas frecuentes e información de Investors Logics. |
+| `/home/documentation` | Todas las guías públicas en una página, con índice y anclas. |
+| `/home/contact` | Consultas de compra/alquiler, centro de ayuda e información de soporte. |
+| `/home/legal` | Términos, condiciones y advertencias de riesgo existentes. |
+| `/cv` | Espacio independiente, vacío por ahora; todo su contenido vive en `app/cv/`. |
 
-Las guías se enlazan con `/documentation#introduction`, `#installation`, `#mt5`,
+`/cv` se carga de forma diferida y no usa el layout de `/home`. No tiene menú,
+cabecera ni pie del catálogo. La entrada y las instrucciones para su futuro
+contenido están en `app/cv/page.tsx` y `app/cv/README.md`. No se añaden enlaces
+desde `/home` hacia esta sección.
+
+Las guías se enlazan con `/home/documentation#introduction`, `#installation`, `#mt5`,
 `#broker`, `#forex`, `#automation`, `#vps`, `#security` y `#resources`.
-`/#about`, `/contact#help` y `/contact#support` apuntan a secciones de esas mismas
+`/home#about`, `/home/contact#help` y `/home/contact#support` apuntan a secciones de esas mismas
 páginas; no son rutas adicionales. Los parámetros de consulta de contacto
 (`mode`, `plan`, `product`) siguen preseleccionando la consulta.
 
-`/products` y las antiguas subrutas de documentación ya no están registradas.
+`/` y cualquier URL no registrada muestran únicamente
+`404 — Página no encontrada`, fuera del layout compartido. No incluyen cabecera,
+pie, botones ni redirecciones, también cuando la URL incluye parámetros o anclas.
+El mensaje es del frontend; devolver el estado HTTP 404 real requiere configurar
+el hosting. No se modifica el servidor ni se simula ese estado desde React.
+
+`/documentation`, `/contact`, `/legal`, `/products` y las antiguas subrutas
+de documentación ya no están registradas.
 Muestran 404 sin cambiar la URL. Sus archivos de contenido se reutilizan como
 componentes de las páginas agrupadas, no como rutas independientes.
 
 ## Qué está activo
 
-`/` muestra el catálogo. Incluye cabecera y menú, hero con
+`/home` muestra el catálogo. Incluye cabecera y menú, hero con
 película original de cinco capítulos, navegación sticky, ocho conceptos desde
 datos, tarjetas responsive, Why, precios, FAQ, dock y un diálogo funcional con
 play/replay, slider y sesiones alternativas.
 
 La documentación pública y las consultas de venta/alquiler están en
-`/documentation` y `/contact`; los términos se encuentran en `/legal`.
+`/home/documentation` y `/home/contact`; los términos se encuentran en `/home/legal`.
 La aplicación es una SPA de React, sin servidor
 Next.js ni React Server Components. Contacto, documentación y legal se cargan por ruta;
 los motores del canvas conservan su carga diferida cerca del viewport.
@@ -71,6 +87,7 @@ los motores del canvas conservan su carga diferida cerca del viewport.
 - `index.html` y `src/main.tsx`: entrada de Vite y montaje de React.
 - `src/router.tsx`: rutas, carga diferida y títulos de página.
 - `app/`: páginas y layouts de React; no usa convenciones automáticas de Next.js.
+- `app/cv/`: contenido del espacio independiente `/cv`.
 - `components/` y `data/`: componentes activos y contenido público.
 
 - `tokens.css`: variables y compatibilidad con las páginas públicas.
@@ -110,9 +127,10 @@ npm run lint
 npm run build
 ```
 
-La simplificación de rutas del 2026-10-09 pasó TypeScript, ESLint y compilación
-de producción. La comprobación de código confirmó cuatro rutas públicas,
-14 URLs retiradas resueltas por el handler 404, 21 destinos internos con sus
+La organización bajo `/home` del 2026-10-09 pasó TypeScript, ESLint y compilación
+de producción. La comprobación de código confirmó cuatro páginas bajo
+la misma ruta padre, un 404 mínimo fuera del layout y 18 URLs retiradas resueltas
+por el handler 404 y 21 destinos internos con sus
 anclas y un único H1 por página. No se añadieron redirecciones. Esta revisión
 de organización no inició servidores ni hizo una nueva revisión visual.
 
